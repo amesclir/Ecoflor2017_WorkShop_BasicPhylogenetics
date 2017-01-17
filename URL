@@ -1,0 +1,1887 @@
+LOCUS       Z73494                  1143 bp    DNA     linear   VRT 24-JUL-2016
+DEFINITION  Sylvia atricapilla atricapilla mitochondrial cycb gene for
+            cytochrome b.
+ACCESSION   Z73494
+VERSION     Z73494.2
+KEYWORDS    cytb gene; cytochrome b.
+SOURCE      mitochondrion Sylvia atricapilla atricapilla
+  ORGANISM  Sylvia atricapilla atricapilla
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Archosauria; Dinosauria; Saurischia; Theropoda;
+            Coelurosauria; Aves; Neognathae; Passeriformes; Sylviidae;
+            Sylviinae; Sylvia.
+REFERENCE   1  (bases 1 to 1143)
+  AUTHORS   Helbig,A.J., Seibold,I., Martens,J. and Wink,M.
+  TITLE     Genetic differentiation and phylogenetic relationships of Bonelli's
+            Warbler Phylloscopus bonelli and Green Warbler P.nitidus
+  JOURNAL   J. Avian Biol. 26, 139-153 (1995)
+REFERENCE   2
+  AUTHORS   Helbig,A.J. and Seibold,I.
+  TITLE     Molecular phylogeny of Palearctic-African Acrocephalus and
+            Hippolais Warblers (Aves: Sylviidae)
+  JOURNAL   Mol. Phylogenet. Evol. 11 (2), 246-260 (1999)
+   PUBMED   10191069
+REFERENCE   3
+  AUTHORS   Helbig,A.J.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (09-MAY-1996) Helbig A.J.,
+            Ernst-Moritz-Arndt-Universitaet Greifswald, Vogelwarte Hiddensee,
+            D-18565 Kloster, FRG
+  REMARK    revised by [4]
+REFERENCE   4  (bases 1 to 1143)
+  AUTHORS   Helbig,A.J.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (10-DEC-2002) Helbig A.J.,
+            Ernst-Moritz-Arndt-Universitaet Greifswald, Vogelwarte Hiddensee,
+            D-18565 Kloster, FRG
+COMMENT     On Dec 16, 2002 this sequence version replaced gi:1332570.
+FEATURES             Location/Qualifiers
+     source          1..1143
+                     /organism="Sylvia atricapilla atricapilla"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /sub_species="atricapilla"
+                     /db_xref="taxon:216587"
+     gene            1..1143
+                     /gene="cytb"
+     CDS             1..1143
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CAA97841.2"
+                     /db_xref="GOA:Q36540"
+                     /db_xref="HSSP:1BCC"
+                     /db_xref="InterPro:IPR005797"
+                     /db_xref="InterPro:IPR005798"
+                     /db_xref="InterPro:IPR016174"
+                     /db_xref="InterPro:IPR016175"
+                     /db_xref="UniProtKB/TrEMBL:Q36540"
+                     /translation="MALNLRKNHPILKVINDALIDLPTPSNISTWWNFGSLLGLCLII
+                     QIATGLMLAMHYTADISLAFSSVAHMCRDVQFGWLIRNLHANGASFFFICIYIHIGRG
+                     IYYGSYLNKETWNVGVILLLTLMATAFVGYVLPWGQMSFWGATVITNLFSAIPYIGQT
+                     LVEWAWGGFSVDNPTLTRFFALHFLLPFVIAGLTLVHLTLLHESGSNNPLGIPSDCDK
+                     IPFHPYYSTKDILGFALMFIPLASLALFAPNLLGDPENFTPANPLATPPHIKPEWYFL
+                     FAYAILRSIPNKLGGVLALAASVLVLFLIPLLHTSKLRSMTFRPLSQILFWTLVANLL
+                     VLTWVGSQPVEHPFIIIGQLASLSYFTIILVLFPLVSILENKMLKL"
+ORIGIN      
+        1 atggctctca atcttcgaaa aaaccaccct atcctaaaag tcatcaacga cgccctaatc
+       61 gacctaccaa cgccgtctaa catctctact tgatgaaact tcggctcact cctaggtctt
+      121 tgtctaatca tccaaatcgc cacaggcctc atactagcta tacactacac agcagacatc
+      181 tcattggcct tctcctctgt agcccacata tgccgagacg tccaatttgg ctgactaatc
+      241 cgaaaccttc acgcaaacgg agcttcattc ttcttcatct gcatctacat tcacattggc
+      301 cgaggaatct actacggctc atacctaaac aaagagacct gaaatgtagg agttatcctg
+      361 ctactaaccc tcatggccac tgctttcgta ggttacgttc tcccatgagg acagatatca
+      421 ttctgaggag ctacagtaat tacaaaccta ttctctgcta tcccatacat cggtcaaaca
+      481 ctagtagaat gagcctgagg aggcttctcg gtagacaacc ccacactaac ccgattcttc
+      541 gctcttcact tcctcctccc cttcgtcatt gcaggcctaa cattagtaca tctcacccta
+      601 ctacacgaat cagggtctaa caacccccta ggcatcccct cagattgcga caaaatccca
+      661 ttccacccct actactccac aaaagatatc ctaggctttg cacttatatt catccctctc
+      721 gcctccctag cactattcgc ccctaacctc ctaggagacc cagaaaactt cacgcccgcc
+      781 aaccccctag ccacacctcc acatatcaaa ccagaatgat acttcctgtt cgcctacgcc
+      841 atcctgcgat ccatcccgaa taaacttggt ggcgtactag ctctagctgc ctctgtccta
+      901 gttctcttcc tcatcccact actacacaca tccaaactac gctcaatgac cttccgtccc
+      961 ttatcccaaa tcctattctg aaccctagtc gccaacctcc ttgtcctcac ctgagtagga
+     1021 agccaaccag tagaacaccc attcatcatt attggacagc tagcttcact ctcctacttc
+     1081 acaatcattc tcgtcctctt tccccttgta tccatcctag agaataaaat actcaaactt
+     1141 taa
+//
+
+LOCUS       AJ534526                1143 bp    DNA     linear   VRT 25-JUL-2016
+DEFINITION  Chamaea fasciata mitochondrial cytb gene for cytochrome b.
+ACCESSION   AJ534526
+VERSION     AJ534526.1
+KEYWORDS    cytb gene; cytochrome b.
+SOURCE      mitochondrion Chamaea fasciata
+  ORGANISM  Chamaea fasciata
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Archosauria; Dinosauria; Saurischia; Theropoda;
+            Coelurosauria; Aves; Neognathae; Passeriformes; Sylviidae; Chamaea.
+REFERENCE   1
+  AUTHORS   Helbig,A.J.
+  TITLE     Evolution of Bird Migration: A phylogenetic and biogeographic
+            perspective
+  JOURNAL   (in) Berthold,P., Gwinner,E. and Sonnenschein,E. (Eds.);
+            AVIAN MIGRATION: 3-20;
+            Springer Verlag, Berlin. (2003)
+REFERENCE   2
+  AUTHORS   Bohning-Gaese,K., Schuda,M.D. and Helbig,A.J.
+  TITLE     Weak phylogenetic effects on ecological niches of Sylvia warblers
+  JOURNAL   J. Evol. Biol. 16 (5), 956-965 (2003)
+   PUBMED   14635911
+REFERENCE   3  (bases 1 to 1143)
+  AUTHORS   Helbig,A.J.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (09-DEC-2002) Helbig A.J., Vogelwarte Hiddensee,
+            University of Greifswald, Zum Hochland 17, D-18565 Kloster, GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1143
+                     /organism="Chamaea fasciata"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:190680"
+                     /tissue_type="muscle"
+                     /country="USA:California"
+     gene            1..1143
+                     /gene="cytb"
+     CDS             1..1143
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CAD58933.1"
+                     /db_xref="GOA:Q8HJQ9"
+                     /db_xref="HSSP:1BCC"
+                     /db_xref="InterPro:IPR005797"
+                     /db_xref="InterPro:IPR005798"
+                     /db_xref="InterPro:IPR016174"
+                     /db_xref="InterPro:IPR016175"
+                     /db_xref="UniProtKB/TrEMBL:Q8HJQ9"
+                     /translation="MAPNLRKNHPILKIVNDALIDLPTPSNISSWWNFGSLLGMCLIT
+                     QIVTGLLLAMHYTADTSLAFSSVAHMCRDVQFGWLIRNLHANGASFFFICIYLHIGRG
+                     FYYGSYLNKETWNVGVLLLLALMATAFVGYVLPWGQMSFWGATVITNLFSAIPYIGQT
+                     LVEWAWGGFSVDNPTLTRFFAIHFLLPFLITGLTLVHLTLLHETGSNNPLGIPADCDK
+                     IPFHPYYSTKDVLGFALMFIPLATLALFAPNLLGDPENFTPANPLATPPHIKPEWYFL
+                     FAYAILRSIPNKLGGVLALAASVLVLFLIPLLHTSKLRSMTFRPISQVLFWTLVANLL
+                     ILTWVGSQPVEHPFIIIGQLASFTYFTIILVLFPLASILENKMLKL"
+ORIGIN      
+        1 atggctccca acttacgtaa aaaccaccct atcctaaaaa tcgtcaatga cgccctaatt
+       61 gaccttccaa caccatcaaa catctcatct tgatgaaact tcggatcact tctaggcatg
+      121 tgcctaatca cacaaatcgt cacaggccta ctactagcta tacattacac cgcagacact
+      181 tcactagcct tctcctccgt agctcacata tgccgagacg tccaattcgg ctgactcatc
+      241 cgcaatctac atgcaaacgg agcctcattc ttttttatct gcatctacct acacattgga
+      301 cgaggattct actacggctc ttatctcaac aaagaaacat gaaacgtagg agttctcctc
+      361 ctacttgcac tcatagccac tgctttcgta ggatacgtcc taccttgagg acaaatatca
+      421 ttctgaggcg ctacagtaat cacaaacctg ttctcagcca tcccatacat cggccaaaca
+      481 ctagtagaat gagcatgagg tggattctca gtagataacc ccacactgac ccgattcttc
+      541 gctatccact ttctccttcc tttcctaatc acaggcctca cattagtcca cctcacccta
+      601 ctacacgaaa caggatccaa caacccccta ggaattcccg cagactgcga caaaatccca
+      661 ttccaccctt actactccac aaaagacgtt ctaggcttcg cactcatatt tatcccccta
+      721 gccactctgg ccctattcgc ccctaacctg ctaggagacc cagaaaactt cacacctgcc
+      781 aaccccctgg ccacaccccc ccacatcaaa cccgaatgat acttcctatt tgcttacgcc
+      841 atcttacgat ctatccccaa caaactagga ggcgtactgg ctctagccgc ttccgtccta
+      901 gtcctattcc taatcccact actacacaca tccaaactac gctcaataac cttccgccct
+      961 atctcacaag tcctattctg aacgctagtc gccaaccttc tcattctaac ttgagtaggc
+     1021 agccaaccgg tcgaacaccc cttcatcatc atcggacaat tagcttcatt cacctacttc
+     1081 acaatcattc tagtcctctt tcccctagca tcaatcttag aaaacaaaat actcaaactc
+     1141 taa
+//
+
+LOCUS       AJ534527                1143 bp    DNA     linear   VRT 25-JUL-2016
+DEFINITION  Sylvia nisoria mitochondrial cytb gene for cytochrome b.
+ACCESSION   AJ534527
+VERSION     AJ534527.1
+KEYWORDS    cytb gene; cytochrome b.
+SOURCE      mitochondrion Sylvia nisoria (barred warbler)
+  ORGANISM  Sylvia nisoria
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Archosauria; Dinosauria; Saurischia; Theropoda;
+            Coelurosauria; Aves; Neognathae; Passeriformes; Sylviidae;
+            Sylviinae; Sylvia.
+REFERENCE   1
+  AUTHORS   Helbig,A.J.
+  TITLE     Evolution of Bird Migration: A phylogenetic and biogeographic
+            perspective
+  JOURNAL   (in) Berthold,P., Gwinner,E. and Sonnenschein,E. (Eds.);
+            AVIAN MIGRATION: 3-20;
+            Springer Verlag, Berlin. (2003)
+REFERENCE   2
+  AUTHORS   Bohning-Gaese,K., Schuda,M.D. and Helbig,A.J.
+  TITLE     Weak phylogenetic effects on ecological niches of Sylvia warblers
+  JOURNAL   J. Evol. Biol. 16 (5), 956-965 (2003)
+   PUBMED   14635911
+REFERENCE   3  (bases 1 to 1143)
+  AUTHORS   Helbig,A.J.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (09-DEC-2002) Helbig A.J., Vogelwarte Hiddensee,
+            University of Greifswald, Zum Hochland 17, D-18565 Kloster, GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1143
+                     /organism="Sylvia nisoria"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:216220"
+                     /tissue_type="blood"
+                     /country="Austria:Burgenland"
+     gene            1..1143
+                     /gene="cytb"
+     CDS             1..1143
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CAD58934.1"
+                     /db_xref="GOA:Q70VX4"
+                     /db_xref="HSSP:1BCC"
+                     /db_xref="InterPro:IPR005797"
+                     /db_xref="InterPro:IPR005798"
+                     /db_xref="InterPro:IPR016174"
+                     /db_xref="InterPro:IPR016175"
+                     /db_xref="UniProtKB/TrEMBL:Q70VX4"
+                     /translation="MALNLRKNHPILKTINDALIDLPTPSNISSWWNFGSLLGLCLIT
+                     QILTGLFLAMHYTADTSLAFASVAHMCRDVQFGWLIRNLHANGASFFFICIYLHIGRG
+                     IYYGSYLNKETWNVGVILLLTLMATAFVGYVLPWGQMSFWGATVITNLFSAIPYIGQT
+                     LVEWAWGGFSVDNPTLTRFFALHFLLPFVIAGLTLVHLTLLHETGSNNPLGIPSDCDK
+                     IPFHPYYSTKDVLGFALMFIPLASLALFAPNLLGDPENFTPANPLATPPHIKPEWYFL
+                     FAYAILRSIPNKLGGVLALAASVLVLFLMPLLHTSKLRSMTFRPLSQILFWTLVANLL
+                     ILTWVGSQPVEHPFIIIGQLASLSYFTIILVLFPLAAILENKMLKL"
+ORIGIN      
+        1 atggctctca atctccgcaa aaaccaccct attctaaaaa ccatcaacga cgccctcatc
+       61 gacctcccaa caccatcaaa catctcatca tgatgaaact tcggatcact cctaggcctc
+      121 tgcctaatca cccaaatcct aacaggccta ttcctagcaa tacactacac agcagacacc
+      181 tcactagcct ttgcttccgt agcccacata tgccgagacg tacaattcgg ctgactaatc
+      241 cgaaacctac acgcaaacgg agcctccttc ttcttcatct gcatctacct ccacatcggc
+      301 cgaggaatct actacggatc ctacctaaac aaagaaacct gaaacgtagg agtcatcctc
+      361 ctacttaccc tcatagccac tgctttcgta ggctacgttc ttccctgagg ccaaatatca
+      421 ttctgaggcg ccaccgtaat caccaaccta ttctcagcca tcccttacat cggccaaaca
+      481 ctagtagaat gggcctgagg cggattctca gtagacaacc ccacactcac ccgattcttt
+      541 gccctccact tccttctccc cttcgtcatc gcaggcctca cactagtcca cctcaccctc
+      601 ctacacgaaa caggatccaa caatccccta ggaatcccat cagactgcga caaaatccca
+      661 ttccacccct actactccac aaaagacgta cttggcttcg cactaatatt tatcccccta
+      721 gcttccctag cactatttgc cccaaacctg ctaggagacc cagaaaactt cacacccgcc
+      781 aaccccctag ctacaccccc ccacatcaaa ccagaatgat acttcctatt cgcttacgct
+      841 atcctgcgat ccatcccaaa caaactaggc ggagtactcg ccctagctgc ttccgtacta
+      901 gtcctattcc taatacccct actccacaca tccaaactac gctcaataac cttccgccct
+      961 ctctcccaaa tcctattctg aaccctagta gccaacctcc ttatcctcac ctgagtaggc
+     1021 agccagccag tagagcaccc cttcatcatc atcggccaac tagcctcact ctcctacttc
+     1081 acaatcatcc tagtcctctt ccctctcgca gctatcctag agaacaaaat actcaaacta
+     1141 taa
+//
+
+LOCUS       AJ534528                1143 bp    DNA     linear   VRT 25-JUL-2016
+DEFINITION  Sylvia layardi mitochondrial cytb gene for cytochrome b.
+ACCESSION   AJ534528
+VERSION     AJ534528.1
+KEYWORDS    cytb gene; cytochrome b.
+SOURCE      mitochondrion Sylvia layardi (Layard's warbler)
+  ORGANISM  Sylvia layardi
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Archosauria; Dinosauria; Saurischia; Theropoda;
+            Coelurosauria; Aves; Neognathae; Passeriformes; Sylviidae;
+            Sylviinae; Sylvia.
+REFERENCE   1
+  AUTHORS   Helbig,A.J.
+  TITLE     Evolution of Bird Migration: A phylogenetic and biogeographic
+            perspective
+  JOURNAL   (in) Berthold,P., Gwinner,E. and Sonnenschein,E. (Eds.);
+            AVIAN MIGRATION: 3-20;
+            Springer Verlag, Berlin. (2003)
+REFERENCE   2
+  AUTHORS   Bohning-Gaese,K., Schuda,M.D. and Helbig,A.J.
+  TITLE     Weak phylogenetic effects on ecological niches of Sylvia warblers
+  JOURNAL   J. Evol. Biol. 16 (5), 956-965 (2003)
+   PUBMED   14635911
+REFERENCE   3  (bases 1 to 1143)
+  AUTHORS   Helbig,A.J.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (09-DEC-2002) Helbig A.J., Vogelwarte Hiddensee,
+            University of Greifswald, Zum Hochland 17, D-18565 Kloster, GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1143
+                     /organism="Sylvia layardi"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:216213"
+                     /tissue_type="blood"
+                     /country="South Africa"
+     gene            1..1143
+                     /gene="cytb"
+     CDS             1..1143
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CAD58935.1"
+                     /db_xref="GOA:Q70VX3"
+                     /db_xref="HSSP:1BCC"
+                     /db_xref="InterPro:IPR005797"
+                     /db_xref="InterPro:IPR005798"
+                     /db_xref="InterPro:IPR016174"
+                     /db_xref="InterPro:IPR016175"
+                     /db_xref="UniProtKB/TrEMBL:Q70VX3"
+                     /translation="MAXXLRKNHPILKIINDALIDLPTPPNISSWWNFGSLLGLCLIT
+                     QIVTGLFLAMHYTADTSLAFASVAHMCRDVQFGWLIRNLHANGASFFFICIYIHIGRG
+                     IYYGSYLNKETWNVGVILLLTLMATAFVGYVLPWGQMSFWGATVITNLFSAIPYIGQT
+                     LVEWAWGGFSVDNPTLTRFFALHFLLPFVIAGLTLVHLTLLHETGSNNPLGIPSDCDK
+                     IPFHPYYSTKDTLGFALMFIPLASLALFAPNLLGDPENFTPANPLATPPHIKPEWYFL
+                     FAYAILRSIPNKLGGVLALAASVLVLFLMPLLHTSKLRSMTFRPLSQILFWTLVANLL
+                     VLTWVGSQPVEHPFIIIGQLASLSYFTIILILFPLVSILENKMLKL"
+ORIGIN      
+        1 atggcncnca ntctacgnaa aaatcaccct atcctaaaaa tcatcaacga cgccctaatt
+       61 gacctaccaa caccaccaaa catctcatca tgatgaaact tcggatcact cctaggcctc
+      121 tgcctaatca cacaaatcgt cacaggccta ttcctagcaa tacattacac agcagacacc
+      181 tcactagcct ttgcctcagt agcccacata tgccgagatg tacaattcgg ctgactaatc
+      241 cgcaacctac acgcaaacgg agcttcattc ttcttcatct gcatctatat ccacattggc
+      301 cgaggaatct actatggttc ttacctcaac aaagaaacct gaaacgtagg agtcatccta
+      361 ctactaacac tcatagccac cgcctttgta ggttacgttc tcccctgagg ccaaatgtcc
+      421 ttctgaggcg ctaccgtaat cactaaccta ttctcagcca tcccatacat tggccaaaca
+      481 ctagtagaat gagcctgagg agggttctca gtagacaacc ctacactcac tcgattcttc
+      541 gccctccact tccttctccc attcgtcatc gcaggcctca cactagtcca cctcaccctt
+      601 ctccacgaaa cagggtccaa caacccccta ggaatcccat cagactgcga caaaattcca
+      661 ttccacccct actactccac aaaagacact cttggctttg cactcatatt catcccccta
+      721 gcctccctag cactattcgc cccaaaccta ctgggagacc cagaaaattt cacgcccgcc
+      781 aaccccctag ctacaccacc ccatatcaaa ccagaatgat acttcctctt tgcctacgct
+      841 attcttcgat ccatccctaa caaactaggc ggcgttcttg ctctagctgc ctccgtccta
+      901 gtactcttct taatgcctct actccacaca tcaaaactac gctcaataac cttccgtccc
+      961 ctctcccaaa tcctattctg aaccctagta gccaatctcc tcgtcctcac ctgagtgggc
+     1021 agccaaccag tagaacaccc cttcatcatc atcggccaac tagcttcact ctcctacttc
+     1081 acaatcatcc taatcctttt cccccttgtc tccatcctag aaaacaaaat actcaaactt
+     1141 taa
+//
+
+LOCUS       AJ534529                1143 bp    DNA     linear   VRT 25-JUL-2016
+DEFINITION  Sylvia subcaeruleum mitochondrial cytb gene for cytochrome b.
+ACCESSION   AJ534529
+VERSION     AJ534529.1
+KEYWORDS    cytb gene; cytochrome b.
+SOURCE      mitochondrion Sylvia subcaeruleum (rufous-vented warbler)
+  ORGANISM  Sylvia subcaeruleum
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Archosauria; Dinosauria; Saurischia; Theropoda;
+            Coelurosauria; Aves; Neognathae; Passeriformes; Sylviidae;
+            Sylviinae; Sylvia.
+REFERENCE   1
+  AUTHORS   Helbig,A.J.
+  TITLE     Evolution of Bird Migration: A phylogenetic and biogeographic
+            perspective
+  JOURNAL   (in) Berthold,P., Gwinner,E. and Sonnenschein,E. (Eds.);
+            AVIAN MIGRATION: 3-20;
+            Springer Verlag, Berlin. (2003)
+REFERENCE   2
+  AUTHORS   Bohning-Gaese,K., Schuda,M.D. and Helbig,A.J.
+  TITLE     Weak phylogenetic effects on ecological niches of Sylvia warblers
+  JOURNAL   J. Evol. Biol. 16 (5), 956-965 (2003)
+   PUBMED   14635911
+REFERENCE   3  (bases 1 to 1143)
+  AUTHORS   Helbig,A.J.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (09-DEC-2002) Helbig A.J., Vogelwarte Hiddensee,
+            University of Greifswald, Zum Hochland 17, D-18565 Kloster, GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1143
+                     /organism="Sylvia subcaeruleum"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:216214"
+                     /tissue_type="blood"
+                     /country="South Africa"
+     gene            1..1143
+                     /gene="cytb"
+     CDS             1..1143
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CAD58936.1"
+                     /db_xref="GOA:Q70VX2"
+                     /db_xref="HSSP:1BCC"
+                     /db_xref="InterPro:IPR005797"
+                     /db_xref="InterPro:IPR005798"
+                     /db_xref="InterPro:IPR016174"
+                     /db_xref="InterPro:IPR016175"
+                     /db_xref="UniProtKB/TrEMBL:Q70VX2"
+                     /translation="MAPNLRKNHPILKIVNDALIDLPTPSNISSWWNFGSLLGLCLIT
+                     QIVTGLFLAMHYTADTSLAFASVTHICRDVQFGWLIRNLHANGASFFFICIYIHIGRG
+                     IYYGSYLNKETWNVGVILLLTLMATAFVGYVLPWGQMSLWGATVITNLLSAIPYIGQT
+                     LVEWAWGGFSVDNPTLTRFFALHFLLPFVIAGLTLVHLTLLHETGSNNPLGIPSDCXK
+                     IPFHPYYSTKDILGFALMFIPLASLALFAPNLLGDPENFTPANPLATPPHIKPEWYFL
+                     FAYAILRSIPSKLGGVLALAASVLVLFLMPLLHTSKLRSMTFRPLSQILFWALVANLL
+                     ILTWVGSQPVEHPFIIIGQLASLSYFTIILILFPLVSILENKMLKL"
+ORIGIN      
+        1 atggcaccca atcttcgcaa aaaccatcct atcctaaaaa tcgtcaacga cgctctcatt
+       61 gacctcccaa caccatcaaa catctcctcc tgatgaaact tcggatcact actaggcctc
+      121 tgcttaatta cacaaatcgt cacaggccta ttcctagcaa tacactacac ggcagacacc
+      181 tcactggctt tcgcctctgt aactcacatc tgccgagacg tacaattcgg ctgactaatt
+      241 cggaacctac atgcaaacgg agcctctttc ttcttcatct gcatctacat ccacattggt
+      301 cgaggaatct actatggctc ctacctaaat aaagaaacct gaaacgtagg agttatcctc
+      361 ctactaacac tcatagccac tgccttcgta ggctacgtcc ttccttgagg acaaatatca
+      421 ctctgaggcg ctaccgtaat cacaaaccta ctctcagcta tcccatacat tggccaaaca
+      481 ctagtagaat gagcctgagg ggggttctca gtagacaacc ccacactcac tcgattcttt
+      541 gcccttcatt tccttcttcc ctttgtgatc gcaggcctaa cactagtcca cctcactctt
+      601 ctacacgaaa caggctctaa taacccacta ggaatcccat cagactgcga naaaattcca
+      661 ttccacccat actactctac aaaagacatc ctcggcttcg cattaatatt catccccctt
+      721 gcttcactag cactatttgc tcccaaccta ctaggagacc cagaaaactt cacgcccgcc
+      781 aaccctctgg ccacaccacc ccacatcaag ccagaatgat acttcctctt cgcctacgcc
+      841 atcctccgat ctatccctag caaactaggc ggcgtactcg ccctagccgc ctccgtacta
+      901 gtcctattcc tcataccact actccacaca tcaaaacttc gctcaatgac cttccgccct
+      961 ctttctcaaa ttctattctg agccctagta gccaacctcc tcattctcac ctgagtaggc
+     1021 agccaaccag tagaacaccc cttcatcatc atcggccaac tagcctcact ctcttatttc
+     1081 acaatcattc taatcctctt cccccttgta tccatcctag aaaacaaaat actcaaactt
+     1141 taa
+//
+
+LOCUS       AJ534530                1143 bp    DNA     linear   VRT 26-JUL-2016
+DEFINITION  Sylvia boehmi mitochondrial cytb gene for cytochrome b.
+ACCESSION   AJ534530
+VERSION     AJ534530.1
+KEYWORDS    cytb gene; cytochrome b.
+SOURCE      mitochondrion Sylvia boehmi (banded warbler)
+  ORGANISM  Sylvia boehmi
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Archosauria; Dinosauria; Saurischia; Theropoda;
+            Coelurosauria; Aves; Neognathae; Passeriformes; Sylviidae;
+            Sylviinae; Sylvia.
+REFERENCE   1
+  AUTHORS   Bohning-Gaese,K., Schuda,M.D. and Helbig,A.J.
+  TITLE     Weak phylogenetic effects on ecological niches of Sylvia warblers
+  JOURNAL   J. Evol. Biol. 16 (5), 956-965 (2003)
+   PUBMED   14635911
+REFERENCE   2  (bases 1 to 1143)
+  AUTHORS   Helbig,A.J.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (09-DEC-2002) Helbig A.J., Vogelwarte Hiddensee,
+            University of Greifswald, Zum Hochland 17, D-18565 Kloster, GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1143
+                     /organism="Sylvia boehmi"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:216198"
+                     /tissue_type="blood"
+                     /country="Ethiopia"
+     gene            1..1143
+                     /gene="cytb"
+     CDS             1..1143
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CAD58937.1"
+                     /db_xref="GOA:Q70VX1"
+                     /db_xref="HSSP:1BCC"
+                     /db_xref="InterPro:IPR005797"
+                     /db_xref="InterPro:IPR005798"
+                     /db_xref="InterPro:IPR016174"
+                     /db_xref="InterPro:IPR016175"
+                     /db_xref="UniProtKB/TrEMBL:Q70VX1"
+                     /translation="MAPNLRKNHPILKIVNDALIDLPTPSNISSWWNFGSLLGLCLIT
+                     QIATGLFLAMHYTADTSLAFASVAHICRDVQFGWLIRNLHANGASFFFICIYLHIGRG
+                     IYYGSYLNKETWNVGVLLLLALMATAFVGYVLPWGQMSFWGATVITNLFSAIPYIGQT
+                     LVEWAWGGFSVDNPTLTRFFALHFLLPFVIAGLTLVHLTLLHETGSNNPLGIPSDCDK
+                     IPFHPYYSTKDTLGFMLMFIPLASLALFAPNLLGDPENFTPANPLATPPHIKPEWYFL
+                     FAYAILRSIPNKLGGVLALAASVLVLFLMPLLHTSKLRSMTFRPLSQILFWALVANLL
+                     ILTWVGSQPVEHPFIIIGQLASLSYFTIILILFPLVXXLENKMLKL"
+ORIGIN      
+        1 atggcaccca atcttcgaaa aaatcaccct atcctnaaaa tcgtcaacga tgctctcatc
+       61 gaccttccaa ccccatcaaa catctcatcc tgatgaaact tcggatccct tctaggcctc
+      121 tgcctaatca cacaaatcgc cacaggccta ttcctagcaa tacactatac agctgacacc
+      181 tcactagcct ttgcctctgt agcccacatc tgccgagacg tacaattcgg ctgactaatc
+      241 cgcaatctac acgcaaacgg agcttccttc ttcttcatct gcatctacct acacattggc
+      301 cgaggaatct actacggatc ctacctaaac aaagaaacct gaaacgtagg agtcctcctc
+      361 ctactagcac tcatagccac cgcctttgta ggttacgttc tcccctgagg acaaatatca
+      421 ttctgaggtg ctaccgtaat cacaaaccta ttctcagcta ttccgtacat cggccaaaca
+      481 ctagtagaat gagcgtgagg gggattctca gtagacaacc ccacactcac ccgattcttt
+      541 gctctccact tcctacttcc ctttgtcatc gcaggcctta cattagtcca cctcaccctc
+      601 ctacatgaaa caggatctaa caacccccta ggaatcccat cagactgcga caaaatccca
+      661 ttccaccctt actactccac aaaagacact cttggtttca tactcatatt catccctctt
+      721 gcctccctag cactattcgc cccaaacctg ctaggagacc cagaaaactt cacgcccgcc
+      781 aaccccctag ccacaccacc ccacatcaaa ccagaatgat acttcctctt tgcctacgct
+      841 attcttcggt ccatccccaa caaactaggc ggcgtgctcg ccttagccgc atccgtacta
+      901 gttttattcc tcatgccatt actccacaca tcaaaacttc gctcaataac cttccgtccc
+      961 ctctcccaaa tcctattctg agccctagta gccaacctcc tcatcctcac ttgagtaggc
+     1021 agccaaccag tagaacaccc cttcatcatc atcggccaat tagcctcact ctcctacttc
+     1081 acaatcatcc taatcctctt ccctctngtn nnnntcctag aaaacaaaat actcaaactt
+     1141 taa
+//
+
+LOCUS       AJ534531                1143 bp    DNA     linear   VRT 26-JUL-2016
+DEFINITION  Sylvia buryi mitochondrial cytb gene for cytochrome b.
+ACCESSION   AJ534531
+VERSION     AJ534531.1
+KEYWORDS    cytb gene; cytochrome b.
+SOURCE      mitochondrion Sylvia buryi (Yemen warbler)
+  ORGANISM  Sylvia buryi
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Archosauria; Dinosauria; Saurischia; Theropoda;
+            Coelurosauria; Aves; Neognathae; Passeriformes; Sylviidae;
+            Sylviinae; Sylvia.
+REFERENCE   1
+  AUTHORS   Bohning-Gaese,K., Schuda,M.D. and Helbig,A.J.
+  TITLE     Weak phylogenetic effects on ecological niches of Sylvia warblers
+  JOURNAL   J. Evol. Biol. 16 (5), 956-965 (2003)
+   PUBMED   14635911
+REFERENCE   2  (bases 1 to 1143)
+  AUTHORS   Helbig,A.J.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (09-DEC-2002) Helbig A.J., Vogelwarte Hiddensee,
+            University of Greifswald, Zum Hochland 17, D-18565 Kloster, GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1143
+                     /organism="Sylvia buryi"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:216196"
+                     /tissue_type="blood"
+                     /country="Saudi Arabia"
+     gene            1..1143
+                     /gene="cytb"
+     CDS             1..1143
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CAD58938.1"
+                     /db_xref="GOA:Q70VX0"
+                     /db_xref="HSSP:1BCC"
+                     /db_xref="InterPro:IPR005797"
+                     /db_xref="InterPro:IPR005798"
+                     /db_xref="InterPro:IPR016174"
+                     /db_xref="InterPro:IPR016175"
+                     /db_xref="UniProtKB/TrEMBL:Q70VX0"
+                     /translation="MAPNLRKNHPILKIVNDALIDLPTPSNISSWWNFGSLLGLCLIM
+                     QIVTGLFLAMHYTADTSLAFASVAHMCRDVQFGWLIRNLHANGASFFFICIYLHIGRG
+                     IYYGSYLNKETWNVGVLLLLALMATAFVGYVLPWGQMSFWGATVITNLLSAIPYIGQT
+                     LVEWAWGGFSVDNPTLTRFFALHFLLPFVIAGLTLVHLTLLHETGSNNPLGIPSDCDK
+                     IPFHPYYSTKDVLGFALLFIPLASLALFAPNLLGDPENFTPANPLATPPHIKPEWYFL
+                     FAYAILRSIPNKLGGVLALAASVLVLFLMPLLHTSKLRSMTFRPLSQILFWALVANLL
+                     ILTWVGGQPVEHPFIIIGQLASLSYFTIILILFPLVSILENKMLKL"
+ORIGIN      
+        1 atggcaccca atctacgcaa aaaccacccc atcctaaaaa tcgtcaacga cgcccttatc
+       61 gacctcccaa caccatcaaa catctcatcc tgatgaaatt tcggatccct tctaggccta
+      121 tgtctaatca tacaaatcgt cacaggccta ttcctagcaa tacattacac agcagatact
+      181 tcactagcct tcgcctccgt agcccacata tgccgagacg tccaattcgg ctgacttatt
+      241 cgcaacctac atgccaacgg agcctctttc ttcttcattt gcatctacct ccacatcggc
+      301 cgaggaatct actacggatc ctacctaaac aaagaaacct gaaacgtagg agttctcctc
+      361 ctcctagcac tcatagccac cgccttcgta ggctacgtcc tcccctgagg ccaaatatca
+      421 ttctgaggcg ctaccgtaat tacaaaccta ctctcagcca tcccctacat tggccaaaca
+      481 ctagtagaat gagcctgagg tggattctca gtagacaacc ccacactcac ccgattcttc
+      541 gcccttcact tcctacttcc cttcgtcatc gcaggcctta cactagtcca cctcaccctc
+      601 ctacacgaaa caggatctaa caacccccta ggaatcccat cagactgcga caaaatccca
+      661 ttccatccct actactccac aaaagacgta cttggctttg cactcctatt catccccctt
+      721 gcctccctag cactattcgc cccaaacctg ctaggagacc cagaaaactt cacgcccgcc
+      781 aaccccctag ccacaccacc ccatatcaag ccagaatgat acttcctctt cgcctacgcc
+      841 atcctccgat ccatccccaa caaactggga ggcgtacttg ccttagccgc ctctgtccta
+      901 gtcctattcc tcatgccgct ccttcacacc tctaaactac gctcaataac tttccgtccc
+      961 ctctcccaaa tcctattttg agccctagta gctaacctcc ttattctcac ctgagtaggc
+     1021 ggccaaccag tggaacaccc cttcatcatc atcggccaac tagcctcact ctcctacttc
+     1081 acaatcatcc taatcctatt ccccctcgta tccattctag agaacaaaat actcaaactc
+     1141 taa
+//
+
+LOCUS       AJ534532                1143 bp    DNA     linear   VRT 26-JUL-2016
+DEFINITION  Sylvia lugens mitochondrial cytb gene for cytochrome b.
+ACCESSION   AJ534532
+VERSION     AJ534532.1
+KEYWORDS    cytb gene; cytochrome b.
+SOURCE      mitochondrion Sylvia lugens (brown warbler)
+  ORGANISM  Sylvia lugens
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Archosauria; Dinosauria; Saurischia; Theropoda;
+            Coelurosauria; Aves; Neognathae; Passeriformes; Sylviidae;
+            Sylviinae; Sylvia.
+REFERENCE   1
+  AUTHORS   Bohning-Gaese,K., Schuda,M.D. and Helbig,A.J.
+  TITLE     Weak phylogenetic effects on ecological niches of Sylvia warblers
+  JOURNAL   J. Evol. Biol. 16 (5), 956-965 (2003)
+   PUBMED   14635911
+REFERENCE   2  (bases 1 to 1143)
+  AUTHORS   Helbig,A.J.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (09-DEC-2002) Helbig A.J., Vogelwarte Hiddensee,
+            University of Greifswald, Zum Hochland 17, D-18565 Kloster, GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1143
+                     /organism="Sylvia lugens"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:216224"
+                     /tissue_type="blood"
+                     /country="Ethiopia"
+     gene            1..1143
+                     /gene="cytb"
+     CDS             1..1143
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CAD58939.1"
+                     /db_xref="GOA:Q70VW9"
+                     /db_xref="HSSP:1BCC"
+                     /db_xref="InterPro:IPR005797"
+                     /db_xref="InterPro:IPR005798"
+                     /db_xref="InterPro:IPR016174"
+                     /db_xref="InterPro:IPR016175"
+                     /db_xref="UniProtKB/TrEMBL:Q70VW9"
+                     /translation="MAPNLRKNHPILKIVNDALIDLPTPSNISSWWNFGSLLGLCLIM
+                     QIVTGLFLAMHYTADTSLAFASVAHTCRDVQFGWLIRNLHANGASFFFICIYLHIGRG
+                     IYYGSYLNKETWNVGVLLLLALMATAFVGYVLPWGQMSFWGATVITNLLSAIPYIGQT
+                     LVEWAWGGFSVDNPTLTRFFALHFLLPFVIAGLTLVHLTLLHETGSNNPLGIPSDCDK
+                     IPFHPYYSTKDVLGFALLFIPLASLALFAPNLLGDPENFTPANPLATPPHIKPEWYFL
+                     FAYAILRSIPNKLGGVLALAASILVLFLMPLLHTSKLRSMTFRPLSQILFWALVANLL
+                     ILTWVGGQPVEHPFIIIGQLASLSYFTIILVLFPLVSILENKMLKL"
+ORIGIN      
+        1 atggcaccca atctacgcaa aaatcaccct atcctaaaaa tcgtcaacga cgcccttatc
+       61 gacctcccaa caccatcaaa catctcatcc tgatgaaact tcggatccct cctaggccta
+      121 tgtctaatca tacaaatcgt cacaggccta ttcctagcaa tacattacac agcagacact
+      181 tcactagcct tcgcctccgt agcccacaca tgccgagacg tccaattcgg ctgacttatt
+      241 cgcaacctac acgccaacgg agcctctttc ttcttcatct gcatctacct ccacatcggc
+      301 cgaggaatct actacggatc ctacttaaac aaagagacct gaaacgtagg agttctcctc
+      361 ctcctagcac tcatagccac cgccttcgta ggctacgtcc tcccctgagg ccaaatatcg
+      421 ttctgaggcg ctaccgtaat tacaaaccta ctctcagcca tcccttacat cggccaaaca
+      481 ctagtagaat gagcctgagg ggggttctca gtagacaacc ccacacttac ccgattcttc
+      541 gcccttcact tcctactccc ctttgtcatc gcaggtctta cactagtcca ccttaccctc
+      601 ctacacgaaa caggatctaa caacccccta ggaatcccat cagactgcga caaaatccca
+      661 ttccatccct actactccac aaaagacgta cttggctttg cactcctatt catccccctt
+      721 gcctccctag cactattcgc cccaaaccta ctaggagacc cagaaaattt cacgcccgcc
+      781 aaccccctag ccacaccacc ccatatcaaa ccagaatgat acttcctctt cgcctacgcc
+      841 atcctccgat ccatcccgaa caaactggga ggcgtacttg ccttagccgc ctccatccta
+      901 gttctattcc tcataccact ccttcacacc tctaagttgc gctcaataac cttccgtccc
+      961 ctctcccaaa tcctattctg ggccctagtg gctaacctcc tcatcctcac ttgagtaggt
+     1021 ggccaaccag tggaacaccc cttcatcatc atcggccaac tagcctcact ctcctacttc
+     1081 acaatcatcc tagtcctatt ccctctcgta tccatcctag agaacaaaat actcaaactt
+     1141 taa
+//
+
+LOCUS       AJ534533                1143 bp    DNA     linear   VRT 26-JUL-2016
+DEFINITION  Sylvia leucomelaena mitochondrial cytb gene for cytochrome b.
+ACCESSION   AJ534533
+VERSION     AJ534533.1
+KEYWORDS    cytb gene; cytochrome b.
+SOURCE      mitochondrion Sylvia leucomelaena (red sea warbler)
+  ORGANISM  Sylvia leucomelaena
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Archosauria; Dinosauria; Saurischia; Theropoda;
+            Coelurosauria; Aves; Neognathae; Passeriformes; Sylviidae;
+            Sylviinae; Sylvia.
+REFERENCE   1
+  AUTHORS   Bohning-Gaese,K., Schuda,M.D. and Helbig,A.J.
+  TITLE     Weak phylogenetic effects on ecological niches of Sylvia warblers
+  JOURNAL   J. Evol. Biol. 16 (5), 956-965 (2003)
+   PUBMED   14635911
+REFERENCE   2  (bases 1 to 1143)
+  AUTHORS   Helbig,A.J.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (09-DEC-2002) Helbig A.J., Vogelwarte Hiddensee,
+            University of Greifswald, Zum Hochland 17, D-18565 Kloster, GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1143
+                     /organism="Sylvia leucomelaena"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:216215"
+                     /tissue_type="blood"
+                     /country="Saudi Arabia"
+     gene            1..1143
+                     /gene="cytb"
+     CDS             1..1143
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CAD58940.1"
+                     /db_xref="GOA:Q70VW8"
+                     /db_xref="HSSP:1BCC"
+                     /db_xref="InterPro:IPR005797"
+                     /db_xref="InterPro:IPR005798"
+                     /db_xref="InterPro:IPR016174"
+                     /db_xref="InterPro:IPR016175"
+                     /db_xref="UniProtKB/TrEMBL:Q70VW8"
+                     /translation="MAPNLRKNHPILKTINNALIDLPTPSNISSWWNFGSLLGLCLIM
+                     QILTGLFLAMHYTADTSLAFASVAHMCRDVQFGWLIRNLHANGASFFFICIYLHIGRG
+                     IYYGSYLNKETWNVGVLLLLALMATAFVGYVLPWGQMSFWGATVITNLLSAIPYIGQT
+                     LVEWAWGGFSVDNPTLTRFFALHFLLPFVIAGLTLVHLTLLHETGSNNPLGIPSDCDK
+                     IPFHPYYSTKDVLGFALLFIPLASLALFAPNLLGDPENFTPANPLATPPHIKPEWYFL
+                     FAYAILRSIPNKLGGVLALAASVLVLFLMPLLHTSKLRSMTFRPLSQILFWALVANLL
+                     ILTWVGGQPVEHPFIIIGQLASLSYFTIILILFPLVSILENKMLKL"
+ORIGIN      
+        1 atggcaccca atctacgcaa aaaccaccct atcctaaaaa ccatcaacaa cgccctcatc
+       61 gacctcccaa caccatcaaa catctcatca tgatgaaact ttggatccct cctaggactc
+      121 tgcctaatca tacaaatcct cacaggccta ttcctagcaa tacattacac agcagacact
+      181 tcactagcct tcgcttccgt agcccacata tgccgagatg tccaattcgg ctgactaatt
+      241 cgcaacctac atgcaaacgg agcttctttc ttcttcatct gcatctacct ccatatcggc
+      301 cgaggaatct actacggatc ctacctaaac aaagagacct gaaacgtagg agtcctcctc
+      361 ctgctagcac tcatagccac cgccttcgta ggttacgtcc taccctgagg ccaaatatca
+      421 ttctgaggcg ctaccgttat tacaaacctt ctctcagcta ttccctacat cggccaaaca
+      481 ctggtagaat gagcttgagg aggattctca gtagacaacc ccacgctcac ccgattcttc
+      541 gcccttcact tcctacttcc cttcgtaatc gcaggcctta cgctagtcca cctcaccctc
+      601 ctacatgaga caggatctaa caacccccta ggaatcccat cagactgcga caaaattcca
+      661 ttccacccct actactctac aaaagatgta ctcggcttcg ccctcctatt catccctctc
+      721 gcctccctag cactattcgc cccaaaccta ctaggagacc cagaaaactt cacgcccgcc
+      781 aaccccctag ctacgccacc tcacattaaa ccagaatgat acttcctttt tgcctatgct
+      841 atcctccgat ccatccccaa caaactggga ggcgtacttg ccttagccgc ctctgtccta
+      901 gtcttattcc tcatgccact ccttcatacc tccaaactac gctcaataac cttccgccct
+      961 ctctcccaaa ttctattctg agccctagta gccaacctcc tcatcctcac ctgagtaggg
+     1021 ggccaaccag tagaacaccc cttcattatc attggccaac tagcttcgct ctcctacttc
+     1081 acaatcatcc tcatcctctt ccctctcgta tccatcctag agaacaaaat actcaaactc
+     1141 taa
+//
+
+LOCUS       AJ534534                1143 bp    DNA     linear   VRT 26-JUL-2016
+DEFINITION  Sylvia hortensis mitochondrial cytb gene for cytochrome b.
+ACCESSION   AJ534534
+VERSION     AJ534534.1
+KEYWORDS    cytb gene; cytochrome b.
+SOURCE      mitochondrion Sylvia hortensis (orphean warbler)
+  ORGANISM  Sylvia hortensis
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Archosauria; Dinosauria; Saurischia; Theropoda;
+            Coelurosauria; Aves; Neognathae; Passeriformes; Sylviidae;
+            Sylviinae; Sylvia.
+REFERENCE   1
+  AUTHORS   Bohning-Gaese,K., Schuda,M.D. and Helbig,A.J.
+  TITLE     Weak phylogenetic effects on ecological niches of Sylvia warblers
+  JOURNAL   J. Evol. Biol. 16 (5), 956-965 (2003)
+   PUBMED   14635911
+REFERENCE   2  (bases 1 to 1143)
+  AUTHORS   Helbig,A.J.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (09-DEC-2002) Helbig A.J., Vogelwarte Hiddensee,
+            University of Greifswald, Zum Hochland 17, D-18565 Kloster, GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1143
+                     /organism="Sylvia hortensis"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:216225"
+                     /tissue_type="blood"
+                     /country="Spain"
+     gene            1..1143
+                     /gene="cytb"
+     CDS             1..1143
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CAD58941.1"
+                     /db_xref="GOA:Q70VW7"
+                     /db_xref="HSSP:1BCC"
+                     /db_xref="InterPro:IPR005797"
+                     /db_xref="InterPro:IPR005798"
+                     /db_xref="InterPro:IPR016174"
+                     /db_xref="InterPro:IPR016175"
+                     /db_xref="UniProtKB/TrEMBL:Q70VW7"
+                     /translation="MAPNLRKNHPILKIVNDALIDLPTPSNISSWWNFGSLLGLCLIM
+                     QIVTGLFLAMHYTADTSLAFASVAHTCRDVQFGWLIRNLHANGASFFFICIYLHIGRG
+                     IYYGSYLNKETWNVGVLLLLALMATAFVGYVLPWGQMSFWGATVITNLLSAIPYIGQT
+                     LVEWAWGGFSVDNPTLTRFFALHFLLPFVIAGLTLVHLTLLHETGSNNPLGIPSDCDK
+                     IPFHPYYSTKDVLGFALLFIPLASLALFAPNLLGDPENFTPANPLATPPHIKPEWYFL
+                     FAYAILRSIPNKLGGVLALAASVLVLFLMPLLHTSKLRSMTFRPLSQILFWALVANLL
+                     ILTWVGGQPVEHPFIIIGQLASLSYFTIILILFPLVSILENKMLKL"
+ORIGIN      
+        1 atggcaccca atctacgcaa aaaccacccc atcctaaaaa tcgtcaacga cgcccttatc
+       61 gacctcccaa caccttcaaa tatctcatcc tgatgaaact ttggatccct cctaggcctc
+      121 tgcctaatca tacaaatcgt cacaggccta ttcctagcaa tacattacac agcagatacc
+      181 tcactagcct tcgcctccgt agcccataca tgccgagacg tccaattcgg gtgactcatc
+      241 cgcaacctac acgcaaacgg agcctctttc ttcttcatct gcatctacct acacatcggc
+      301 cgaggaatct attacggatc ctacctaaac aaagaaacct gaaacgtagg ggtcctcctc
+      361 ctcctagcac tcatagccac cgccttcgta ggctacgtcc tcccctgagg ccaaatatca
+      421 ttctgaggcg ctaccgtaat tacaaacctg ctctcagcca tcccctacat tggacagaca
+      481 ctagtagagt gagcctgagg aggcttttca gtagacaatc ctacactcac ccgattcttc
+      541 gcccttcact tcctacttcc cttcgtcatc gcaggtctca ctctagtcca cctcactctc
+      601 ctacacgaaa caggatccaa caacccccta ggaatcccat cagactgcga caaaattcca
+      661 ttccacccct actactccac aaaagacgta cttggcttcg cactcttatt catccccctt
+      721 gcttccctag cactattcgc cccaaaccta ctaggagacc cagaaaattt cacgcccgcc
+      781 aaccccctag ccacaccacc ccacatcaaa ccagagtgat acttcctctt tgcctatgcc
+      841 atcctccgat ccattcccaa caaactggga ggcgtactcg ccctagccgc ctctgtccta
+      901 gtcctattcc tcatgccact ccttcacacc tccaaactac gctcaataac cttccgtccc
+      961 ctctctcaaa tcctattctg agccctagta gccaacctcc tcatcctcac ttgagtaggc
+     1021 ggccaaccag tagaacaccc cttcatcatc attggccaat tagcctcact ctcctacttc
+     1081 acaatcatcc taatcctctt ccctctcgta tccattctag agaacaaaat actcaaactc
+     1141 taa
+//
+
+LOCUS       AJ534535                1143 bp    DNA     linear   VRT 26-JUL-2016
+DEFINITION  Sylvia crassirostris mitochondrial cytb gene for cytochrome b.
+ACCESSION   AJ534535
+VERSION     AJ534535.1
+KEYWORDS    cytb gene; cytochrome b.
+SOURCE      mitochondrion Sylvia crassirostris (eastern orphean warbler)
+  ORGANISM  Sylvia crassirostris
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Archosauria; Dinosauria; Saurischia; Theropoda;
+            Coelurosauria; Aves; Neognathae; Passeriformes; Sylviidae;
+            Sylviinae; Sylvia.
+REFERENCE   1
+  AUTHORS   Bohning-Gaese,K., Schuda,M.D. and Helbig,A.J.
+  TITLE     Weak phylogenetic effects on ecological niches of Sylvia warblers
+  JOURNAL   J. Evol. Biol. 16 (5), 956-965 (2003)
+   PUBMED   14635911
+REFERENCE   2  (bases 1 to 1143)
+  AUTHORS   Helbig,A.J.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (09-DEC-2002) Helbig A.J., Vogelwarte Hiddensee,
+            University of Greifswald, Zum Hochland 17, D-18565 Kloster, GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1143
+                     /organism="Sylvia crassirostris"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:216226"
+                     /tissue_type="blood"
+                     /country="Israel"
+     gene            1..1143
+                     /gene="cytb"
+     CDS             1..1143
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CAD58942.1"
+                     /db_xref="GOA:Q70VW6"
+                     /db_xref="HSSP:1BCC"
+                     /db_xref="InterPro:IPR005797"
+                     /db_xref="InterPro:IPR005798"
+                     /db_xref="InterPro:IPR016174"
+                     /db_xref="InterPro:IPR016175"
+                     /db_xref="UniProtKB/TrEMBL:Q70VW6"
+                     /translation="MAPNLRKNHPILKIVNDALIDLPTPSNISSWWNFGSLLGLCLXM
+                     QIXTGLFLAMHYTADTSLAFASVAHMCRDVQFGWLIRNLHANGASFFFICIYLHIGRG
+                     IYYGSYLNKETWNVGVLLLLALMATAFVGYVLPWGQMSFWGATVITNLLSAIPYIGQT
+                     LVEWAWGGFSVDNPTLTRFFALHFLLPFVIAGLTLVHLTLLHETGSNNPLGIPSDCDK
+                     IPFHPYYSTKDVLGFALLFIPLASLALFAPNLLGDPENFTPANPLATPPHIKPEWYFL
+                     FAYAILRSIPNKLGGVLALAASVLVLFLMPLLHTSKLRSMTFRPLSQILFWALVANLL
+                     ILTWVGGQPVEHPFIIIGQLASLSYFTIILILFPLVSILENKMLKL"
+ORIGIN      
+        1 atggcaccca atctacgtaa aaatcaccct atcctaaaaa tcgtcaacga cgctctcatc
+       61 gacctcccaa caccatcaaa catctcatcc tgatgaaact tcggatccct cctaggcctc
+      121 tgcctgatna tacaaatcnt cacaggccta ttcctagcaa tacattacac agcagacact
+      181 tcactagcct tcgcctccgt agcccacata tgccgagacg tccaatttgg ctgactaatc
+      241 cgcaacctac atgcaaatgg agcttctttc ttcttcatct gcatctacct tcatatcggc
+      301 cgaggaatct actacggatc ctacctaaac aaagaaacct gaaacgtagg agtcctcctc
+      361 ctactagcac tcatagccac cgccttcgta ggttacgtcc tcccctgagg ccaaatatca
+      421 ttctgaggcg ctaccgtaat tacaaaccta ctctcagcta tcccctacat tggccaaaca
+      481 ctagtagaat gagcctgagg aggattttca gtagacaacc ctacactcac ccgattcttc
+      541 gcccttcact tcctacttcc cttcgtcatc gcaggcctta cactagttca cctcaccctt
+      601 ctacacgaaa caggatccaa caaccctcta ggaatcccat cagactgcga caaaattcca
+      661 ttccacccat actactccac aaaagacgta cttggctttg cactcctatt catccctctt
+      721 gcctccctag cactattcgc cccaaaccta ctaggagacc cagaaaattt cacgcccgcc
+      781 aaccccctgg ccacaccacc ccacattaag ccagaatgat acttcctctt cgcctacgct
+      841 atcctccgat ccatccccaa caaactggga ggcgtacttg ccctagctgc ctctgtctta
+      901 gttttattcc tcatgccact ccttcacacc tctaaactac gctcaatgac tttccgtccc
+      961 ctctcccaaa ttctattctg agccctagta gcaaatctcc tgatcctcac ctgagtaggg
+     1021 ggccaacccg tggaacaccc tttcatcatc attggccaat tagcctcact ctcatacttc
+     1081 acaatcatcc taatcctctt ccctctcgta tccattctag agaacaaaat actcaaactc
+     1141 taa
+//
+
+LOCUS       AJ534536                1143 bp    DNA     linear   VRT 26-JUL-2016
+DEFINITION  Sylvia curruca mitochondrial cytb gene for cytochrome b.
+ACCESSION   AJ534536
+VERSION     AJ534536.1
+KEYWORDS    cytb gene; cytochrome b.
+SOURCE      mitochondrion Sylvia curruca (lesser whitethroat)
+  ORGANISM  Sylvia curruca
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Archosauria; Dinosauria; Saurischia; Theropoda;
+            Coelurosauria; Aves; Neognathae; Passeriformes; Sylviidae;
+            Sylviinae; Sylvia.
+REFERENCE   1
+  AUTHORS   Bohning-Gaese,K., Schuda,M.D. and Helbig,A.J.
+  TITLE     Weak phylogenetic effects on ecological niches of Sylvia warblers
+  JOURNAL   J. Evol. Biol. 16 (5), 956-965 (2003)
+   PUBMED   14635911
+REFERENCE   2  (bases 1 to 1143)
+  AUTHORS   Helbig,A.J.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (09-DEC-2002) Helbig A.J., Vogelwarte Hiddensee,
+            University of Greifswald, Zum Hochland 17, D-18565 Kloster, GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1143
+                     /organism="Sylvia curruca"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:43163"
+                     /tissue_type="blood"
+                     /country="Germany"
+     gene            1..1143
+                     /gene="cytb"
+     CDS             1..1143
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CAD58943.1"
+                     /db_xref="GOA:Q70VW5"
+                     /db_xref="HSSP:1BCC"
+                     /db_xref="InterPro:IPR005797"
+                     /db_xref="InterPro:IPR005798"
+                     /db_xref="InterPro:IPR016174"
+                     /db_xref="InterPro:IPR016175"
+                     /db_xref="UniProtKB/TrEMBL:Q70VW5"
+                     /translation="MALNLRKNHPILKIVNDALIDLPTPSNISSWWNFGSLLGLCLIT
+                     QIVTGLFLAMHYTADTSLAFASVAHMCRDVQFGWLIRNLHANGASFFFICIYLHIGRG
+                     IYYGSYLNKETWNVGVLLLLALMATAFVGYVLPWGQMSFWGATVITNLLSAIPYIGQT
+                     LVEWAWGGFSVDNPTLTRFFALHFLLPFVIAGLTLVHLTLLHETGSNNPLGIPSDCDK
+                     IPFHPYYSTKDVLGFALLFIPLASLALFAPNLLGDPENFTPANPLATPPHIKPEWYFL
+                     FAYAILRSIPNKLGGVLALAASVLVLFLMPLLHTSKLRSMTFRPLSQILFWTLVANLL
+                     ILTWVGGQPVEHPXIIIGQLASISYFTIILILFPLVSILENKMLKL"
+ORIGIN      
+        1 atggcactca atctacgcaa aaatcacccc atcctaaaaa tcgtcaacga cgctctcatc
+       61 gacctcccaa caccatcaaa tatctcatcc tgatgaaact tcggatctct cctaggcctc
+      121 tgcttaatca cacaaatcgt cacaggccta ttcctagcaa tacactacac agcagacacc
+      181 tcactagcct tcgcctctgt agcccatata tgccgagacg tccaattcgg ctgactaatc
+      241 cgcaacctac acgcaaacgg agcctctttc tttttcattt gcatctacct ccacattggc
+      301 cgagggatct actacggatc ctacctaaac aaagaaacct gaaacgtagg agtcctcctt
+      361 ctactagcac tcatagccac tgccttcgtg ggctacgttc taccctgagg ccaaatatca
+      421 ttctgagggg caaccgtaat tacgaaccta ctctcagcca tcccatacat tggccaaaca
+      481 ctagtagaat gagcctgagg aggattctca gtagataatc ccactcttac tcgattcttc
+      541 gccctccact tcctactccc cttcgtcatc gcaggcctta cactagtcca cctcaccctc
+      601 ctacacgaaa cagggtctaa caacccctta ggaattccat cagactgcga caaaattcca
+      661 ttccacccct actactccac aaaagacgta ctcggctttg cactcctatt catccccctt
+      721 gcctccctag cactatttgc tccaaacctc ctaggagacc cagaaaattt cacgcccgcc
+      781 aaccccctag ctacacctcc acatattaaa ccagaatgat acttcctctt tgcctacgcc
+      841 attctccgat ccatccccaa caaactaggg ggcgttcttg ccctagccgc ctccgtacta
+      901 gtcctattcc ttataccact cctccacacc tccaaactgc gctcgataac cttccgtccc
+      961 ctctcccaaa tcctattctg aaccctagta gccaacctcc tcatcctcac ctgagtaggc
+     1021 ggccaaccag tagaacaccc cttnatcatc attggccaac tagcctcaat ctcttacttc
+     1081 acaatcatcc taatcctatt ccctctagta tccatcctag aaaacaaaat actcaaactc
+     1141 taa
+//
+
+LOCUS       AJ534537                1143 bp    DNA     linear   VRT 26-JUL-2016
+DEFINITION  Sylvia nana mitochondrial cytb gene for cytochrome b.
+ACCESSION   AJ534537
+VERSION     AJ534537.1
+KEYWORDS    cytb gene; cytochrome b.
+SOURCE      mitochondrion Sylvia nana
+  ORGANISM  Sylvia nana
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Archosauria; Dinosauria; Saurischia; Theropoda;
+            Coelurosauria; Aves; Neognathae; Passeriformes; Sylviidae;
+            Sylviinae; Sylvia.
+REFERENCE   1
+  AUTHORS   Bohning-Gaese,K., Schuda,M.D. and Helbig,A.J.
+  TITLE     Weak phylogenetic effects on ecological niches of Sylvia warblers
+  JOURNAL   J. Evol. Biol. 16 (5), 956-965 (2003)
+   PUBMED   14635911
+REFERENCE   2  (bases 1 to 1143)
+  AUTHORS   Helbig,A.J.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (09-DEC-2002) Helbig A.J., Vogelwarte Hiddensee,
+            University of Greifswald, Zum Hochland 17, D-18565 Kloster, GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1143
+                     /organism="Sylvia nana"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:175014"
+                     /tissue_type="blood"
+                     /country="Israel"
+     gene            1..1143
+                     /gene="cytb"
+     CDS             1..1143
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CAD58944.1"
+                     /db_xref="GOA:Q70VW4"
+                     /db_xref="HSSP:1BCC"
+                     /db_xref="InterPro:IPR005797"
+                     /db_xref="InterPro:IPR005798"
+                     /db_xref="InterPro:IPR016174"
+                     /db_xref="InterPro:IPR016175"
+                     /db_xref="UniProtKB/TrEMBL:Q70VW4"
+                     /translation="MALNLRKNHPILKIVNDALIDLPTPSNISSWWNFGSLLGLCLIT
+                     QIITGLLLAMHYTADTSLAFASVAHMCRDVQFGWLIRNLHANGASFFFICIYFHIGRG
+                     IYYGSYLNKETWNVGVLLLLMLMATAFVGYVLPWGQMSFWGATVITNLFSAIPYIGQT
+                     LVEWAWGGFSVDNPTLTRFFAIHFLLPFVIAGLTLVHLTLLHETGSNNPLGIPSDCDK
+                     IPFHPYYSTKDLLGFALMFIPLASLALFAPNLLGDPENFTPANPLATPPHIKPEWYFL
+                     FAYAILRSIPNKLGGVLALAASVLVLFLIPLLHTSKLRSMTFRPLSQILFWTLVANLL
+                     VLTWVGSQPVEHPFIIIGQVASASYFTIILILFPLVSILENKMLKL"
+ORIGIN      
+        1 atggctctca atcttcgtaa aaaccacccc atcctaaaaa tcgtcaacga cgccctcatc
+       61 gaccttccca caccatcaaa catctcatca tgatgaaact ttggctcact cctaggcctc
+      121 tgcctaatca cacaaattat tacaggccta ctactagcaa tacactacac agcagacacc
+      181 tcactagctt tcgcctccgt agcccacatg tgccgagatg ttcaattcgg ctgacttatc
+      241 cgaaacctac atgcaaacgg agcttctttc ttcttcatct gcatctactt ccacatcggc
+      301 cgaggaatct actatggctc atacctaaac aaagagacat gaaacgtcgg agttctactc
+      361 ctacttatac tcatagccac cgccttcgta ggctacgtcc ttccatgagg ccaaatatca
+      421 ttctgaggtg ccaccgtaat tacaaaccta ttctcagcca tcccttacat cggccaaaca
+      481 ttagtagaat gggcctgagg aggattctca gtagacaacc ctacactaac ccgattcttc
+      541 gccattcact tccttcttcc cttcgtcatt gcaggcctca cattagttca ccttaccctc
+      601 ctacacgaaa caggatccaa taaccctctg ggaatcccat cagactgtga taaaattcca
+      661 ttccacccct actactccac aaaagaccta cttggcttcg cgctcatatt catccccctc
+      721 gcctccctag cactatttgc tccaaacctn ctaggagacc cagaaaactt cacgcccgcc
+      781 aaccctctag ccacnccccc ccacatcaaa ccagaatgat acttcctctt cgcctacgct
+      841 attctccgat ccatccccaa caaactagga ggcgtacttg cactagccgc ctccgtccta
+      901 gtcctattcc tcatcccact actccacaca tccaaactac gttctatgac cttccgccct
+      961 ctctctcaaa tcctattctg aaccctagtc gctaacctcc ttgtcctcac ctgagtagga
+     1021 agccaaccag tagaacaccc attcatcatc atcggccaag tagcctcagc ctcctacttc
+     1081 acaatcatcc taattctatt cccactagta tctatcctag aaaacaaaat acttaaactt
+     1141 taa
+//
+
+LOCUS       AJ534538                1143 bp    DNA     linear   VRT 26-JUL-2016
+DEFINITION  Sylvia communis mitochondrial cytb gene for cytochrome b.
+ACCESSION   AJ534538
+VERSION     AJ534538.1
+KEYWORDS    cytb gene; cytochrome b.
+SOURCE      mitochondrion Sylvia communis (greater whitethroat)
+  ORGANISM  Sylvia communis
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Archosauria; Dinosauria; Saurischia; Theropoda;
+            Coelurosauria; Aves; Neognathae; Passeriformes; Sylviidae;
+            Sylviinae; Sylvia.
+REFERENCE   1
+  AUTHORS   Bohning-Gaese,K., Schuda,M.D. and Helbig,A.J.
+  TITLE     Weak phylogenetic effects on ecological niches of Sylvia warblers
+  JOURNAL   J. Evol. Biol. 16 (5), 956-965 (2003)
+   PUBMED   14635911
+REFERENCE   2  (bases 1 to 1143)
+  AUTHORS   Helbig,A.J.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (09-DEC-2002) Helbig A.J., Vogelwarte Hiddensee,
+            University of Greifswald, Zum Hochland 17, D-18565 Kloster, GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1143
+                     /organism="Sylvia communis"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:216193"
+                     /tissue_type="blood"
+                     /country="Germany"
+     gene            1..1143
+                     /gene="cytb"
+     CDS             1..1143
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CAD58945.1"
+                     /db_xref="GOA:Q70VW3"
+                     /db_xref="HSSP:1BCC"
+                     /db_xref="InterPro:IPR005797"
+                     /db_xref="InterPro:IPR005798"
+                     /db_xref="InterPro:IPR016174"
+                     /db_xref="InterPro:IPR016175"
+                     /db_xref="UniProtKB/TrEMBL:Q70VW3"
+                     /translation="MALNLRKNHPILKIVNDALIDLPTPSNISSWWNFGSLLGLCLIT
+                     QIVTGLFLAMHYTADTSLAFASVAHMCRDVQFGWLIRNLHANGASFFFICIYLHIGRG
+                     IYYGSYLNKETWNVGVVLLLTLMATAFVGYVLPWGQMSFWGATVITNLFSAIPYIGQT
+                     LVEWAWGGFSVDNPTLTRFFALHFLLPFVIAGLTLVHLTLLHETGSNNPLGIPSDCDK
+                     IPFHPYYSTKDVLGFALMFIPLASLALFAPNLLGDPENFTPANPLATPPHIKPEWYFL
+                     FAYAILRSIPNKLGGVLALAASVLVLFLMPLLHTSKLRSMTFRPLSQILFWTLVANVL
+                     ILTWVGSQPVEHPFIIIGQLASLSYFTIILVLFPLVSILENKMLKL"
+ORIGIN      
+        1 atggctctca atctacgcaa aaaccaccca atcctaaaaa tcgtcaacga cgccctcatt
+       61 gacctcccaa caccatcaaa catctcatcc tgatgaaact tcggatcact tctaggcctc
+      121 tgcctaatta cacaaatcgt cacaggccta ttcctagcaa tacattacac agcagacacc
+      181 tcactagcct tcgcctccgt agcccacata tgccgagacg tacaattcgg ctgactaatc
+      241 cgaaacctac acgcaaacgg agcctcattc ttcttcatct gcatctacct tcacatcggc
+      301 cgaggaatct actacggatc ctacttgaac aaagaaacct gaaacgtagg agttgtcctt
+      361 ctactaaccc tcatagctac cgccttcgta ggttacgtcc ttccatgagg ccaaatatca
+      421 ttctgagggg ccactgtaat cacaaaccta ttctcagcca tcccctacat cggtcaaaca
+      481 ttagtagaat gggcctgagg aggattctca gtagacaacc ccacattaac ccgattcttc
+      541 gctctccact tcctccttcc ctttgtaatc gcaggcctca cactagtcca tctcacactc
+      601 ctacacgaaa caggatccaa caacccccta ggaatcccat cagactgcga caaaatccca
+      661 ttccaccctt actactccac aaaagacgtt cttggcttcg cgctcatgtt catcccccta
+      721 gcctccctag cactattcgc cccaaacctt ctaggggacc cagaaaactt cacgcccgcc
+      781 aacccactag caacaccacc tcacatcaag ccagaatgat acttcctatt cgcctacgct
+      841 atccttcggt ccatcccaaa caaactaggc ggtgtactcg ctctagccgc ttccgtccta
+      901 gtcctattcc taatacctct actccacaca tccaaactgc gctcaataac cttccgccct
+      961 ctatcccaaa tcctattctg aaccctagtc gccaacgtgc tcatccttac ctgagtagga
+     1021 agccagccgg tagaacaccc tttcatcatc atcggccaac tagcctcact ctcctacttc
+     1081 acaatcatcc tagtcctctt cccccttgta tccatcctag aaaacaaaat actcaagcta
+     1141 taa
+//
+
+LOCUS       AJ534539                1143 bp    DNA     linear   VRT 26-JUL-2016
+DEFINITION  Sylvia conspicillata mitochondrial cytb gene for cytochrome b.
+ACCESSION   AJ534539
+VERSION     AJ534539.1
+KEYWORDS    cytb gene; cytochrome b.
+SOURCE      mitochondrion Curruca conspicillata (spectacled warbler)
+  ORGANISM  Curruca conspicillata
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Archosauria; Dinosauria; Saurischia; Theropoda;
+            Coelurosauria; Aves; Neognathae; Passeriformes; Sylviidae;
+            Sylviinae; Curruca.
+REFERENCE   1
+  AUTHORS   Bohning-Gaese,K., Schuda,M.D. and Helbig,A.J.
+  TITLE     Weak phylogenetic effects on ecological niches of Sylvia warblers
+  JOURNAL   J. Evol. Biol. 16 (5), 956-965 (2003)
+   PUBMED   14635911
+REFERENCE   2  (bases 1 to 1143)
+  AUTHORS   Helbig,A.J.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (09-DEC-2002) Helbig A.J., Vogelwarte Hiddensee,
+            University of Greifswald, Zum Hochland 17, D-18565 Kloster, GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1143
+                     /organism="Curruca conspicillata"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:216227"
+                     /tissue_type="blood"
+                     /country="Senegal"
+     gene            1..1143
+                     /gene="cytb"
+     CDS             1..1143
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CAD58946.1"
+                     /db_xref="GOA:Q70VW2"
+                     /db_xref="HSSP:1BCC"
+                     /db_xref="InterPro:IPR005797"
+                     /db_xref="InterPro:IPR005798"
+                     /db_xref="InterPro:IPR016174"
+                     /db_xref="InterPro:IPR016175"
+                     /db_xref="UniProtKB/TrEMBL:Q70VW2"
+                     /translation="MAPNLRKNHPILKIVNDALIDLPTPSNISSWWNFGSLLGLCLIT
+                     QITTGLFLAMHYTADTSLAFASVAHMCRDVQFGWLIRNLHANGASFFFICIYLHIGRG
+                     IYYGSYLNKETWNVGVLLLLTLMATAFVGYVLPWGQMSFWGATVITNLFSAIPYIGQT
+                     LVEWAWGGFSVDNPTLTRFFALHFLLPFVIAGLTLVHLTLLHETGSNNPLGIPSDCDK
+                     IPFHPYYSTKDVLGFALMFIPLASLALFAPNLLGDPENFTPANPLATPPHIKPEWYFL
+                     FAYAILRSIPNKLGGVLALAASVLVLFLMPLLHTSKLRSMTFRPLSQILFWTLVANLL
+                     ILTWVGSQPVEHPFIIIGQLASLSYFTIILVLFPLVSILENKMLKL"
+ORIGIN      
+        1 atggctccca acctacgtaa aaaccaccca atcctaaaaa tcgtcaacga cgccctcatc
+       61 gacctcccaa caccatcaaa catctcatcc tgatgaaact tcggatcact cctaggcctt
+      121 tgcctaatca cacaaatcac cacaggccta ttcctagcaa tacactatac agcagacacc
+      181 tcactagcct ttgcctccgt agcccacata tgccgagacg tacaattcgg ctgactaatc
+      241 cgaaacctac atgcaaacgg agcttcattc ttcttcatct gcatctacct ccacattggt
+      301 cgaggaatct actacggatc ctacctaaac aaagaaacct gaaacgtcgg agttctcctt
+      361 ctattaactc ttatagccac cgccttcgta ggctatgtcc tcccatgagg ccaaatatca
+      421 ttctgaggcg ccaccgtaat cacaaaccta ttctcagcca tcccctacat cggccaaaca
+      481 ttagtagaat gggcctgagg cggattctca gtagacaacc ccacattaac tcgattcttc
+      541 gcccttcact tcctcctccc cttcgtcatc gcaggcctca ctctagtcca tcttacactc
+      601 ctacacgaaa caggatctaa caacccccta gggatcccat cagactgcga caaaattcca
+      661 ttccacccct actactctac aaaagacgtg ctcggctttg cactcatatt tatcccactc
+      721 gcttctttag cactattcgc cccaaacctt ctaggggacc cagaaaactt cacgcccgcc
+      781 aaccccctag ccactccacc ccatatcaaa ccagaatgat actttctatt tgcctacgct
+      841 atcctgcgat ccatccccaa taaactaggt ggcgttctcg ctctagccgc ttccgtccta
+      901 gtcttattcc ttatgccact tctccacaca tccaaactac gttcaataac cttccgtccc
+      961 ctatcccaaa ttctattctg aaccttagtc gccaacctac tcatccttac ctgagtaggc
+     1021 agccaaccgg tagaacatcc attcatcatc atcggccagc tagcctcact ctcctacttc
+     1081 acaatcatcc tagttctctt ccccctcgta tccatcctag aaaacaaaat actcaaacta
+     1141 taa
+//
+
+LOCUS       AJ534540                1143 bp    DNA     linear   VRT 26-JUL-2016
+DEFINITION  Sylvia deserticola mitochondrial cytb gene for cytochrome b.
+ACCESSION   AJ534540
+VERSION     AJ534540.1
+KEYWORDS    cytb gene; cytochrome b.
+SOURCE      mitochondrion Sylvia deserticola (Tristram's warbler)
+  ORGANISM  Sylvia deserticola
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Archosauria; Dinosauria; Saurischia; Theropoda;
+            Coelurosauria; Aves; Neognathae; Passeriformes; Sylviidae;
+            Sylviinae; Sylvia.
+REFERENCE   1
+  AUTHORS   Bohning-Gaese,K., Schuda,M.D. and Helbig,A.J.
+  TITLE     Weak phylogenetic effects on ecological niches of Sylvia warblers
+  JOURNAL   J. Evol. Biol. 16 (5), 956-965 (2003)
+   PUBMED   14635911
+REFERENCE   2  (bases 1 to 1143)
+  AUTHORS   Helbig,A.J.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (09-DEC-2002) Helbig A.J., Vogelwarte Hiddensee,
+            University of Greifswald, Zum Hochland 17, D-18565 Kloster, GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1143
+                     /organism="Sylvia deserticola"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:216228"
+                     /tissue_type="blood"
+                     /country="Morocco"
+     gene            1..1143
+                     /gene="cytb"
+     CDS             1..1143
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CAD58947.1"
+                     /db_xref="GOA:Q70VW1"
+                     /db_xref="HSSP:1BCC"
+                     /db_xref="InterPro:IPR005797"
+                     /db_xref="InterPro:IPR005798"
+                     /db_xref="InterPro:IPR016174"
+                     /db_xref="InterPro:IPR016175"
+                     /db_xref="UniProtKB/TrEMBL:Q70VW1"
+                     /translation="MAPNLRKXHPILKVVNDALIDLPTPSNISSWWNFGSLLGLCLIT
+                     QITTGLFLAMHYTADTSLAFASVAHMCRDVQFGWLIRNLHANGASFFFICIYLHIGRG
+                     IYYGSYLNKETWNVGVLLLLTLMATAFVGYVLPWGQMSFWGATVITNLFSAIPYIGQT
+                     LVEWAWGGFSVDNPTLTRFFALHFLLPFVXAGLTLVHLTLLHETGSNXPLGIPSDCDK
+                     IPXXPYYSTKDXLGFALMFIPLASLALFAPNLLGDPENFTPANPLATPPHIKPEWYFL
+                     FAYAILRSIPNKLGGVLALAASVLVLFLMPLLHTSKLRSMTFRPLSQILFWTLVANLL
+                     ILTWVGSQPVEHPFIIIGQLASLSYFTIILILFPLVSILENKMLKL"
+ORIGIN      
+        1 atggcaccca atctacgtaa aaancaccca atcctaaaag tcgtcaacga cgccctaatt
+       61 gacctcccaa caccatcaaa catctcatcc tgatgaaact tcggatccct cctgggcctt
+      121 tgcctaatca cacaaatcac tacaggccta ttcctagcaa tacattacac agcagacacc
+      181 tcactagcct ttgcctccgt agcccacata tgccgagacg tacaattcgg ctgactaatc
+      241 cgaaacctgc acgcaaacgg agcttcattc ttcttcatct gcatctacct ccacatcggc
+      301 cgaggaatct actacggatc ctacctgaac aaagaaacct gaaatgttgg agttctcctt
+      361 ctattaaccc ttatagctac cgctttcgta ggctacgtcc ttccatgagg ccaaatatca
+      421 ttctgaggtg ctaccgtaat tacaaaccta ttctcagcca tcccctacat tggccaaaca
+      481 ttagtagaat gagcctgagg agggttctca gtagacaacc ccacactaac tcgattcttc
+      541 gcccttcact tcctcctccc cttcgtcatn gcaggcctca cactagtcca cctcacactc
+      601 ctacacgaaa caggatccaa caanccccta ggaatcccat cagactgcga caaaatccca
+      661 ttnnncccct actactccac aaaagacnta ctcggcttcg cactcatgtt catccccctc
+      721 gcctctctag cactatttgc cccaaacctc ctaggggacc cagaaaactt cacgcccgcc
+      781 aaccccctag ctacaccgcc ccacatcaaa ccagagtgat atttcctatt cgcctacgct
+      841 atcctccgat ccatccccaa caaactaggt ggcgtacttg ccctagccgc ttccgtccta
+      901 gtcctattcc ttatgccact actccacaca tccaaactac gntcaataac cttccgcccc
+      961 ctatcccaaa tcctattctg aaccttagtc gccaacctac tcatccttac ttgagtaggc
+     1021 agccaaccgg tagaacaccc cttcatcatc atcggccaac tagcctcact ctcttacttt
+     1081 acaatcatcc taatcctctt cccccttgta tccatcctag aaaacaaaat actcaaacta
+     1141 taa
+//
+
+LOCUS       AJ534541                1143 bp    DNA     linear   VRT 26-JUL-2016
+DEFINITION  Sylvia balearica mitochondrial cytb gene for cytochrome b.
+ACCESSION   AJ534541
+VERSION     AJ534541.1
+KEYWORDS    cytb gene; cytochrome b.
+SOURCE      mitochondrion Sylvia balearica (balearic Warbler)
+  ORGANISM  Sylvia balearica
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Archosauria; Dinosauria; Saurischia; Theropoda;
+            Coelurosauria; Aves; Neognathae; Passeriformes; Sylviidae;
+            Sylviinae; Sylvia.
+REFERENCE   1
+  AUTHORS   Bohning-Gaese,K., Schuda,M.D. and Helbig,A.J.
+  TITLE     Weak phylogenetic effects on ecological niches of Sylvia warblers
+  JOURNAL   J. Evol. Biol. 16 (5), 956-965 (2003)
+   PUBMED   14635911
+REFERENCE   2  (bases 1 to 1143)
+  AUTHORS   Helbig,A.J.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (09-DEC-2002) Helbig A.J., Vogelwarte Hiddensee,
+            University of Greifswald, Zum Hochland 17, D-18565 Kloster, GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1143
+                     /organism="Sylvia balearica"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:216229"
+                     /tissue_type="blood"
+                     /country="Spain:Balearic Islands, Menorca"
+     gene            1..1143
+                     /gene="cytb"
+     CDS             1..1143
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CAD58948.1"
+                     /db_xref="GOA:Q70VW0"
+                     /db_xref="HSSP:1BCC"
+                     /db_xref="InterPro:IPR005797"
+                     /db_xref="InterPro:IPR005798"
+                     /db_xref="InterPro:IPR016174"
+                     /db_xref="InterPro:IPR016175"
+                     /db_xref="UniProtKB/TrEMBL:Q70VW0"
+                     /translation="MAPNLRKNHPILKVVNDALIDLPTPSNISSWWNFGSLLGLCLIT
+                     QITTGLFLAMHYTADTSLAFASVAHMCRDVQFGWLIRNLHANGASFFFICIYLHIGRG
+                     IYYGSYLNKETWNVGVLLLLTLMATAFVGYVLPWGQMSFWGATVITNLFSAIPYIGQT
+                     LVEWAWGGFSVDNPTLTRFFALHFLLPFVIAGLTLVHLTLLHETGSNNPLGIPSDCDK
+                     IPFHPYYSTKDVLGFALMFIPLASLALFAPNLLGDPENFTPANPLATPPHIKPEWYFL
+                     FAYAILRSIPNKLGGVLALAASVLVLFFMPLLHTSKLRSMTFRPLSQILFWTLVANLL
+                     ILTWVGSQPVEHPFIIIGQLASLSYFTIILILFPLVSILENKMLKL"
+ORIGIN      
+        1 atggctccca atctacgtaa aaaccaccca atcctaaaag tcgtcaacga cgccctcatt
+       61 gacctcccaa caccatcaaa catctcatcc tgatgaaact tcggatcact cctaggcctt
+      121 tgcctaatca cacaaatcac cacaggccta ttcctagcaa tacattacac agcagatacc
+      181 tcactagcct tcgcctccgt agcccacata tgccgagacg tacaattcgg ctgactaatc
+      241 cgaaacctac atgcaaacgg agcttcattc ttcttcatct gcatctacct ccacatcggc
+      301 cgaggaatct actacggatc ctacctgaac aaagaaacct gaaatgtcgg agttctcctc
+      361 ctactaaccc ttatagccac cgccttcgta ggttacgtcc tcccatgagg ccaaatatca
+      421 ttctgaggtg ctaccgtaat cacaaaccta ttctcagcca tcccctacat tggccaaaca
+      481 ttggtagaat gagcctgagg tggattctca gtagacaacc ccacattaac tcgattcttt
+      541 gcccttcact tccttctccc cttcgtcatc gcaggtctca cactagtcca cctcaccctt
+      601 ctacacgaaa caggatccaa caaccctcta ggaatcccat cagactgtga caagatccca
+      661 ttccacccct actactccac aaaagacgta cttggcttcg cgctcatatt catccccctc
+      721 gcctctctag cactatttgc cccaaacctc ctaggggacc cagaaaactt cacgcccgcc
+      781 aaccccctag ccacaccacc tcacatcaaa ccagagtgat atttcctatt tgcctacgct
+      841 attcttcgat ccatccccaa caaactaggt ggcgtacttg ccctagctgc ttccgtccta
+      901 gtcctattct ttatacccct actccacaca tccaaactac gttcaataac cttccgccct
+      961 ctatcccaaa tcctattctg aaccctagtc gccaacctgc tcatccttac ttgagtaggc
+     1021 agccaaccgg tagaacaccc ttttatcatc atcggccaac tagcctcact ctcctacttt
+     1081 acaatcatct taatcctctt cccccttgta tccatcttag aaaacaaaat actcaaacta
+     1141 taa
+//
+
+LOCUS       AJ534542                1143 bp    DNA     linear   VRT 26-JUL-2016
+DEFINITION  Sylvia undata mitochondrial cytb gene for cytochrome b.
+ACCESSION   AJ534542
+VERSION     AJ534542.1
+KEYWORDS    cytb gene; cytochrome b.
+SOURCE      mitochondrion Sylvia undata (Dartford warbler)
+  ORGANISM  Sylvia undata
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Archosauria; Dinosauria; Saurischia; Theropoda;
+            Coelurosauria; Aves; Neognathae; Passeriformes; Sylviidae;
+            Sylviinae; Sylvia.
+REFERENCE   1
+  AUTHORS   Bohning-Gaese,K., Schuda,M.D. and Helbig,A.J.
+  TITLE     Weak phylogenetic effects on ecological niches of Sylvia warblers
+  JOURNAL   J. Evol. Biol. 16 (5), 956-965 (2003)
+   PUBMED   14635911
+REFERENCE   2  (bases 1 to 1143)
+  AUTHORS   Helbig,A.J.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (09-DEC-2002) Helbig A.J., Vogelwarte Hiddensee,
+            University of Greifswald, Zum Hochland 17, D-18565 Kloster, GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1143
+                     /organism="Sylvia undata"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:216216"
+                     /tissue_type="blood"
+                     /country="France:Corsica"
+     gene            1..1143
+                     /gene="cytb"
+     CDS             1..1143
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CAD58949.1"
+                     /db_xref="GOA:Q70VV9"
+                     /db_xref="HSSP:1BCC"
+                     /db_xref="InterPro:IPR005797"
+                     /db_xref="InterPro:IPR005798"
+                     /db_xref="InterPro:IPR016174"
+                     /db_xref="InterPro:IPR016175"
+                     /db_xref="UniProtKB/TrEMBL:Q70VV9"
+                     /translation="MAXNLRKNHPILKVVNDALIDLPTPSNISSWWNFGSLLGLCLIT
+                     QITTGLFLAMHYTADTSLAFASVAHMCRDVQFGWLIRNLHANGASFFFICIYLHIGRG
+                     IYYGSYLNKETWNVGVLLLLTLMATAFVGYVLPWGQMSFWGATVITNLFSAIPYIGQT
+                     LVEWAWGGFSVDNPTLTRFFALHFLLPFVIAGLTLVHLTLLHETGSNNPLGIPSDCDK
+                     IPFHPYYSTKDMLGFALMFIPLASLALFAPNLLGDPENFTPANPLATPPHIKPEWYFL
+                     FAYAILRSIPNKLGGVLALAASVLVLFLMPLLHTSKLRSMTFRPLSQILFWTLVANLL
+                     ILTWVGSQPVEHPFIIIGQLASLSYFTIILVLFPLVSILENKMLKL"
+ORIGIN      
+        1 atggctcnca atctacgtaa aaaccaccca atcctaaaag tcgtcaacga cgccctaatt
+       61 gacctcccaa caccatcaaa catctcatct tgatgaaact tcggatccct cctgggcctt
+      121 tgcctaatca cacaaatcac tacaggccta ttcctagcaa tacattacac agcagacacc
+      181 tcactagcct ttgcctccgt agcccacata tgccgagacg ttcaattcgg ctgactaatc
+      241 cgaaacctac acgcaaacgg agcttcattc ttcttcatct gcatctacct ccacatcggc
+      301 cgaggaatct actacggatc ctacctaaac aaagaaacct gaaatgtcgg agttctcctt
+      361 ctactaaccc ttatagccac cgctttcgta ggctacgtcc ttccatgagg ccaaatatca
+      421 ttctgaggtg ccaccgtaat cacaaaccta ttctcagcca tcccctacat tggccaaaca
+      481 ttagtagaat gagcctgagg cggattctca gtagacaacc ccacattaac ccgattcttc
+      541 gcccttcact tcctcctccc cttcgtcatt gcaggtctca cactagtcca cctcacactt
+      601 ctacacgaaa caggatccaa caatccccta ggaatcccat cagactgcga caaaatccca
+      661 ttccacccct actactccac aaaagacata ctcggcttcg cactcatatt catccccctc
+      721 gcctccctag cactattcgc cccaaacctc ctaggggacc cagaaaactt cacgcccgcc
+      781 aatcccctag ctacaccacc ccacatcaaa ccagagtgat atttcctatt cgcctacgct
+      841 atcctccgat ccatccccaa caaactaggt ggcgtacttg ccctagccgc ttctgtccta
+      901 gtcctattcc tcatgccact actccacaca tccaaactac gttcaataac cttccgccct
+      961 ctatcccaaa tcctattctg aaccttagtc gccaacctac tcatccttac ttgagtaggc
+     1021 agccaaccgg tagaacaccc atttatcatc atcggccaac tagcctcact ctcctacttt
+     1081 acaatcatct tagtcctctt ccccctcgta tccatcctag aaaacaaaat actcaaacta
+     1141 taa
+//
+
+LOCUS       AJ534543                1143 bp    DNA     linear   VRT 26-JUL-2016
+DEFINITION  Sylvia cantillans mitochondrial cytb gene for cytochrome b.
+ACCESSION   AJ534543
+VERSION     AJ534543.1
+KEYWORDS    cytb gene; cytochrome b.
+SOURCE      mitochondrion Sylvia cantillans (subalpine warbler)
+  ORGANISM  Sylvia cantillans
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Archosauria; Dinosauria; Saurischia; Theropoda;
+            Coelurosauria; Aves; Neognathae; Passeriformes; Sylviidae;
+            Sylviinae; Sylvia.
+REFERENCE   1
+  AUTHORS   Bohning-Gaese,K., Schuda,M.D. and Helbig,A.J.
+  TITLE     Weak phylogenetic effects on ecological niches of Sylvia warblers
+  JOURNAL   J. Evol. Biol. 16 (5), 956-965 (2003)
+   PUBMED   14635911
+REFERENCE   2  (bases 1 to 1143)
+  AUTHORS   Helbig,A.J.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (09-DEC-2002) Helbig A.J., Vogelwarte Hiddensee,
+            University of Greifswald, Zum Hochland 17, D-18565 Kloster, GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1143
+                     /organism="Sylvia cantillans"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:208071"
+                     /tissue_type="blood"
+                     /country="Spain"
+     gene            1..1143
+                     /gene="cytb"
+     CDS             1..1143
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CAD58950.1"
+                     /db_xref="GOA:Q70VV8"
+                     /db_xref="HSSP:1BCC"
+                     /db_xref="InterPro:IPR005797"
+                     /db_xref="InterPro:IPR005798"
+                     /db_xref="InterPro:IPR016174"
+                     /db_xref="InterPro:IPR016175"
+                     /db_xref="UniProtKB/TrEMBL:Q70VV8"
+                     /translation="MAPNLRKNHPILKIVNDALIDLPTPSNISSWWNFGSLLGLCLIT
+                     QITTGLFLAMHYTADTSLAFASVAHMCRDVQFGWLIRNLHANGASFFFICIYLHIGRG
+                     IYYGSYLNKETWNVGVLLLLTLMATAFVGYVLPWGQMSFWGATVXTNLFSAIPYIGQT
+                     LVEWAWGGFSVDNPTLTRFFALHFLLPFVIAGLTLVHLTLLHETGSNNPLGIPSDCDK
+                     IPFHPYYSTKDVLGFALMFIPLASLALFAPNLLGDPENFTPANPLATPPHIKPEWYFL
+                     FAYAILRSIPNKLGGVLALAASVLVLFLMPLLHTSKLRSMTFRPLSQILFWTLVANLL
+                     ILTWVGSQPVEHPFIIIGQLASLSYFTIILILFPLXSILENKMLKL"
+ORIGIN      
+        1 atggctccca atctacgcaa aaatcaccct atcctaaaaa tcgtcaacga cgccctcatc
+       61 gacctcccaa caccatccaa catctcatca tgatgaaact tcggatcact cctaggcctt
+      121 tgcttaatca cacaaatcac cacaggccta tttctagcaa tgcattacac agcagacacc
+      181 tcactagctt tcgcttccgt agcccacata tgccgagatg tacaattcgg ctgacttatc
+      241 cgaaacctac atgcaaatgg agcctcattc ttcttcatct gcatctacct tcatatcggc
+      301 cgaggaatct actacggatc ctacctaaac aaagaaacct gaaacgtcgg agtcctactc
+      361 ctattaaccc tcatagccac cgctttcgta ggctacgtcc ttccatgagg ccaaatatca
+      421 ttctgaggcg ctaccgtnat nacaaactta ttctcagcca tcccctacat tggccaaaca
+      481 ctggtagaat gagcctgagg tggattctca gtagacaacc ccacattaac ccgattcttc
+      541 gcccttcact tcctcctccc tttcgtcatc gcaggcctca cactagtcca cctcacactt
+      601 ctgcacgaaa caggatccaa caacccccta ggaatcccat cagactgcga caaaatccca
+      661 ttccacccct actactccac aaaagacgta cttggcttcg cactcatatt catccccctc
+      721 gcttctctag cactatttgc cccaaatctt ctaggggacc cagaaaactt cacgcccgcc
+      781 aaccccctgg ccacaccacc ccacattaaa ccagaatgat acttcctatt tgcctacgct
+      841 atcctccgat ccatccccaa caaactaggc ggcgtacttg ccctagccgc ctccgtacta
+      901 gtcctattcc tcatgccact acttcacaca tccaaactac gctcaataac tttccgccct
+      961 ctatcccaaa tcctattctg aaccctagtc gccaacctac tcatccttac ctgagtaggc
+     1021 agccaaccgg tagaacaccc cttcattatc atcggacagc tagcctcact ctcctacttc
+     1081 acaatcatcc taatcctctt cccccttgna tccatcctag aaaacaaaat actcaaacta
+     1141 taa
+//
+
+LOCUS       AJ534544                1143 bp    DNA     linear   VRT 26-JUL-2016
+DEFINITION  Sylvia melanocephala mitochondrial cytb gene for cytochrome b.
+ACCESSION   AJ534544
+VERSION     AJ534544.1
+KEYWORDS    cytb gene; cytochrome b.
+SOURCE      mitochondrion Curruca melanocephala (Sardinian warbler)
+  ORGANISM  Curruca melanocephala
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Archosauria; Dinosauria; Saurischia; Theropoda;
+            Coelurosauria; Aves; Neognathae; Passeriformes; Sylviidae;
+            Sylviinae; Curruca.
+REFERENCE   1
+  AUTHORS   Bohning-Gaese,K., Schuda,M.D. and Helbig,A.J.
+  TITLE     Weak phylogenetic effects on ecological niches of Sylvia warblers
+  JOURNAL   J. Evol. Biol. 16 (5), 956-965 (2003)
+   PUBMED   14635911
+REFERENCE   2  (bases 1 to 1143)
+  AUTHORS   Helbig,A.J.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (09-DEC-2002) Helbig A.J., Vogelwarte Hiddensee,
+            University of Greifswald, Zum Hochland 17, D-18565 Kloster, GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1143
+                     /organism="Curruca melanocephala"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:121426"
+                     /tissue_type="blood"
+                     /country="Spain"
+     gene            1..1143
+                     /gene="cytb"
+     CDS             1..1143
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CAD58951.1"
+                     /db_xref="GOA:Q70VV7"
+                     /db_xref="HSSP:1BCC"
+                     /db_xref="InterPro:IPR005797"
+                     /db_xref="InterPro:IPR005798"
+                     /db_xref="InterPro:IPR016174"
+                     /db_xref="InterPro:IPR016175"
+                     /db_xref="UniProtKB/TrEMBL:Q70VV7"
+                     /translation="MAPNLRKNHPILKIVNDALIDLPTPSNISSWWNFGSLLGLCLIV
+                     QITTGLFLAMHYTADTSLAFASVAHMCRDVQFGWLIRNLHANGASFFFICIYLHIGRG
+                     IYYGSYLNKETWNVGVLLLLTLMATAFVGYVLPWGQMSFWGATVITNLFSAIPYIGQT
+                     LVEWAWGGFSVDNPTLTRFFALHFLLPFVIAGLTLVHLTLLHETGSNNPLGIPSDCDK
+                     IPFHPYYSTKDVLGFALMFIPLASLALFAPNLLGDPENFTPANPLATPPHIKPEWYFL
+                     FAYAILRSIPNKLGGVLALAASVLVLFLMPLLHTSKLRSMTFRPLSQILFWTLVANLL
+                     ILTWVGSQPVEHPFIIIGQLASLSYFTIILILFPLVSILENKMLKL"
+ORIGIN      
+        1 atggctccca atctacgcaa aaaccacccc atcctaaaaa tcgtcaacga cgccctcatc
+       61 gacctcccaa caccatccaa catctcatcc tgatgaaact tcggatccct cctaggcctc
+      121 tgcctaatcg tacaaatcac cacaggccta ttcctagcaa tacattacac agcagacact
+      181 tcactagctt tcgcttccgt agcccacata tgccgagacg tacaattcgg ttgactcatt
+      241 cgaaacctac atgcaaacgg agcttcattc ttcttcatct gcatctatct tcacatcggc
+      301 cgaggaatct actacgggtc ctacctaaat aaagaaacct gaaatgtcgg agtcttactc
+      361 ctactaaccc tcatagccac cgctttcgta ggctacgtcc ttccatgagg ccaaatatca
+      421 ttctgaggtg ccaccgtaat cacaaacctg ttctcagcca tcccctacat tggccaaaca
+      481 ctagtagagt gagcctgagg cggattctca gtagacaatc ccacattaac tcgatttttc
+      541 gccctccact tcctcctccc cttcgtcatc gcaggcctca cactagtcca cctcacactt
+      601 ttacacgaga caggatccaa caacccccta ggaatcccct cagactgcga caaaatccca
+      661 ttccaccctt actactccac aaaagacgta cttggcttcg cactcatatt catccccctt
+      721 gcttccttag cactatttgc cccaaacctt ctaggagacc cagaaaactt cacacccgcc
+      781 aaccccctag ccacaccacc ccacattaaa ccagaatgat acttcctatt tgcctacgcc
+      841 atcctccgat ccatccccaa caaactaggt ggcgtacttg ccctagctgc ttctgtacta
+      901 gtcctattcc tcataccact acttcacaca tccaagctac gttcaataac tttccgcccc
+      961 ctatcccaaa tcctattctg aaccctagtc gccaacctac tcatcctcac ctgagtaggc
+     1021 agccaaccgg tagaacaccc cttcattatc atcggtcaac tagcctcact ctcctacttc
+     1081 acaatcatcc taatcctctt cccccttgtg tccatcctag aaaacaaaat actcaaacta
+     1141 taa
+//
+
+LOCUS       AJ534545                1143 bp    DNA     linear   VRT 26-JUL-2016
+DEFINITION  Sylvia mystacea mitochondrial cytb gene for cytochrome b.
+ACCESSION   AJ534545
+VERSION     AJ534545.1
+KEYWORDS    cytb gene; cytochrome b.
+SOURCE      mitochondrion Sylvia mystacea (Menetrie's warbler)
+  ORGANISM  Sylvia mystacea
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Archosauria; Dinosauria; Saurischia; Theropoda;
+            Coelurosauria; Aves; Neognathae; Passeriformes; Sylviidae;
+            Sylviinae; Sylvia.
+REFERENCE   1
+  AUTHORS   Bohning-Gaese,K., Schuda,M.D. and Helbig,A.J.
+  TITLE     Weak phylogenetic effects on ecological niches of Sylvia warblers
+  JOURNAL   J. Evol. Biol. 16 (5), 956-965 (2003)
+   PUBMED   14635911
+REFERENCE   2  (bases 1 to 1143)
+  AUTHORS   Helbig,A.J.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (09-DEC-2002) Helbig A.J., Vogelwarte Hiddensee,
+            University of Greifswald, Zum Hochland 17, D-18565 Kloster, GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1143
+                     /organism="Sylvia mystacea"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:216217"
+                     /tissue_type="blood"
+                     /country="Kuwait"
+     gene            1..1143
+                     /gene="cytb"
+     CDS             1..1143
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CAD58952.1"
+                     /db_xref="GOA:Q70VV6"
+                     /db_xref="HSSP:1BCC"
+                     /db_xref="InterPro:IPR005797"
+                     /db_xref="InterPro:IPR005798"
+                     /db_xref="InterPro:IPR016174"
+                     /db_xref="InterPro:IPR016175"
+                     /db_xref="UniProtKB/TrEMBL:Q70VV6"
+                     /translation="MAPNLRKNHPILKIVNDALIDLPTPSNISSWWNFGSLLGLCLIT
+                     QITTGLFLAMHYTADTSLAFASVAHMCRDVQFGWLIRNLHANGASFFFICIYLHIGRG
+                     IYYGSYLNKETWNVGVLLLLTLMATAFVGYVLPWGQMSFWGATVITNLFSAIPYIGQT
+                     LVEWAWGGFSVDNPTLTRFFALHFLLPFVIAGLTLVHLTLLHETGSNNPLGIPSDCDK
+                     IPFHPYYSTKDVLGFALMFIPLASLALFAPNLLGDPENFTPANPLATPPHIKPEWYFL
+                     FAYAILRSIPNKLGGVLALAASVLVLFLMPLLHTSKLRSMTFRPLSQILFWTLVANLL
+                     ILTWVGSQPVEHPFIIIGQLASLSYFTIILILFPLVSILENKMLKL"
+ORIGIN      
+        1 atggctccca atctacgcaa aaaccatccc atcctaaaaa tcgtcaacga cgccctcatc
+       61 gacctcccaa caccatctaa tatctcatcc tgatgaaact tcggatcact cctaggcctc
+      121 tgcctaatca cgcaaatcac cacaggccta ttcctagcga tacattacac agcagacact
+      181 tcattagctt ttgcttccgt agcccacata tgccgagatg tacaattcgg ttgactcatc
+      241 cgaaaccttc atgcaaacgg agcttcattc ttcttcatct gcatctacct tcacatcggc
+      301 cgaggaatct attacgggtc ctacctaaat aaagaaacct gaaacgttgg agtcttactt
+      361 ctactaaccc tcatagccac cgccttcgta ggctacgtcc ttccatgagg ccaaatatca
+      421 ttctgaggtg ccaccgtaat cacaaaccta ttctcagcca tcccctacat tggccaaaca
+      481 ctagtagaat gagcctgagg tggattctca gtagacaacc ctacattaac ccgatttttc
+      541 gcccttcact tcctcctccc cttcgtcatc gcaggcctca cactagtcca ccttacactt
+      601 ctacacgaaa caggatccaa caaccctcta ggaatcccct cagattgcga caaaatccca
+      661 ttccaccctt actactccac aaaagacgta cttggcttcg cactcatatt catccccctc
+      721 gcttctctag cactatttgc cccaaacctt ctaggggacc cagaaaattt cacgcccgcc
+      781 aaccccctag ccacaccacc ccatattaaa ccagagtgat atttcctatt tgcttacgct
+      841 attctccgat ccatccctaa caaactaggc ggcgtactcg ctctagctgc ctccgtacta
+      901 gtcctcttcc tcatgccgct acttcacaca tccaaactac gttcaataac tttccgcccc
+      961 ctatcccaaa tcctattctg aaccctagtc gccaacctgc tcattcttac ctgagtaggc
+     1021 agccaaccgg tagaacaccc cttcatcatc atcggacaac tagcctcact ctcctacttc
+     1081 acaatcatcc taatcctctt cccccttgta tccatcctag aaaacaaaat actcaaacta
+     1141 taa
+//
+
+LOCUS       AJ534546                1143 bp    DNA     linear   VRT 26-JUL-2016
+DEFINITION  Sylvia melanothorax mitochondrial cytb gene for cytochrome b.
+ACCESSION   AJ534546
+VERSION     AJ534546.1
+KEYWORDS    cytb gene; cytochrome b.
+SOURCE      mitochondrion Sylvia melanothorax (cyprus warbler)
+  ORGANISM  Sylvia melanothorax
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Archosauria; Dinosauria; Saurischia; Theropoda;
+            Coelurosauria; Aves; Neognathae; Passeriformes; Sylviidae;
+            Sylviinae; Sylvia.
+REFERENCE   1
+  AUTHORS   Bohning-Gaese,K., Schuda,M.D. and Helbig,A.J.
+  TITLE     Weak phylogenetic effects on ecological niches of Sylvia warblers
+  JOURNAL   J. Evol. Biol. 16 (5), 956-965 (2003)
+   PUBMED   14635911
+REFERENCE   2  (bases 1 to 1143)
+  AUTHORS   Helbig,A.J.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (09-DEC-2002) Helbig A.J., Vogelwarte Hiddensee,
+            University of Greifswald, Zum Hochland 17, D-18565 Kloster, GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1143
+                     /organism="Sylvia melanothorax"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:216218"
+                     /tissue_type="blood"
+                     /country="Israel"
+     gene            1..1143
+                     /gene="cytb"
+     CDS             1..1143
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CAD58953.1"
+                     /db_xref="GOA:Q70VV5"
+                     /db_xref="HSSP:1BCC"
+                     /db_xref="InterPro:IPR005797"
+                     /db_xref="InterPro:IPR005798"
+                     /db_xref="InterPro:IPR016174"
+                     /db_xref="InterPro:IPR016175"
+                     /db_xref="UniProtKB/TrEMBL:Q70VV5"
+                     /translation="MAPNLRKNHPILKIVNDALIDLPTPSNISSWWNFGSLLGLCLIT
+                     QITTGLFLAMHYTADTSLAFASVAHMCRDVQFGWLIRNLHANGASFFFICIYLHIGRG
+                     IYYGSYLNKETWNVGVLLLLTLMATAFVGYVLPWGQMSFWGATVITNLFSAIPYVGQT
+                     LVEWAWGGFSVDNPTLTRFFALHFLLPFVIAGLTLVHLTLLHETGSNNPLGIPSDCDK
+                     IPFHPYYSTKDLLGFALMFIPLASLALFAPNLLGDPENFTPANPLATPPHIKPEWYFL
+                     FAYAILRSIPNKLGGVLALAASVLVLFLMPLLHTSKLRSMTFRPLSQILFWALVANLL
+                     ILTWVGSQPVEHPFIIIGQLASLSYFTIILILFPLVSILENKMLKL"
+ORIGIN      
+        1 atggctccca atctacgcaa aaatcacccc atcctaaaaa tcgtcaacga cgctcttatc
+       61 gacctcccaa caccatcaaa catctcatcc tgatgaaact tcggatcact cctaggcctc
+      121 tgcctaatca cacaaatcac cacaggccta ttcttagcga tacattacac agcagacacc
+      181 tcactagcct ttgcctccgt agcccacata tgccgagacg tacaattcgg ctgactaatc
+      241 cgaaacctac acgcaaatgg agcctcattc ttcttcattt gcatctacct ccacattggc
+      301 cgaggaatct actacggatc ctacctaaac aaagaaacct gaaacgtcgg agtcctactc
+      361 ctactaaccc tcatagccac cgctttcgta ggttacgtcc taccatgagg ccaaatatca
+      421 ttttgaggtg ccaccgtaat tacaaaccta ttctcagcca tcccctacgt aggccaaaca
+      481 ctagtagaat gagcctgagg cggattttca gtagacaacc ctacattaac ccgattcttc
+      541 gcccttcatt tcctcctccc tttcgtcatc gcaggcctca cactagtcca ccttacactc
+      601 ctacacgaaa caggatccaa taaccctcta ggaatcccat cagactgcga caaaatccca
+      661 ttccacccct actactccac aaaagaccta cttggcttcg cacttatatt catcccccta
+      721 gcctccctag ccctatttgc cccaaacctg ctaggggacc cagaaaactt tacgcccgcc
+      781 aaccccctag ccacaccacc ccacatcaaa ccagaatgat acttcctatt tgcctacgcc
+      841 attctccgat ccatccccaa caaactaggc ggcgtacttg ccctagctgc ctccgtccta
+      901 gtcctattcc taataccatt actccacaca tccaagctac gctcaatgac cttccgcccc
+      961 ctatcccaaa tcctattctg agccttagtc gctaacctac tcatccttac ctgagtaggc
+     1021 agccaaccgg tagaacaccc cttcatcatc atcggtcaac tagcctcact ctcctacttc
+     1081 acaatcatcc taattctctt cccccttgta tccatcctag aaaacaaaat actcaaacta
+     1141 taa
+//
+
+LOCUS       AJ534547                1143 bp    DNA     linear   VRT 26-JUL-2016
+DEFINITION  Sylvia rueppelli mitochondrial cytb gene for cytochrome b.
+ACCESSION   AJ534547
+VERSION     AJ534547.1
+KEYWORDS    cytb gene; cytochrome b.
+SOURCE      mitochondrion Sylvia rueppelli (Rueppell's warbler)
+  ORGANISM  Sylvia rueppelli
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Archosauria; Dinosauria; Saurischia; Theropoda;
+            Coelurosauria; Aves; Neognathae; Passeriformes; Sylviidae;
+            Sylviinae; Sylvia.
+REFERENCE   1
+  AUTHORS   Bohning-Gaese,K., Schuda,M.D. and Helbig,A.J.
+  TITLE     Weak phylogenetic effects on ecological niches of Sylvia warblers
+  JOURNAL   J. Evol. Biol. 16 (5), 956-965 (2003)
+   PUBMED   14635911
+REFERENCE   2  (bases 1 to 1143)
+  AUTHORS   Helbig,A.J.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (09-DEC-2002) Helbig A.J., Vogelwarte Hiddensee,
+            University of Greifswald, Zum Hochland 17, D-18565 Kloster, GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1143
+                     /organism="Sylvia rueppelli"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:216219"
+                     /tissue_type="blood"
+                     /country="Israel"
+     gene            1..1143
+                     /gene="cytb"
+     CDS             1..1143
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CAD58954.1"
+                     /db_xref="GOA:Q70VV4"
+                     /db_xref="HSSP:1BCC"
+                     /db_xref="InterPro:IPR005797"
+                     /db_xref="InterPro:IPR005798"
+                     /db_xref="InterPro:IPR016174"
+                     /db_xref="InterPro:IPR016175"
+                     /db_xref="UniProtKB/TrEMBL:Q70VV4"
+                     /translation="MAPNLRKNHPILKIVNDALIDLPTPSNISSWWNFGSLLGLCLIM
+                     QITTGLFLAMHYTADTXLAFASVAHMCRDVQFGWLIRNLHANGASFFFICIYLHIGRG
+                     IYYGSYLNKETWNIGVLLLLTLMATAFVGYVLPWGQMSFWGATVITNLFSAIPYIGQT
+                     LVEWAWGGFSVDNPTLTRFFALHFLLPFVIAGLTLVHLTLLHETGSNNPLGIPSDCDK
+                     IPFHPYYSTKDVLGFALMFIPLASLALFAPNFLGDPENFTPANPLATPPHIKPEWYFL
+                     FAYAILRSIPNKLGGVLALAASVLVLFLMPLLHTSKLRSMTFRPLSQILFWTLVANLL
+                     ILTWVGSQPVEHPFIIIGQLASLSYFTIILILFPLVSILENKMLKL"
+ORIGIN      
+        1 atggctccca atctacgcaa aaaccatccc atcctaaaaa tcgtcaacga cgccctcatc
+       61 gaccttccaa caccatcaaa catctcatcc tgatgaaact ttggatcact cctaggcctt
+      121 tgcctaatca tacaaatcac cacaggccta ttcttagcaa tacattacac agcagacact
+      181 tnactagcct ttgcctccgt agcccacata tgccgagacg tacaattcgg ctgactaatc
+      241 cgaaacctac acgcaaatgg agcctcattc ttcttcattt gcatctacct gcacattggc
+      301 cgaggaatct actacggatc ctacctaaac aaagaaacct gaaacatcgg agtcctactc
+      361 ctactaactc tcatagccac cgccttcgta ggctacgtcc tcccatgagg ccaaatatca
+      421 ttctgaggtg ccaccgtaat cacaaatcta ttctcagcta tcccctacat cggccaaaca
+      481 ctagtagaat gagcctgagg cggattctca gtagacaacc ctacattaac ccgattcttc
+      541 gcccttcact tcctcctccc cttcgttatc gcaggcctca cactagtcca tctcacactt
+      601 cttcatgaaa caggatccaa caacccccta ggaatcccat cagactgcga caaaatccca
+      661 ttccacccct actactccac aaaagacgtg ctcggcttcg cactcatatt cattcctctc
+      721 gcttccctag cactattcgc cccaaacttc ctaggggacc cagaaaactt cacgcctgcc
+      781 aaccccctag ccacaccacc tcacatcaaa ccagaatgat acttcctatt tgcctacgcc
+      841 atcctccgat ctatccccaa taaattaggt ggcgtactcg ccctagccgc ttccgttcta
+      901 gtcctgttcc tgataccact tctccacaca tccaaactac gctcaataac cttccgcccc
+      961 ctatcccaaa tcctattctg aaccctagtc gccaacttac tcatccttac ctgagtaggc
+     1021 agccaaccag tagaacaccc cttcatcatc atcggccaac tagcctcact ctcctacttc
+     1081 acaatcatcc taattctttt cccccttgta tctatcttag aaaacaaaat actcaaactg
+     1141 taa
+//
+
+LOCUS       AJ534548                1041 bp    DNA     linear   VRT 01-DEC-2003
+DEFINITION  Sylvia abyssinica mitochondrial partial cytb gene for cytochrome b.
+ACCESSION   AJ534548
+VERSION     AJ534548.1
+KEYWORDS    cytb gene; cytochrome b.
+SOURCE      mitochondrion Pseudoalcippe abyssinica
+  ORGANISM  Pseudoalcippe abyssinica
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Archosauria; Dinosauria; Saurischia; Theropoda;
+            Coelurosauria; Aves; Neognathae; Passeriformes; Timaliidae;
+            Pseudoalcippe.
+REFERENCE   1
+  AUTHORS   Bohning-Gaese,K., Schuda,M.D. and Helbig,A.J.
+  TITLE     Weak phylogenetic effects on ecological niches of Sylvia warblers
+  JOURNAL   J. Evol. Biol. 16 (5), 956-965 (2003)
+   PUBMED   14635911
+REFERENCE   2  (bases 1 to 1041)
+  AUTHORS   Helbig,A.J.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (09-DEC-2002) Helbig A.J., Vogelwarte Hiddensee,
+            University of Greifswald, Zum Hochland 17, D-18565 Kloster, GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1041
+                     /organism="Pseudoalcippe abyssinica"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:528194"
+                     /tissue_type="muscle"
+                     /country="Kenya:Aberdare Mountains"
+     gene            <1..1041
+                     /gene="cytb"
+     CDS             <1..1041
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CAD58955.1"
+                     /db_xref="GOA:Q70VV3"
+                     /db_xref="InterPro:IPR005797"
+                     /db_xref="InterPro:IPR005798"
+                     /db_xref="InterPro:IPR016174"
+                     /db_xref="InterPro:IPR016175"
+                     /db_xref="UniProtKB/TrEMBL:Q70VV3"
+                     /translation="GSLLGVCLVTQITTGLLLAMHYTADTSLAFSSVAHVCRDVQFGW
+                     LIRNLHANGASFFFICIYLHIGRGIYYGSYLNKETWNVGVVLLLALMATAFVGYVLPW
+                     GQMSFWGATVITNLFSAIPYIGQTLVEWLWGGFSVDNPTLTRFFALHFLLPFVIAGLT
+                     LVHLTLLHESGSNNPLGIPSDCDMIPFHPYYSTKDXLGFALMFIPLASLALFAPNLLG
+                     DPENFTPANPLATPPHIKPEWYFLFAYAILRSIPNKLGGVLALAASVLVLFLMPLLHT
+                     SKLRSMTFRPLSQILFWALVANLLVLTWVGSQPVEHPFIIIGQLASISYFTIILVLFP
+                     LVSILENKMLKL"
+ORIGIN      
+        1 ggatcactcc tgggtgtctg cctagtcaca caaatcacca caggactact actagccata
+       61 cactacacag cagacacttc attagccttt tcctccgtag ctcacgtatg ccgagatgta
+      121 caattcggat gactaatccg aaacctgcac gcaaacggag cctcattctt cttcatctgc
+      181 atctacttac acatcggccg aggaatctac tacggctctt atctaaataa agaaacctga
+      241 aacgtcggag ttgttctcct actagcccta atagccactg ccttcgtagg ctacgttctc
+      301 ccatgaggnc aaatatcatt ctgaggtgct acagtcatca caaacctatt ctcagccatc
+      361 ccctacatcg gccaaacact agtagaatgg ctctggggag gattctccgt tgataacccc
+      421 acactaactc gattcttcgc cctacacttc ctcctcccct tcgtcatcgc aggccttaca
+      481 ctagttcacc tcaccctcct acacgaatcc ggatctaaca accccctagg aatcccctca
+      541 gactgcgaca taattccatt ccacccttac tactccacaa aagacgnntt aggctttgca
+      601 ctaatattca tccctcttgc ctctctggca ttattcgccc ctaaccttct aggagaccca
+      661 gaaaatttca cgcccgccaa ccccctagcc acacctcctc acatcaaacc agaatgatac
+      721 ttcctatttg cctacgccat cttgcgatcc atcccaaaca aactcggtgg cgtactagcc
+      781 ctggccgcct cagtcctagt tctcttcctc atacccctcc tgcacacatc caaactacga
+      841 tcaataacct tccgcccatt atcacaaatc ctattctgag ccctagtagc caacctcctc
+      901 gtcctaacct gagtaggaag ccagccagta gaacacccat tcattatcat tggacaacta
+      961 gcctcaattt cctacttcac gatcatccta gtcctcttcc ccctagtgtc catcctggag
+     1021 aacaaaatac ttaaacttta a
+//
+
+LOCUS       AJ534549                1041 bp    DNA     linear   VRT 26-JUL-2016
+DEFINITION  Sylvia borin mitochondrial partial cytb gene for cytochrome b.
+ACCESSION   AJ534549
+VERSION     AJ534549.1
+KEYWORDS    cytb gene; cytochrome b.
+SOURCE      mitochondrion Sylvia borin (garden warbler)
+  ORGANISM  Sylvia borin
+            Eukaryota; Metazoa; Chordata; Craniata; Vertebrata; Euteleostomi;
+            Archelosauria; Archosauria; Dinosauria; Saurischia; Theropoda;
+            Coelurosauria; Aves; Neognathae; Passeriformes; Sylviidae;
+            Sylviinae; Sylvia.
+REFERENCE   1
+  AUTHORS   Bohning-Gaese,K., Schuda,M.D. and Helbig,A.J.
+  TITLE     Weak phylogenetic effects on ecological niches of Sylvia warblers
+  JOURNAL   J. Evol. Biol. 16 (5), 956-965 (2003)
+   PUBMED   14635911
+REFERENCE   2  (bases 1 to 1041)
+  AUTHORS   Helbig,A.J.
+  TITLE     Direct Submission
+  JOURNAL   Submitted (09-DEC-2002) Helbig A.J., Vogelwarte Hiddensee,
+            University of Greifswald, Zum Hochland 17, D-18565 Kloster, GERMANY
+FEATURES             Location/Qualifiers
+     source          1..1041
+                     /organism="Sylvia borin"
+                     /organelle="mitochondrion"
+                     /mol_type="genomic DNA"
+                     /db_xref="taxon:73324"
+                     /tissue_type="muscle"
+                     /country="Germany"
+     gene            <1..1041
+                     /gene="cytb"
+     CDS             <1..1041
+                     /gene="cytb"
+                     /codon_start=1
+                     /transl_table=2
+                     /product="cytochrome b"
+                     /protein_id="CAD58956.1"
+                     /db_xref="GOA:Q70VV2"
+                     /db_xref="InterPro:IPR005797"
+                     /db_xref="InterPro:IPR005798"
+                     /db_xref="InterPro:IPR016174"
+                     /db_xref="InterPro:IPR016175"
+                     /db_xref="UniProtKB/TrEMBL:Q70VV2"
+                     /translation="GSLLGLCLVTQITTGLLLAMHYTADTSLAFSSVAXMCQDVQFSW
+                     LIRNLYANGASFFFICIYLHIGRGIYYGSYLNKETWNVRVILLLTLMATSFVGYVLPW
+                     GQMSFWGATVITNLFSAIPYISQMLVEWAWGGFSVDNPPLTWFFALHFLLLFIIAGLT
+                     LVHLTLLQESGSNNPLGIPSDCDKIPFHSYYSTKDVLGFTLMFIPLASLALFAPNLLG
+                     DPENFAPANPLATPPHIKPEWYFLXAYAILRSIPNKLGGVLALAASVLVLSLIPLLHT
+                     SKLRSMTFRPLSQILFWTLVANLLVLTWVGSQPVEHPXIIIGQLASLSYFTIILILFP
+                     LVSILENKMLKL"
+ORIGIN      
+        1 ggatcactcc taggcctctg cctagtcaca cagatcacca caggcctatt actagccata
+       61 cactacacag cagatacctc attagccttt tcctccgtag ctcanatatg ccaagacgta
+      121 caattcagct gactaatccg aaacctatac gcaaacggag cctcattctt cttcatttgc
+      181 atctaccttc acattggccg aggaatctac tacggctctt acctaaacaa agaaacctga
+      241 aacgtacgag ttatcctcct attaaccctt atagctacca gcttcgtagg ttatgttctt
+      301 ccatgaggac aaatatcatt ctgaggcgct acagtcatca caaacctgtt ctcagccatc
+      361 ccatacatca gccaaatgct agtagagtgg gcctgaggtg gattctcagt agacaacccc
+      421 ccactgacct gattcttcgc cctacacttc ctccttctgt tcattattgc aggtcttaca
+      481 ctagtccacc tcaccctact acaagaatct ggatccaaca accccctggg gatcccctca
+      541 gattgcgaca aaatcccatt ccactcttac tattccacaa aggatgtcct aggctttaca
+      601 ctcatattta tccccctcgc ctccttagca ctattcgccc ctaaccttct aggggaccca
+      661 gaaaatttcg cgcccgccaa ccccctagct actcctcccc acatcaaacc agaatggtac
+      721 ttcctattng cctatgctat cctacgatcc attccaaaca aacttggtgg tgtactagcc
+      781 ctagccgcct ctgtcctagt cctctccctc attcccctac tacacacatc taaactacgc
+      841 tcaataactt tccgaccctt atcacaaatc ttattctgaa ccctagtcgc caacctcctt
+      901 gttctcacct gagtaggaag ccaaccagta gaacacccct tnatcatcat tgggcaacta
+      961 gcntcgctct cctacttcac aatcattcta atcctattcc cccttgtatc tattctagaa
+     1021 aacaaaatac tcaaactata a
+//
+
+

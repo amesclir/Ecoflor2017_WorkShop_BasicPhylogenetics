@@ -1,0 +1,1846 @@
+---
+title: "APE"
+author: "amesclir"
+date: "11/08/2016"
+output: html_document
+---
+
+Chapter 1, Chapter 2, Chapter 3
+```{r}
+
+library(ape)
+library(ade4)
+library(seqinr)
+library(phyloch)
+library(adephylo)
+library(phylobase)
+library(phangorn)
+library(cluster)
+
+tr <- read.tree("treefile.tre")
+trx <- read.nexus("treefile.nex")
+tr <- read.tree()
+(a:1,b:1);
+
+a <- "(a:1,b:1);"
+tr <- read.tree(text = a)
+
+#Import DNA data
+read.dna() #fasta
+read.nexus.data #nexus
+read.GenBank
+read.aa
+read.phyDat
+read.alignment
+
+choosebank()
+s <- choosebank("genbank")
+rampho <- query("rampho", "sp=Ramphocelus@")
+rampho
+names(rampho)
+rampho$req
+
+x <- getSequence(rampho)
+length(x)
+length(x[[1]])
+x[[1]][1:20]
+
+y <- read.GenBank("AF310048")
+length(y[[1]])
+attr(y, "species")
+identical(x[[1]], as.character(y[[1]]))
+
+write.tree(tr, file = "treefile.tre")
+write.nexus(tr, file = "treefile.nex")
+
+write.nexus(tr1, tr2, tr3, file = "treefile.nex")
+L <- list(tr1, tr2, tr3)
+write.nexus(L, file = "treefile.nex")
+
+write.dna
+write.nexus.data
+
+
+tr <- read.tree(text = "((a:1,b:1):1,(c:1,d:1):1);")
+plot(tr)
+write.tree(drop.tip(tr, c("a", "b")))
+tr2 <- drop.tip(tr, c("a", "b"))
+plot(tr2)
+write.tree(drop.tip(tr, 1:2)) # same as above
+tr3 <- drop.tip(tr, 1:2)
+plot(tr3)
+write.tree(drop.tip(tr, 3:4, trim.internal = FALSE))
+tr4 <- drop.tip(tr, 3:4, trim.internal = FALSE)
+plot(tr4)
+write.tree(extract.clade(tr, node = 6))
+tr5 <- extract.clade(tr, node = 6)
+plot(tr5)
+
+
+t1 <- read.tree(text = "(a:1,b:1):0.5;")
+plot(t1)
+t2 <- read.tree(text = "(c:1,d:1):0.5;")
+plot(t2)
+write.tree(bind.tree(t1, t2))
+t3 <- bind.tree(t1, t2)
+plot(t3)
+write.tree(bind.tree(t1, t2, position = 0.5))
+
+write.tree(t1 + t2)
+t3 <- t1 + t2
+plot(t3)
+
+write.tree(rotate(t1, 3))
+plot(rotate(t1, 3))
+
+
+ta <- read.tree(text = "(a,b,c);")
+tb <- read.tree(text = "(a,b,c):1;")
+tc <- read.tree(text = "((a,b),c);")
+is.rooted(ta)
+is.rooted(tb)
+is.rooted(tc)
+root
+unroot
+
+plot(tr)
+plot(ta <- root(tr, interactive = TRUE))
+
+multi2di
+di2multi
+
+is.ultrametric(tr)
+balance(tr)
+coalescent.intervals(tr)
+
+t1 <- read.tree(text = "((a:1,b:1):1,c:2);")
+t2 <- read.tree(text = "(c:2,(a:1,b:1):1);")
+all.equal(t1, t2)
+t3 <- read.tree(text = "(c:1,(a:1,b:1):1);")
+all.equal(t1, t3)
+all.equal(t1, t3, use.edge.length = FALSE)
+
+isTRUE(all.equal(t1, t2))
+
+ta <- read.tree(text = "(((a:1,b:1):1,c:2):1,d:3);")
+tb <- read.tree(text = "(((a:0.5,b:0.5):1.5,d:2):1,c:3);")
+compare.phylo(ta, tb, presCol = "white", absCol = "black", tsCol="darkgrey", font = 1)
+
+library(distory)
+distinct.edges(ta, tb)
+distinct.edges(ta, ta)
+
+TR <- rmtree(10, 5)
+TR
+attr(TR, "TipLabel")
+TRcompr <- .compressTipLabel(TR)
+attr(TRcompr, "TipLabel")
+TR[[1]] <- rtree(10)
+TRcompr[[1]] <- rtree(10)
+.compressTipLabel(TR)
+TRcompr[11:20] <- rmtree(10, 10)
+TRcompr[11:20] <- rmtree(10, 5)
+
+
+rbind
+#to combines two matrices of the same marker
+cbind
+#to combines two matrices of different markers
+fill.with.gaps
+#option for supermatrices
+as.matrix
+#from list of sequences to a matrix
+dist.dna
+#from list of sequences to a matrix
+del.gaps
+#from matrix to list of sequences, removing gaps
+as.list
+#from matrix to list of sequences
+
+x <- scan(what= "")
+a c g t g g t c a t
+x
+comp(x)
+
+c2s(x)
+s2c(c2s(x))
+
+splitseq(x)
+splitseq(x, frame = 1)
+splitseq(x, word = 5)
+
+translate(x)
+translate(x, frame = 1)
+translate(x, frame = 2)
+translate(x, frame = 3)
+translate(x, frame = 4)
+aaa(translate(x))
+a(aaa(translate(x)))
+
+base.freq
+GC.content
+seg.sites
+Ftab
+
+count(x, word = 1)
+count(x, word = 2)
+count(x, word = 3)
+
+GC(x)
+GC2(x)
+GC3(x)
+
+as.dendrogram(as.hclust(tr))
+#Tables 3.4 and 3.4 are quite important
+
+makeLabel(tr, len = 99, space = "_", make.unique = TRUE, illegal = "():;,[]", quote = FALSE)
+
+LABELS <- data.frame(original = rownames(X),
+phyml = makeLabel(rownames(X)),
+clustal = makeLabel(rownames(X), 30),
+phylip = makeLabel(rownames(X), 10),
+stringsAsFactors = FALSE)
+
+rownames(X) <- LABELS$phyml
+write.dna(X, "X.txt")
+o <- match(tr$tip.label, LABELS$phyml)
+tr$tip.label <- LABELS$original[o]
+rownames(X) <- LABELS$original
+
+mixedFontLabel(..., sep = " ", italic = 0, bold = 0,
+parenthesis = 0,
+always.roman = c("sp.", "spp.", "ssp."))
+
+tr$tip.label <- mixedFontLabel(tr$tip.label, geo, paren = 2)
+plot(tr)
+
+tr <- makeNodeLabel(tr, "user",
+nodeList = list(Primates = primates, Rodentia = rodents))
+
+#PHYLOCH!!!!!
+#ALIGMENTS
+mafft(x, method = "localpair", maxiterate = 1000, op = 1.53, ep = 0.123)
+prank(x, outfile, guidetree = NULL, gaprate = 0.025, gapext = 0.75)
+clustal(x, pw.gapopen = 10, pw.gapext = 0.1, gapopen = 10, gapext = 0.2, exec = NULL, MoreArgs = "", quiet = TRUE)
+muscle(x, exec = "muscle", MoreArgs = "", quiet = TRUE)
+tcoffee(x, exec = "t_coffee", MoreArgs = "", quiet = TRUE)
+
+x <- woodmouse[, 1:50]
+image(x, c("g", "n"), c("black", "grey"))
+grid(ncol(x), nrow(x), col = "lightgrey")
+
+
+####3.8 Case Studies
+###3.8.1 Sylvia Warblers
+x <- paste("AJ5345", 26:49, sep = "")
+x <- c("Z73494", x)
+x
+sylvia.seq <- read.GenBank(x)
+
+sylvia.seq
+sylvia.clus <- clustal(sylvia.seq)
+library(phyloch)
+sylvia.maff <- mafft(sylvia.seq)
+
+identical(sylvia.clus[x, ], sylvia.maff[x, ])
+
+taxa.sylvia <- attr(sylvia.seq, "species")
+names(taxa.sylvia) <- names(sylvia.seq)
+rm(sylvia.seq)
+
+taxa.sylvia[c(1, 24)]
+
+taxa.sylvia[1] <- "Sylvia_atricapilla"
+taxa.sylvia[24] <- "Sylvia_abyssinica"
+taxa.sylvia
+
+sylvia.eco <- read.table("sylvia_data.txt")
+str(sylvia.eco)
+rownames(sylvia.eco)
+save(sylvia.clu, taxa.sylvia, sylvia.eco, file = "sylvia.RData")
+
+#3.8.2 Mammalian Mitochondrial Genomes
+mtgen.taxa <- read.table("mammal_mtGenome.fasta", skip = 4, 
+nrows = 233, sep = "_", comment.char = "(", as.is = TRUE)
+
+mtgen.taxa <- read.table("http://idv.sinica.edu.tw/cychen0704/mammal_mtGenome.fasta", skip = 4, 
+nrows = 233, sep = "_", comment.char = "(", as.is = TRUE)
+
+mtgen.taxa[1:5, ]
+mtgen.taxa$V3 <- NULL
+mtgen.taxa$V1 <- gsub("#", "", mtgen.taxa$V1)
+mtgen.taxa$V1 <- gsub(" : ", "", mtgen.taxa$V1)
+colnames(mtgen.taxa) <- c("code", "species")
+mtgen.taxa[1:5, ]
+
+
+#mtgen <- read.dna("mammal_mtGenome.fasta", format = "fasta", skip = 239)
+mtgen <- read.dna("http://idv.sinica.edu.tw/cychen0704/mammal_mtGenome.fasta", format = "fasta", skip = 239)
+
+length(mtgen)
+names(mtgen)[1:10]
+
+genes <- gsub("^[[:alnum:]]{1,}\\(", "", names(mtgen))
+genes <- gsub("\\)$", "", genes)
+
+unique(genes)[15]
+
+i <- grep("Sequence does not exist", names(mtgen))
+mtgen <- mtgen[-i]
+genes <- gsub("^[[:alnum:]]{1,}\\(", "", names(mtgen))
+genes <- gsub("\\)$", "", genes)
+table (genes)
+
+BF.sp <- matrix(NA, nrow = 233, ncol = 4)
+rownames(BF.sp) <- mtgen.taxa$species
+colnames(BF.sp) <- c("A", "C", "G", "T")
+for (i in 1:233) {
+x <- grep(mtgen.taxa$code[i], names(mtgen))
+BF.sp[i, ] <- base.freq(mtgen[x])
+}
+matplot(BF.sp, type = "l", col = 1, xlab = "Species", ylab = "Base frequency")
+legend(0, 0.22, c("A", "C", "G", "T"), lty=1:4, bty="n")
+
+BF.gene <- matrix(NA, nrow = 39, ncol = 4)
+rownames(BF.gene) <- unique(genes)
+colnames(BF.gene) <- c("A", "C", "G", "T")
+for (i in 1:nrow(BF.gene)) {
+x <- grep(rownames(BF.gene)[i], names(mtgen), fixed=TRUE)
+BF.gene[i, ] <- base.freq(mtgen[x])
+}
+par(mar = c(8, 3, 3, 2))
+barplot(t(BF.gene), las = 2, legend = TRUE, args.legend = list(horiz = TRUE, bg = "white"))
+cox1 <- mtgen[grep("COX1", names(mtgen))]
+cox1
+table(sapply(cox1, length))
+cox1.muscle <- muscle(cox1)
+cox1.mafft <- mafft(cox1)
+cox1.clustal <-clustal(cox1)
+dim(cox1.muscle)
+dim(cox1.mafft)
+nm <- rownames(cox1.muscle)
+identical(cox1.muscle[, 1:1532], cox1.mafft[nm, 1:1532])
+cox1.ali <- cox1.muscle[, 1:1532]
+
+BF.cox1 <- matrix(NA, 3, 4)
+rownames(BF.cox1) <- paste("codon position", 1:3)
+colnames(BF.cox1) <- c("A", "C", "G", "T")
+for (i in 1:3) {
+s <- rep(FALSE, 3)
+s[i] <- TRUE
+BF.cox1[i, ] <- base.freq(cox1.ali[, s])
+}
+BF.cox1
+
+par(mar = c(2.5, 4.1, 4.1, 1))
+barplot(t(BF.cox1), main = "Cytochrome oxydase I",
+ylab = "Base frequency")
+par(cex = 2)
+text(0.7, BF.cox1[1, 1]/2, "A", col = "white")
+text(0.7, BF.cox1[1,1]+BF.cox1[1,2]/2, "C", col = "white")
+text(0.7, sum(BF.cox1[1, 1:2]) + BF.cox1[1, 3]/2, "G")
+text(0.7, sum(BF.cox1[1, 1:3]) + BF.cox1[1, 4]/2, "T")
+
+#3.8.3 Butterfly DNA Barcodes
+x <- paste("AY66", 6597:7060, sep = "")
+x <- c(x, "AY724411", "AY724412")
+astraptes.seq <- read.GenBank(x)
+table(sapply(astraptes.seq, length))
+astraptes.seq.ali <- clustal(astraptes.seq)
+table(attr(astraptes.seq, "species"))
+taxa.astraptes <- attr(astraptes.seq, "species")
+names(taxa.astraptes) <- names(astraptes.seq)
+save(astraptes.seq.ali, taxa.astraptes, file = "astraptes.RData")
+
+
+```
+
+
+Chapter 4
+
+```{r}
+resetPar <- function() {
+    dev.new()
+    op <- par(no.readonly = TRUE)
+    dev.off()
+    op
+}
+par(resetPar())
+
+tr <- read.tree("rodent.tre")
+plot(tr)
+plot(tr, type = "c", use.edge.length = FALSE, direction = "l")
+#Table 4.1 is important
+
+par("mar")
+par(mar = rep(1, 4))
+par(mar = rep(0, 4))
+
+tr.sett <- plot(tr)
+names(tr.sett)
+
+plot(tr, x.lim = c(0, 0.264))
+plot(tr, x.lim = c(-0.132, 0.132))
+
+plot(tr, type = "u", font = 1, no.margin = TRUE)
+plot(tr, "fan")
+plot(tr, "radial")
+
+#Table 4.2 is important
+
+plot(tr); nodelabels(); tiplabels(); edgelabels()
+
+
+trape <- read.tree(text = "((Homo,Pan),Gorilla);")
+plot(trape, x.lim = c(-0.1, 2.2))
+nodelabels("6.4 Ma", 4, frame = "c", bg = "white")
+nodelabels("5.4 Ma", 5, frame = "c", bg = "white")
+
+plot(trape, x.lim = c(-0.1, 2.2))
+nodelabels(c("6.4 Ma", "5.4 Ma"), frame = "c", bg = "white")
+
+plot(tr)
+nodelabels(bs, adj = 0, frame = "n")
+
+plot(tr)
+nodelabels(tr$node.label, adj = 0, frame = "n")
+
+bs.pars <- scan()
+NA 76 34 54 74 100 56 91 74 60 63 100 100
+bs.nj <- scan()
+NA 74 48 68 75 100 NA 91 67 82 52 100 100
+bs.ml <- scan()
+NA 88 76 73 71 100 45 81 72 67 63 100 100
+
+plot(tr, no.margin = TRUE)
+nodelabels(bs.pars, adj = c(-0.2, -0.1), frame = "n",
+cex = 0.8, font = 2)
+nodelabels(bs.nj, adj = c(1.2, -0.5), frame = "n",
+cex = 0.8, font = 3)
+nodelabels(bs.ml, adj = c(1.2, 1.5), frame = "n", cex = 0.8)
+add.scale.bar(length = 0.01)
+
+plot(tr, no.margin = TRUE)
+nodelabels(thermo = bs.ml/100, piecol = "grey")
+
+p <- character(length(bs.ml))
+p[bs.ml >= 90] <- "black"
+p[bs.ml < 90 & bs.ml >= 70] <- "grey"
+p[bs.ml < 70] <- "white"
+p
+
+co <- c("black", "grey", "white")
+
+p <- character(length(bs.ml))
+p[bs.ml >= 90] <- co[1]
+p[bs.ml < 90 & bs.ml >= 70] <- co[2]
+p[bs.ml < 70] <- co[3]
+
+plot(tr, no.margin = TRUE)
+nodelabels(node = 16:27, pch = 21, bg = p[-1], cex = 2)
+
+points(rep(0.005, 3), 1:3, pch = 21, cex = 2, bg = co)
+text(rep(0.01, 3), 1:3, adj = 0,
+c("90 <= BP", "70 <= BP < 90", "BP < 70"))
+
+legend("bottomleft", legend = expression(90 <= BP,
+70 <= BP * " < 90", BP < 70),
+pch = 21,
+pt.bg = co, pt.cex = 2, bty = "n")
+
+o <- plot(trape)
+plot(trape, show.tip.label = FALSE, x.lim = o$x.lim)
+
+tiplabels(trape$tip.label, adj = 0, bg = c("white", "black",
+"white"), col = c("black", "white", "black"))
+
+tiplabels(trape$tip.label[2], 2, adj = 0,
+bg = "black", col = "white")
+tiplabels(trape$tip.label[-2], c(1, 3), frame = "n", adj = 0)
+
+tree.owls <- read.tree(text = "(((Strix_aluco:4.2,
+Asio_otus:4.2):3.1,Athene_noctua:7.3):6.3,
+Tyto_alba:13.5);")
+plot(tree.owls, x.lim = 19)
+box(lty = 2)
+text(2, 1.5, "This is a node", font = 2)
+arrows(3.5, 1.55, 6.1, 2.2, length = 0.1, lwd = 2)
+text(0.5, 3.125, "Root", srt = 270)
+points(rep(18.5, 4), 1:4, pch = 15:18, cex = 1.5)
+mtext("Simple text above")
+mtext("Text above with \"line = 2\"", at = 0, line = 2)
+mtext("Text below (\"side = 1\")", side = 1)
+mtext("Text in the left-hand margin (\"side = 2\")",
+side = 2, line = 1)
+
+text(locator(1), "Some text")
+
+identify(tr, nodes = TRUE, tips = FALSE, labels = FALSE)
+
+identify(tree.owls)
+
+identify(tree.owls, tips = TRUE)
+
+identify(tree.owls, tips = TRUE, labels = TRUE)
+
+nodelabels("Some text", identify(tree.owls)$nodes)
+
+data(bird.orders)
+plot(bird.orders, font = 1, x.lim = 40,
+no.margin = TRUE)
+segments(38, 1, 38, 5, lwd = 2)
+text(39, 3, "Proaves", srt = 270)
+segments(38, 6, 38, 23, lwd = 2)
+text(39, 14.5, "Neoaves", srt = 270)
+
+wh <- which.edge(bird.orders, 19:23)
+wh
+colo <- rep("black", Nedge(bird.orders))
+colo[wh] <- "grey"
+plot(bird.orders, "c", FALSE, font = 1, edge.color = colo,
+edge.width = 3, no.margin = TRUE)
+
+plot(bird.orders, font = 1)
+rect(1.2, 0.5, 36, 5.4, lty = 2)
+
+plot(bird.orders, font = 1, no.margin = TRUE, draw = FALSE)
+rect(1.2, 0.5, 36, 5.4, col = "lightgrey")
+par(new = TRUE)
+plot(bird.orders, font = 1, no.margin = TRUE)
+
+
+X <- phylo4d(rcoal(20), matrix(rnorm(100), 20))
+table.phylo4d(X, box = FALSE)
+
+Orders.dat <- scan()
+10 47 69 214 161 17 355 51 56 10 39 152
+6 143 358 103 319 23 291 313 196 1027 5712
+names(Orders.dat) <- bird.orders$tip.label
+Orders.dat
+plot(bird.orders, x.lim = 50, font = 1, cex = 0.8)
+segments(rep(40, 23), 1:23, rep(40, 23) +
+log(Orders.dat), 1:23, lwd = 3)
+axis(1, at = c(40, 45, 50), labels = c(0, 5, 10))
+mtext("ln(species richness)", at = 45, side = 1, line = 2)
+axisPhylo()
+
+layout(matrix(1:4, 2, 2))
+matrix(1:4, 2, 2)
+matrix(c(1, 1, 2, 3), 2, 2)
+matrix(1:16, 4, 4)
+matrix(c(2, 1, 1, 1), 2, 2)
+
+layout(matrix(c(2, rep(1, 8)), 3, 3))
+plot(bird.orders, "p", FALSE, font = 1,
+no.margin = TRUE)
+arrows(4.3, 15.5, 6.9, 12, length = 0.1)
+par(mar = c(2, 2, 0, 0))
+hist(rnorm(1000), main = "")
+
+trk <- read.tree("rodent_clock.tre")
+trc <- chronopl(tr, lambda = 2, age.min = 12)
+layout(matrix(1:2, 1, 2))
+plot(trk)
+plot(trc, show.tip.label = FALSE, direction = "l")
+
+trk$tip.label <- gsub("Apodemus", "A.", trk$tip.label)
+
+trk$tip.label <- gsub("[[:lower:]]{1,}_", "._", trk$tip.label)
+
+layout(matrix(1:2, 1, 2), width = c(1.4, 1))
+par(mar = c(4, 0, 0, 0))
+plot(trk, adj = 0.5, cex = 0.8, x.lim = 16)
+nodelabels(node = 26, "?", adj = 2, bg = "white")
+axisPhylo()
+plot(trc, show.tip.label = FALSE, direction = "l")
+axisPhylo()
+
+layout(matrix(1:2, 2, 1))
+plot(trk); title("trk"); axisPhylo()
+plot(trc); title("trc"); axisPhylo()
+
+TR <- read.tree("host_parasite.tre")
+
+A <- matrix(NA,6, 2)
+A[,1] <- c("C.hispidus", "C.formosus", "C.eremicus", "C.intermedius", "C.californicus", "C.baileyi")
+A[,2] <- c("F.zacatecae-C.h.", "F.reducta-C.f.", "F.zacatecae-C.e.", "F.zacatecae-C.i.", "F.tribulosa-C.c.", "F.reducta-C.b.")
+colnames(A) <- c("col1", "col2")
+cophyloplot(TR[[1]], TR[[2]], A, space = 40,
+length.line = -3, lty = 2)
+
+TR <- replicate(6, rcoal(10), simplify = FALSE)
+kronoviz(TR, horiz = FALSE, type = "c", show.tip.label=FALSE)
+
+
+drop.tip(tr, tr$tip.label[-x])
+drop.tip(tr, which(!tr$tip.label %in% x))
+
+data(chiroptera)
+tr <- drop.tip(chiroptera, 16:916, subtree = TRUE)
+plot(tr, font = c(rep(3, 15), rep(2, 3)), cex = 0.8,
+no.margin = TRUE)
+
+
+plot(chiroptera)
+X11()
+plot(tr)
+
+data(bird.families)
+zoom(bird.families, 1:15, col = "grey", no.margin = TRUE,
+font = 1, subtree = TRUE)
+
+zoom(bird.families, list(1:15, 38:48),
+col = c("lightgrey", "slategrey"),
+no.margin = TRUE, font = 1, subtree = TRUE)
+
+
+net <- evonet(stree(4, "balanced"), 6, 7)
+net
+
+plot(net, type = "c", col = "darkgrey", alpha = 1,
+arrows = 3, arrow.type = "h")
+
+ntx <- as.networx(compute.brlen(net, 1))
+plot(ntx, "2D", edge.width = 1, tip.color = "black")
+
+library(network)
+library(igraph)
+layout(matrix(1:2, 1))
+plot(as.network(net), vertex.col="white", displaylabels=TRUE)
+plot(as.igraph(net), vertex.color = "white")
+
+library(rgl)
+open3d()
+plot(ntx, edge.width = 1, tip.color = "black")
+
+play3d(spin3d())
+
+movie3d(spin3d(), 12, fps = 1, convert = FALSE, dir = ".")
+
+TR <- rmtree(10, 10)
+library(animation)
+saveHTML(lapply(TR, plot))
+
+saveHTML(
+for (b in c("a", "g", "c", "t", "-", "n"))
+image(woodmouse, b, "blue"),
+ani.height = 800, ani.width = 1200)
+
+saveHTML(
+for (i in seq(1, 901, 50)) {
+image(woodmouse[, i:(i + 49)])
+mtext(c(i, i + 50), at = c(1, 50), line = 1, font = 2)
+},
+ani.height = 800, ani.width = 1200)
+
+saveLatex(
+for (i in seq(1, 901, 50)) {
+image(woodmouse[, i:(i + 49)])
+mtext(c(i, i + 50), at = c(1, 50), line = 1, font = 2)
+},
+ani.opts = "controls,loop,width=0.95\\textwidth",
+latex.filename = "woodmouse.tex",
+interval = 0.1, nmax = 10, ani.dev = "pdf",
+ani.type = "pdf", ani.width = 7, ani.height = 7)
+
+for (i in seq(1, 901, 50)) {
+image(woodmouse[, i:(i + 49)])
+mtext(c(i, i + 50), at = c(1, 50), line = 1, font = 2)
+Sys.sleep(1)
+}
+
+
+
+```
+
+Chapter 5
+```{r}
+
+X <- matrix(c(0, 1, 5), 3, 3)
+rownames(X) <- LETTERS[1:3]
+X
+
+dist(X)
+dist(X, method = "maximum")
+dist(X, method = "manhattan")
+dist(X, "binary")
+
+d <- dist(X)
+class(d)
+as.matrix(d)
+
+daisy(X, "gower")
+
+Y <- as.data.frame(apply(X, 2, factor))
+Y
+daisy(Y, "gower")
+
+dist.quant(X, 1) # canonical
+dist.quant(X, 2) # Joreskog
+dist.quant(X, 3) # Mahalanobis
+
+dist.dna #important function
+
+djc69 <- dist.dna(x, "JC69")
+dk81 <- dist.dna(x, "K81")
+plot(djc69, dk81)
+abline(b = 1, a = 0)
+
+all(attr(djc69, "Labels") == attr(dk81, "Labels"))
+
+data(woodmouse)
+dw <- dist.dna(woodmouse)
+x <- replicate(5, rnorm(15))
+dx <- dist(x)
+delta.plot(dw)
+delta.plot(dx)
+
+M <- dist.dna(woodmouse)
+tr <- upgma(M)
+plot(tr)
+
+M1 <- dist.dna(woodmouse) # K80 is the default
+tr1 <- upgma(M1)
+M2 <- dist.dna(woodmouse, model = "F84")
+tr2 <- upgma(M2)
+layout(matrix(1:2, 2, 1))
+plot(tr1, main = "Kimura (80) distances")
+plot(tr2, main = "Felsenstein (84) distances")
+
+mod <- list("JC69", "K80", "F81", "F84")
+lapply(mod, function(m) nj(dist.dna(X, model = m)))
+
+trw <- nj(dist.dna(woodmouse))
+which(trw$edge.length < 0)
+trw$edge.length[5]
+
+fastme.ols(X, nni = TRUE)
+fastme.bal(X, nni = TRUE, spr = TRUE, tbr = TRUE)
+
+d <- dist.dna(woodmouse)
+tr.nj <- nj(d)
+dt.nj <- cophenetic(tr.nj)
+dmat <- as.matrix(d)
+nms <- rownames(dmat)
+dt.nj <- dt.nj[nms, nms]
+dt.nj <- as.dist(dt.nj)
+plot(dt.nj - d, ylab = "distance residuals")
+abline(h = 0, lty = 3)
+
+
+Q <- matrix(c(-0.1, 0.1, 0.1, -0.1), 2)
+Q
+matexpo(Q) # t = 1
+matexpo(10*Q) # t = 10
+matexpo(1000*Q) # t = 10
+
+Q <- matrix(c(-0.005, 0.095, 0.005, -0.095), 2)
+Q
+matexpo(Q) # t = 1
+matexpo(Q*1000) # t = 1000
+
+
+round(dist.dna(woodmouse, "BH87")[1:6, 1:6], 4)
+
+pab <- (1 - exp(-4 * 0.05))/4
+pab
+Px <- matrix(pab, 4, 4)
+diag(Px) <- 1 - 3 * pab
+Px
+
+paby <- (1 - exp(-4 *2* 0.05))/4
+paby
+Py <- matrix(pab, 4, 4)
+diag(Py) <- 1 - 3 * paby
+Py
+
+Lx <- Ly <- c(1, 0, 0, 0)
+for (i in 1:4) print(sum(Px[i, ]*Lx) * sum(Py[i, ]*Ly))
+colSums(Px * Lx) * colSums(Py * Ly)
+
+Ly <- c(0, 0, 0, 1)
+colSums(Px * Lx) * colSums(Py * Ly)
+
+#phagorn!!!!!
+pml(tree, data, bf = NULL, Q = NULL, inv = 0, k = 1,
+shape = 1, rate = 1, model = "", ...)
+
+tr <- read.tree(text = "(y:2,x:1);")
+x <- matrix(c("a", "a", "a", "t"), 2, 2)
+rownames(x) <- c("x", "y")
+x <- as.phyDat(x)
+pml(tr, x, rate = .05/.25)
+
+#phagorn!!!!!
+optim.pml(object, optNni=FALSE, optBf=FALSE, optQ=FALSE,
+optInv=FALSE, optGamma=FALSE, optEdge=TRUE, optRate=FALSE,
+control=pml.control(eps=1e-08, maxit=10, trace=1),
+model=NULL, subs=NULL, ...)
+
+tw <- nj(dist.dna(woodmouse))
+x <- as.phyDat(woodmouse)
+o1 <- pml(tw, x)
+o2 <- optim.pml(o1)
+o2
+
+ctr <- pml.control(trace = 0)
+optim.pml(o1, optRate = TRUE, control = ctr)
+
+o3 <- optim.pml(o1, optRate=TRUE, optEdge=FALSE, control=ctr)
+o3$rate
+
+o4 <- optim.pml(o1, optBf=TRUE, optQ=TRUE, control=ctr)
+o4
+
+anova(o2, o4)
+
+o5 <- optim.pml(pml(tw, x, k = 4), optBf=TRUE, optQ=TRUE,
+optGamma = TRUE, control = ctr)
+o5
+
+
+anova(o4, o5)
+
+x
+str(attr(x, "index"))
+w <- table(attr(x, "index"), rep(1:3, length.out = 965))
+dim(w)
+w[11:15, ]
+o6 <- pmlPart(~ rate, o2, weight = w, control = ctr)
+o6
+pchisq(2*(1857.168 - 1827.652), 2, lower.tail = FALSE)
+o7 <- pmlPart(~ rate + shape, o5, weight = w, control = ctr)
+o7
+pchisq(1743.367 - 1714.530, 4, lower.tail = FALSE)
+o8 <- pmlPart(~ rate, o5, weight = w, control = ctr)
+o8
+
+
+o9 <- pmlMix(~ rate, o2, m = 4, control = ctr)
+o9
+logLik(optim.pml(update(o2, k = 4), optGamma = TRUE,control = ctr))
+
+
+raxml(seq, runs = 10, partition = NULL, outgroup = NULL,
+backbone = NULL, path = "/Applications/RAxML-7.0.4",
+optimize = FALSE, clear = TRUE, file = "fromR")
+
+
+MLtree <- raxml(woodmouse, path = "~/local/bin/RAXML2/", clear=TRUE, file  = "~/local/bin/RAXML2/fromR")
+         
+
+phymltest(seqfile, format = "interleaved", itree = NULL,
+exclude = NULL, execname = NULL, append = TRUE)
+
+#setwd("~/local/bin/PhyML-3.1/")
+phymltest("~/local/bin/PhyML-3.1/fromR", execname = "~/local/bin/PhyML-3.1/PhyML-3.1_linux64")
+
+#phymltest("~/local/bin/PhyML-3.1/fromR", format = "sequential", itree = NULL,
+#exclude = NULL, execname = NULL, append = TRUE)
+
+modelTest(x, G = FALSE, I = FALSE)
+
+
+alpha <- lnL <- numeric(1e6)
+for (i in 1:1e6) {
+tr <- rtree(n, rooted = FALSE, tip.label = names(x),
+br = runif, min = 0, max = 0.1)
+alpha[i] <- runif(1)
+lnL[i] <- pml(tr, x, rate = alpha[i])$logLik
+}
+
+o <- hist(alpha*lnL/sum(alpha*lnL), 50, xaxt = "n",
+main = "", xlab = expression(alpha))
+axis(1, at = seq(min(o$breaks), max(o$breaks), length.out=5),
+labels = seq(min(alpha), max(alpha), length.out = 5))
+
+
+alpha <- lnL <- numeric(1e3)
+tr <- rtree(n, rooted = FALSE, tip.label = names(x),
+br = runif, min = 0, max = 0.1)
+alpha[1] <- runif(1)
+lnL[1] <- pml(tr, x, rate = alpha[1])$logLik
+i <- 2
+while (i <= 1e3) {
+tr2 <- rNNI(tr)
+tr2$edge.length <- tr2$edge.length
++ rnorm(2*n - 3, sd = 0.1)
+tr2$edge.length[tr2$edge.length < 0] <- 0
+tr2$edge.length[tr2$edge.length > 0.1] <- 0.1
+alpha[i] <- runif(1)
+lnL[i] <- pml(tr2, x, rate = alpha[i])$logLik
+accept <- if (lnL[i] >= lnL[i - 1]) TRUE
+else as.logical(rbinom(1, size = 1,
+prob = exp(lnL[i] - lnL[i - 1])))
+if (accept) {
+tr <- tr2
+i <- i + 1
+}
+}
+
+plot(lnL, type="l", xlab="Generation", ylab="Log-likelihood")
+
+
+mrbayes(x, file, nst = 6, rates = "invgamma", ngammacat = 4,
+nruns = 2, ngen = 1e+06, printfreq = 100, samplefreq = 10,
+nchains = 4, savebrlens = "yes", temp = 0.2, burnin = 10,
+contype = "allcompat", path="/Applications/mrbayes-3.1.2/",
+run = TRUE)
+
+getwd()
+setwd("/home/amesclir/local/bin/mrbayes-3.2.6/src")
+mrbayes(woodmouse, file = "", ngen = 100, run = TRUE)
+
+mrbayes(woodmouse, file = "", nst = 6, rates = "invgamma", ngammacat = 4,
+nruns = 2, ngen = 1000, printfreq = 100, samplefreq = 10,
+nchains = 4, savebrlens = "yes", temp = 0.2, burnin = 10,
+contype = "allcompat", path="/home/amesclir/local/bin/mrbayes-3.2.6/src",
+run = TRUE)
+
+# DNA sequence data:
+# ------------------
+data(woodmouse)
+x <- woodmouse[,1:60] # tiny alignment
+
+# print NEXUS file with MrBayes block to working directory
+# --------------------------------------------------------
+mrbayes(x, file = "", ngen = 100, run = T)
+
+
+parsimony(tw, x)
+pars.tr <- optim.parsimony(tr, x)
+pars.tr$edge.length
+parsimony(o5$tree, x)
+CI(tw, x)
+RI(tw, x)
+
+
+X <- acgt2ry(as.phyDat(woodmouse[12:15, ]))
+X
+str(X)
+sv
+cbind(sv, qv)
+
+h2st(X)
+h4st(as.phyDat(woodmouse[13:15, ]))
+
+
+speciesTree(x, FUN = min)
+
+t1 <- read.tree(text = "(c:2,(a:1,b:1):1);")
+t2 <- read.tree(text = "(c:4,(a:2,b:2):2);")
+tmax <- speciesTree(list(t1, t2))
+all.equal(tmax, t1)
+tsha <- speciesTree(list(t1, t2), sum)
+kronoviz(list(t1, t2, tmax, tsha), type = "c")
+
+x <- 1:10
+sample(x)
+sample(x, replace = TRUE)
+
+X[,sample(ncol(X), replace = TRUE)]
+
+x <- scan(what = "")
+a a c t t a a c t t c a c c t
+X <- matrix(x, 3, 5, byrow = TRUE)
+X
+
+X[, sample(ncol(X), replace = TRUE, prob = w)]
+X[, sample(ncol(X), replace = TRUE, prob = w, size = sum(w))]
+
+
+x <- scan(what = "")
+a a a c c c g g g t t t
+x
+block <- 3
+i <- seq(block, length(x), block)
+i
+iboot <- sample(i, replace = TRUE)
+iboot
+boot.ind <- as.vector(rbind(iboot - 2, iboot - 1, iboot))
+boot.ind
+x[boot.ind]
+
+bootstrap.pml(x, bs = 100, trees = TRUE, ...)
+bootstrap.phyDat(x, FUN, bs = 100, ...)
+
+tr <- read.tree(text = "((a,(b,c)),d);")
+prop.part(tr)
+
+for (i in 2:length(Y)) {
+cat("Internal branch", i - 1, "\n")
+print(Y[[i]], quote = FALSE)
+cat("vs.\n")
+print(Y[[1]][!(Y[[1]] %in% Y[[i]])], quote = FALSE)
+cat("\n")
+}
+
+prop.clades(tr, tr)
+
+boot.phylo(phy, x, FUN, B = 100, block = 1, trees = FALSE,
+quiet = FALSE, rooted = FALSE)
+
+f <- function(x) nj(dist.dna(x))
+tw <- f(woodmouse)
+o <- boot.phylo(tw, woodmouse, f, trees = TRUE)
+o
+
+s <- as.splits(o$trees)
+length(s)
+
+tr <- read.tree(text = "((a,b),(c,d));")
+tb <- read.tree(text = "((a,d),(c,b));")
+dist.topo(tr, tb)
+dist.topo(tr, tr)
+
+tr <- rtree(10)
+tb <- rtree(10)
+dist.topo(tr, tb, "score")
+
+treedist(tr, tb)
+
+library(distory)
+ta <- read.tree(text = "((a:1,b:1):1,c:1);")
+tc <- read.tree(text = "((a:1,c:1):1,b:1);")
+dist.multiPhylo(c(ta, tc))
+
+cnt <- consensusNet(s) # same than consensusNet(o$trees)
+class(cnt)
+cnt
+plot(cnt, "2", tip.color = "black", edge.width = 1, font = 1)
+
+?chronoMPL
+
+chronopl(phy, lambda, age.min = 1, age.max = NULL,
+node = "root", S = 1, tol = 1e-8, CV = FALSE,
+eval.max = 500, iter.max = 500, ...)
+
+l <- 10^(-1:6)
+cv <- sapply(l, function(x) sum(attr(chronopl(phy,
+lambda = x, CV = TRUE), "D2")))
+plot(l, cv)
+
+chr <- chronopl(phy = phy.est, lambda = 1, CV = TRUE)
+plot(attr(chr, "D2"), type = "l")
+
+library(LAGOPUS)
+data(multicntrl.dat)
+multicntrl.dat
+
+multidivtime(x, file = NULL, start = "baseml", part = 1,
+runs = 1, path = NULL, transfer.files = TRUE,
+LogLCheck = 100, plot = TRUE)
+
+
+#5.8.1 Sylvia Warblers
+load("sylvia.RData")
+
+syl.K80 <- dist.dna(sylvia.seq.ali, pairwise.deletion = TRUE)
+syl.F84 <- dist.dna(sylvia.seq.ali, model = "F84", p = TRUE)
+syl.TN93 <- dist.dna(sylvia.seq.ali, model = "TN93", p = TRUE)
+syl.GG95 <- dist.dna(sylvia.seq.ali, model = "GG95", p = TRUE)
+
+round(cor(cbind(syl.K80, syl.F84, syl.TN93, syl.GG95)), 3)
+syl.JC69 <- dist.dna(sylvia.seq.ali, model = "JC69", p=TRUE)
+syl.raw <- dist.dna(sylvia.seq.ali, model = "raw", p=TRUE)
+layout(matrix(1:2, 1))
+plot(syl.JC69, syl.raw); abline(b = 1, a = 0) # draw x=y line
+plot(syl.K80, syl.JC69); abline(b = 1, a = 0)
+
+layout(matrix(1:3, 1))
+for (i in 1:3) {
+s <- logical(3); s[i] <- TRUE
+x <- sylvia.seq.ali[, s]
+d <- dist.dna(x, p = TRUE)
+ts <- dist.dna(x, "Ts", p = TRUE)
+tv <- dist.dna(x, "Tv", p = TRUE)
+plot(ts, d, xlab = "Number of Ts or Tv", col = "blue",
+ylab = "K80 distance", xlim = range(c(ts, tv)),
+main = paste("Position", i))
+points(tv, d, col = "red")
+}
+
+y <- numeric()
+for (i in 1:3) {
+s <- logical(3); s[i] <- TRUE
+y <- c(y, dist.dna(sylvia.seq.ali[, s], p = TRUE))
+}
+g <- gl(3, length(y) / 3)
+library(lattice)
+histogram(~ y | g, breaks = 20)
+
+nj.sylvia.K80 <- nj(syl.K80)
+nj.sylvia.GG95 <- nj(syl.GG95)
+
+dist.topo(nj.sylvia.K80, nj.sylvia.GG95)
+grep("Chamaea", taxa.sylvia, value = TRUE)
+
+f <- function(xx) root(nj(dist.dna(xx, p=TRUE)), "AJ534526")
+tr <- f(sylvia.seq.ali)
+## same than: tr <- root(nj.sylvia.K80, "AJ534526")
+nj.boot.sylvia <- boot.phylo(tr, sylvia.seq.ali, f, 200, rooted = TRUE)
+nj.boot.sylvia
+nj.boot.codon <- boot.phylo(tr, sylvia.seq.ali, f, 200, 3, rooted = TRUE)
+nj.boot.codon
+nj.est <- tr
+nj.est$tip.label <- taxa.sylvia[tr$tip.label]
+plot(nj.est, no.margin = TRUE)
+nodelabels(round(nj.boot.sylvia / 200, 2), bg = "white")
+add.scale.bar(length = 0.01)
+write.tree(nj.est, "sylvia_nj_k80.tre")
+write.dna(sylvia.seq.ali, "sylvia.txt")
+phyml.sylvia <- phymltest("sylvia.txt", execname = "~/phyml")
+phyml.sylvia
+summary(phyml.sylvia)
+plot(phyml.sylvia, col = "black")
+TR <- read.tree("sylvia.txt_phyml_tree.txt")
+TR
+mltr.sylvia <- TR[[28]]
+mltr.sylvia$tip.label <- taxa.sylvia[mltr.sylvia$tip.label]
+mltr.sylvia <- root(mltr.sylvia, "Chamaea_fasciata")
+plot(mltr.sylvia, no.margin = TRUE)
+add.scale.bar(length = 0.01)
+
+tr.ml <- drop.tip(mltr.sylvia, "Chamaea_fasciata")
+res <- vector("list", 9)
+for (L in -4:4)
+res[[L + 5]] <- chronopl(tr.ml, 10^L, 12, 16, CV = TRUE)
+Lambda <- 10^(-4:4)
+CV <- sapply(res, function(x) sum(attr(x, "D2")))
+plot(Lambda, CV / 1e5, log = "x")
+sylvia.chrono <- res[[2]]
+rts <- attr(sylvia.chrono, "rates")
+summary(rts)
+par(mar = c(2, 0, 0, 0))
+plot(sylvia.chrono, edge.width = 100*rts, label.offset = .15)
+axisPhylo()
+write.tree(sylvia.chrono, "sylvia.chrono.tre")
+
+#5.8.2 Butterfly DNA Barcodes
+M.astraptes.K80 <- dist.dna(astraptes.seq.ali, p = TRUE)
+summary(M.astraptes.K80)
+hist(M.astraptes.K80)
+tr <- nj(M.astraptes.K80)
+tr$tip.label <- taxa.astraptes[tr$tip.label]
+taxon <- unique(taxa.astraptes)
+L <- vector(mode = "list", length = 10)
+for (i in 1:10)
+L[[i]] <- grep(taxon[i], tr$tip.label)
+pdf("astraptes.pdf", width = 30, height = 30)
+zoom(tr, L)
+dev.off()
+
+
+
+
+
+
+```
+
+Chapter 6
+
+```{r}
+
+
+tree.primates <- read.tree("primfive.tre")
+body <- c(4.09434, 3.61092, 2.37024, 2.02815, -1.46968)
+longevity <- c(4.74493, 3.3322, 3.3673, 2.89037, 2.30259)
+names(body) <- names(longevity) <- c("Homo",
+"Pongo", "Macaca", "Ateles", "Galago")
+pic.body <- pic(body, tree.primates)
+pic.longevity <- pic(longevity, tree.primates)
+pic.body
+pic.longevity
+
+plot(tree.primates)
+nodelabels(round(pic.body, 3), adj = c(0, -0.5),
+frame = "n")
+nodelabels(round(pic.longevity, 3), adj = c(0, 1),
+frame = "n")
+
+plot(pic.body, pic.longevity)
+abline(a = 0, b = 1, lty = 2) # x = y line
+
+cor(pic.body, pic.longevity)
+lm(pic.longevity ~ pic.body)
+lm(pic.longevity ~ pic.body - 1)
+
+lmorigin(pic.longevity ~ pic.body, nperm = 1e4)
+
+w <- 1/cophenetic(tree.primates)
+diag(w) <- 0 # OR: w[w == Inf] <- 0
+Moran.I(body, w)
+
+library(ade4)
+gearymoran(w, data.frame(body, longevity))
+
+Moran.I(longevity, cophenetic(tree.primates))
+
+library(adephylo)
+abouheif.moran(cbind(body, longevity), w)
+
+library(phylobase)
+X <- phylo4d(tree.primates, data.frame(body, longevity))
+abouheif.moran(X)
+abouheif.moran(X, method = "sumDD")
+
+data(carnivora)
+frm <- SW ~ Order/SuperFamily/Family/Genus
+correl.carn <- correlogram.formula(frm, data = carnivora)
+correl.carn
+plot(correl.carn, col = c("white", "black"))
+
+tr <- rtree(3)
+treePart(tr)
+treePart(tr, "orthobasis")
+
+as.matrix(orthobasis.phylo(tr))
+
+B <- as.matrix(orthobasis.phylo(tree.primates))
+X <- B[, 1:2]
+X
+anova(lm(body ~ X))
+anova(lm(longevity ~ X))
+
+orthogram(body, tree.primates)
+
+orthogram(longevity, tree.primates)
+
+
+tr <- rtree(30)
+X <- matrix(rnorm(150), 30, 5)
+rownames(X) <- tr$tip.label
+X2 <- replicate(5, rTraitCont(tr))
+dat <- phylo4d(tr, X)
+dat2 <- phylo4d(tr, X2)
+res <- ppca(dat)
+res2 <- ppca(dat2)
+
+plot(res)
+plot(res2)
+
+
+corGrafen(value, phy, fixed = FALSE)
+corBrownian(value = 1, phy)
+corMartins(value, phy, fixed = FALSE)
+corPagel(value, phy, fixed = FALSE)
+corBlomberg(value, phy, fixed = FALSE)
+
+bm.prim <- corBrownian(phy = tree.primates)
+DF.prim <- data.frame(body, longevity)
+library(nlme)
+m1 <- gls(longevity ~ body, DF.prim, correlation = bm.prim)
+summary(m1)
+
+ou.prim <- corMartins(1, tree.primates)
+m2 <- gls(longevity ~ body, DF.prim, correlation = ou.prim)
+summary(m2)
+
+tr <- compute.brlen(tree.primates, runif)
+couni <- corBrownian(phy = tr)
+v <- diag(vcv(couni))
+vf <- varFixed(~ v)
+summary(gls(longevity ~ body, DF.prim, couni, weights = vf))
+sqrt(v) * 1.247344
+
+m1.0 <- gls(longevity ~ 1, DF.prim, correlation = bm.prim)
+1 - (m1$sigma/m1.0$sigma)^2
+1 - exp(-2*(m1$logLik - m1.0$logLik)/5)
+
+iV <- solve(vcv(bm.prim))
+one <- rep(1, 5)
+e <- residuals(m1)
+y <- longevity
+m <- solve(t(one) %*% iV %*% one) %*% (t(one) %*% iV %*% y)
+1 - (t(e) %*% iV %*% e)/(t(y - m) %*% iV %*% (y - m))
+
+summary(lm(longevity ~ body))$r.squared
+
+tr <- rcoal(100)
+x <- rTraitCont(tr)
+y <- rTraitCont(tr)
+DF <- data.frame(x, y)
+cb <- corBrownian(phy = tr)
+m <- gls(y ~ x, DF, correlation = cb)
+m0 <- gls(y ~ 1, DF, correlation = cb)
+1 - (m$sigma/m0$sigma)^2
+1 - exp(-2*(m$logLik - m0$logLik)/n)
+
+summary(lm(y ~ x))$r.squared
+
+mod <- longevity ~ exp(beta * body) + alpha
+init <- list(alpha = 1, beta = 1)
+exm1 <- gnls(mod, DF.prim, start=init, correlation=bm.prim)
+summary(exm1)
+
+AIC(update(m1, method = "ML"))
+
+exm0 <- update(exm1, correlation = NULL)
+summary(exm0)
+AIC(update(m1, correlation = NULL, method = "ML"))
+
+library(gee)
+compar.gee(longevity ~ body, phy = tree.primates)
+
+G <- vcv(tree.primates, corr = TRUE)
+compar.lynch(cbind(body, longevity), G = G)
+
+x <- cumsum(c(0, rnorm(99)))
+x <- numeric(100)
+for (i in 1:99)
+x[i + 1] <- x[i] - 0.2 * x[i] + rnorm(1)
+X <- replicate(5, cumsum(c(0, rnorm(99))))
+sim.ou <- function() {
+x <- numeric(100)
+for (i in 1:99)
+x[i + 1] <- x[i] - 0.2 * x[i] + rnorm(1)
+x # returns the value of x
+}
+X2 <- replicate(5, sim.ou())
+var(X[100 ,])
+var(X2[100 ,])
+
+layout(matrix(1:2, 1, 2))
+yl <- range(X)
+matplot(X, ylim = yl, type = "l", col = 1, main = "Brownian")
+matplot(X2, ylim = yl, type = "l", col = 1, main = "OU")
+
+compar.ou(x, phy, node = NULL, alpha = NULL)
+
+compar.ou(longevity, tree.primates, alpha = 0.2)
+compar.ou(longevity, tree.primates, alpha = 2)
+
+compar.ou(longevity, tree.primates, alpha = 2, node = 8)
+
+1 - pchisq(12.41897 - 9.869067, 1)
+
+
+Kcalc(x, phy, checkdata = TRUE)
+phylosignal(x, phy, reps = 999, checkdata = TRUE, ...)
+
+library(picante)
+x <- list(body = body, longevity = longevity)
+sapply(x, phylosignal, tree.primates)
+sapply(x, Kcalc, tree.primates)
+
+f <- function(cs) gls(body ~ 1, DF.prim, correlation = cs)
+pa.prim <- corPagel(1, tree.primates)
+
+o1 <- lapply(list(NULL, bm.prim, pa.prim, ou.prim), f)
+sapply(o1, AIC)
+
+o2 <- lapply(list(NULL, bm.prim, pa.prim, ou.prim), f)
+sapply(o2, AIC)
+
+o1[[3]]$modelStruct # lambda for ’body’
+o2[[3]]$modelStruct # lambda for ’longevity’
+
+tr <- rcoal(30)
+x <- rnorm(30)
+y <- rTraitCont(tr)
+dphy <- as.dist(cophenetic(tr))
+layout(matrix(1:2, 1))
+plot(dphy, dist(x))
+plot(dphy, dist(y))
+
+AIC(gls(x ~ 1))
+AIC(gls(x ~ 1, correlation = corBrownian(1, tr)))
+AIC(gls(y ~ 1))
+AIC(gls(y ~ 1, correlation = corBrownian(1, tr)))
+
+vf <- varComb(varFixed(~ v), varFixed(~ vi))
+vi <- 1:5
+vf <- varFixed(~ vi)
+gls(longevity ~ body, correlation = bm.prim, weights = vf)
+
+pic.ortho(body, tree.primates)
+pic.ortho(longevity, tree.primates)
+
+x <- lapply(sample(1:5, 5, TRUE), rnorm)
+sapply(x, length)
+pic.ortho(x, tree.primates, intra = TRUE)
+
+varCompPhylip(cbind(body, longevity), tree.primates)
+varCompPhylip(x, tree.primates)
+
+y <- rTraitCont(tree.primates, sigma = 1)
+varCompPhylip(y, tree.primates)
+
+data(Laurasiatherian)
+X <- as.DNAbin(Laurasiatherian)
+f <- function(x) nj(dist.dna(x))
+tr <- f(X)
+o <- boot.phylo(tr, X, f, trees = TRUE)
+
+V <- lapply(o$trees, function(x) as.dist(vcv(x, corr=TRUE)))
+
+V <- matrix(unlist(V), ncol = 100)
+
+plot(apply(V, 1, mean), apply(V, 1, sd))
+
+
+ace(body, tree.primates)
+ace(body, tree.primates, method = "REML")
+ace(body, tree.primates, method = "pic")
+co <- corBrownian(1, tree.primates)
+ace(body, tree.primates, method = "GLS", corStruct = co)
+fitContinuous(tree.primates, body)
+
+
+matrix(c(0, 1, 1, 0), nrow = 2)
+matrix(c(0, 1, 2, 0), nrow = 2)
+matrix(c(0, 1, 1, 1, 0, 1, 1, 1, 0), nrow = 3)
+matrix(c(0, 1, 2, 1, 0, 3, 2, 3, 0), nrow = 3)
+matrix(c(0, 1:3, 0, 4:6, 0), nrow = 3)
+matrix(c(0, 0, 3, 1, 0, 0, 0, 2, 0), nrow = 3)
+
+x <- c(2, 2, 2, 2, 1)
+x.er <- ace(x, tree.primates, type = "discrete")
+x.er
+x.ard <- ace(x, tree.primates, type = "d", model = "ARD")
+x.ard
+1 - pchisq(2*(1.768921 - 1.602901), 1)
+anova(x.er, x.ard)
+names(x) <- tree.primates$tip.label
+fitDiscrete(tree.primates, x)
+2*(-2.296048 - -2.462069)
+y <- c(1, 2, 2, 2, 2)
+ace(y, tree.primates, type = "discrete")
+ace(y, tree.primates, type = "discrete", model = "ARD")
+
+MPR(x, unroot(tree.primates), "Galago")
+ancestral.pml(object, type = c("ml", "bayes"))
+ancestral.pars(tree, data, type = c("MPR", "ACCTRAN"))
+
+
+layout(matrix(1:2, 1, 2))
+ltt.plot(trk)
+ltt.plot(trk, log = "y")
+ltt.plot(trk)
+ltt.lines(trc, lty = 2)
+mltt.plot(phy, ..., dcol = TRUE, dlty = FALSE,
+legend = TRUE, xlab = "Time", ylab = "N")
+mltt.plot(trk, trc, dcol = FALSE, dlty = TRUE)
+
+bd.trk <- birthdeath(trk)
+bd.trk
+
+res <- matrix(NA, 14, 2)
+for (i in 1:14)
+res[i, ] <- birthdeath(drop.tip(trk, i))$para
+res
+
+library(diversitree)
+trk <- rtree(10)
+trk = chronos(trk, lambda = 0, model = "correlated")
+trk.bd <- make.bd(trk)
+trk.bd
+o <- find.mle(trk.bd, c(0.1, 0.2))
+o
+outmcmc <- mcmc(trk.bd, o$par, nsteps = 1e4, w=c(0.1, 0.1),
+print.every = 0)
+str(outmcmc)
+
+co <- c("darkgrey", "lightgrey")
+profiles.plot(outmcmc[c("lambda", "mu")], col.line = co)
+legend("topright", c(expression(lambda), expression(mu)),
+pch = 15, col = co, bty = "n")
+
+yule(trk)
+find.mle(make.yule(trk), 1.560976)
+
+
+tr <- rbdtree(0.1, 0, Tmax = 25)
+library(laser)
+yule2rate(branching.times(tr))
+
+birth.step <- function(l1, l2, Tcl) {
+ans <- rep(l1, length(t))
+ans[t > Tcl] <- l2
+ans
+}
+
+yule.time(tr, birth.step, start = c(.1, .1, 15))
+
+yule(tr)
+
+fitSPVAR(branching.times(tr))$LH
+fitEXVAR(branching.times(tr))$LH
+fitBOTHVAR(branching.times(tr))$LH
+
+DDX(branching.times(tr))
+DDL(branching.times(tr))
+
+logis.t <- function(t, a, b) 1/(1 + exp(-a * t - b))
+f <- make.bd.t(phy, list(logis.t, logis.t))
+find.mle(f, c(0.02, -2, 0.02, -2))
+
+b.logis <- function(a, b) 1/(1 + exp(-a * t - b))
+d.logis <- function(c, d) 1/(1 + exp(-c * t - d))
+bd.time(phy, b.logis, d.logis)
+
+
+#Table 6.1 is very important
+rate.estimate(time = 0, n = 0, phy = NULL, epsilon = 0,
+missing = 0, crown = TRUE, kendall.moran = FALSE)
+rate.estimate(10, 10)
+rate.estimate(10, 10, crown = FALSE)
+crown.limits(r = 0.1609, epsilon = 0, time = 8:10)
+crown.limits(r = 0.1609, epsilon = 0.9, time = 8:10)
+
+data(bird.orders)
+S <- c(10, 47, 69, 214, 161, 17, 355, 51, 56, 10, 39, 152,
+6, 143, 358, 103, 319, 23, 291, 313, 196, 1027, 5712)
+bd.ext(bird.orders, S)
+library(laser)
+fitNDR_1rate(getTipdata(S, bird.orders))
+
+tr <- rcoal(20)
+x <- sample(0:1, size = 20, replace = TRUE)
+names(x) <- tr$tip.label
+library(diversitree)
+f <- make.bisse(tr, x)
+f
+out <- find.mle(f, rep(0.1, 6))
+out
+f.mu <- constrain(f, mu1 ~ mu0)
+out.mu <- find.mle(f.mu, rep(0.1, 5))
+out.mu
+f.lambda <- constrain(f.mu, lambda1 ~ lambda0)
+out.lambda <- find.mle(f.lambda, rep(0.1, 4))
+f.null <- constrain(f, lambda1~lambda0, mu1~mu0, q10~q01)
+out.null <- find.mle(f.null, rep(0.1, 3))
+anova(out, out.mu, out.lambda, out.null)
+mcmc(f, coef(out), 1e3, rep(0.1, length(coef(out))))
+
+u <- data.frame(tip.label = I(c("t1", "t2")),
+Nc = c(10, 10), n0 = 0, n1 = 0)
+f.u <- make.bisse(tr, x, u)
+out.u <- find.mle(f.u, rep(0.1, 6))
+out.u
+f.u.null <- constrain(f.u, lambda1~lambda0, mu1~mu0, q10~q01)
+out.u.null <- find.mle(f.u.null, rep(0.1, 3))
+out.u.null
+anova(out.u, out.u.null)
+asr.marginal(f.null, coef(out.null))
+coef(out.null)["q01"]
+ace(x, tr, type = "d")$rates
+
+
+x <- c(0.8, 1, 1.15, 1.55, 2.3, 0.8, 0.8)
+indicator <- c(rep(1, 5), rep(0, 2))
+diversi.time(x, indicator)
+
+diversi.gof(x)
+diversi.gof(x[indicator == 1])
+1 - 2 * pnorm(abs(gammaStat(tr)))
+
+colless.test(tree, model = "yule", alternative = "less",
+n.mc = 500)
+sackin.test(tree, model = "yule", alternative = "less",
+n.mc = 500)
+trs <- rtreeshape(1, 50, model = "yule")[[1]]
+likelihood.test(trs)
+likelihood.test(trs, model = "pda")
+aldous.test(trs, xmin = 1)
+
+n0 <- replicate(10, Ntip(rbdtree(.1, .09, Tmax = 35)))
+n1 <- replicate(10, Ntip(rbdtree(.15, .1, Tmax = 35)))
+x <- cbind(n1, n0)
+slowinskiguyer.test(x)
+mcconwaysims.test(x)
+richness.yule.test(x, 100)
+
+runMedusa(phy, richness, estimateExtinction = TRUE,
+modelLimit = 20, cutAtStem = TRUE,
+startR = 0.05, startE = 0.5, ...)
+
+
+sum(tree.primates$edge.length)
+d <- as.data.frame(t(rep(1, 5)))
+names(d) <- tree.primates$tip.label
+pd(d, tree.primates)
+
+optimEH(tree.primates, 4)
+
+round(originality(tree.primates, method = 1:7), 4)
+
+d[2, ] <- rpois(5, 10)
+rownames(x) <- paste("Comm", 1:2)
+d
+
+comm.phylo.cor(samp, phylo, metric = "cij",
+null.model = "sample.taxa.labels", runs = 999, ...)
+phylostruct(samp, tree, env = NULL, metric = "psv",
+null.model = "frequency", runs = 100, it = 1000,
+alpha = 0.05, fam = "binomial")
+
+comm.phylo.cor(d, tree.primates)
+
+phylostruct(d, tree.primates)
+
+spacodi.calc(as.spacodi(d), tree.primates)
+
+m <- matrix(0, 4, 4)
+m[c(2:3, 8, 12)] <- 1
+m[14:15] <- 2
+m
+
+m <- c(0, 1, 0, 1, 0, 0, 1, 1, 2)
+dim(m) <- c(3, 3)
+m
+
+x
+#[1] "AB" "B" "A" "B" "B" "A" "AB" "AB" "AB" "AB" "A" "B" "B" "B" "AB" "A" "B" "AB" "AB" "A"
+y <- phyDat(matrix(x), "USER", levels = unique(x))
+parsimony(tr, y, "sankoff", cost = m)
+ancestral.pars(tr, y)
+
+
+library(phyloclim)
+anc.clim(target, posterior=NULL, pno, n=100, method="GLS")
+
+f <- function(n) {x <- runif(n); x/sum(x)}
+X <- as.data.frame(cbind(1:10, replicate(5, f(10))))
+names(X) <- c("variable", tree.primates$tip.label)
+X[1:2, 1:3]
+o <- anc.clim(tree.primates, pno = X)
+
+plotAncClim(o,  col = rep("black", 5))
+D <- niche.overlap(X)
+D
+
+out.arc <- age.range.correlation(tree.primates, D)
+out.arc
+
+plot(out.arc$age.range.correlation)
+apply(out.arc$MonteCarlo.replicates, 1, abline,
+lwd = 0.2, col = "grey")
+abline(out.arc$linear.regression$coefficients)
+
+
+H <- P <- rcoal(10)
+H$tip.label <- paste("host", 1:10)
+P$tip.label <- paste("parasite", 1:10)
+A <- diag(10)
+dimnames(A) <- list(H$tip.label, P$tip.label)
+A[1:4, 1:4]
+parafit(cophenetic(H), cophenetic(P), A)
+
+A[] <- rbinom(100, size = 1, prob = 0.5)
+A[1:4, 1:4]
+parafit(cophenetic(H), cophenetic(P), A)
+
+#6.6.1 Sylvia Warblers
+load("sylvia.RData")
+nj.est <- read.tree("sylvia_nj_k80.tre")
+nj.est <- drop.tip(nj.est, "Chamaea_fasciata")
+DF <- sylvia.eco[nj.est$tip.label, ]
+table(DF$geo.range, DF$mig.behav)
+syl.er <- ace(DF$geo.range, nj.est, type = "d")
+syl.er
+syl.sym <- ace(DF$geo.range, nj.est, type="d", model="SYM")
+syl.sym
+anova(syl.er, syl.sym)
+mod <- matrix(0, 3, 3)
+mod[2, 1] <- mod[1, 2] <- 1
+mod[2, 3] <- mod[3, 2] <- 2
+mod
+syl.mod <- ace(DF$geo.range, nj.est, type="d", model=mod)
+syl.mod
+sapply(list(syl.er, syl.sym, syl.mod), AIC)
+Q <- syl.mod$index.matrix
+Q
+Q[1, 2] <- Q[2, 1] <- syl.mod$rates[1]
+Q[2, 3] <- Q[3, 2] <- syl.mod$rates[2]
+Q[] <- c(0, syl.mod$rates)[Q + 1]
+diag(Q) <- -rowSums(Q)
+Q
+P <- matexpo(0.05 * Q)
+rownames(P) <- c("temp", "temptrop", "trop")
+colnames(P) <- rownames(P)
+P
+co <- rep("grey", 24)
+co[DF$geo.range == "temp"] <- "black"
+co[DF$geo.range == "trop"] <- "white"
+
+plot(nj.est, "c", FALSE, no.margin = TRUE, label.offset = 1)
+tiplabels(pch = 22, bg = co, cex = 2, adj = 1)
+nodelabels(thermo = syl.mod$lik.anc, cex = 0.8,
+piecol = c("black", "grey", "white"))
+
+sylvia.chrono <- read.tree("sylvia.chrono.tre")
+yule(sylvia.chrono)
+birthdeath(sylvia.chrono)
+1 - pchisq(2*(-1.034112 - -1.113822), 1)
+
+x <- sylvia.eco[sylvia.chrono$tip.label, "geo.range"]
+ANC <- ace(x, sylvia.chrono, type = "d", model = mod)
+ANC$lik.anc[1:3, ]
+
+anc <- apply(ANC$lik.anc, 1, which.max)
+anc
+
+X <- factor(c(x, anc))
+yule.cov(sylvia.chrono, ~ X)
+
+1 / (1 + exp(-(-0.0535529)))
+1 / (1 + exp(-(-0.0535529 -1.4608019)))
+1 / (1 + exp(-(-0.0535529 -0.9775966)))
+
+fsamp <- function(x) sample(length(x), size = 1, prob = x)
+nrep <- 1e3
+Pvls <- numeric(nrep)
+for (i in 1:nrep) {
+anc <- apply(ANC$lik.anc, 1, fsamp)
+X <- factor(c(x, anc))
+Pvls[i] <- yule.cov(sylvia.chrono, ~ X)$Pval
+}
+hist(Pvls, freq = FALSE, main = "")
+lines(density(Pvls))
+
+
+
+rtree(n, rooted = TRUE, tip.label = NULL, br = runif, ...)
+
+rcoal(n, tip.label = NULL, br = "coalescent", ...)
+
+x <- 2 * rexp(n - 1)/(n:2 * (n - 1):1)
+tr <- rcoal(n, br = (exp(rho * x) - 1)/rho)
+
+library(phyclust)
+ x <- ms(2, 2, opts = "-T")
+x
+x[c(3, 5)]
+read.tree(text = x[c(3, 5)])
+ms(2, opts = "-s 2 -T")
+ms(2, opts = "-s 1")
+
+
+rlineage(birth, death, Tmax = 50, BIRTH = NULL, DEATH = NULL,
+n0 = 2, eps = 1e-6)
+rbdtree(birth, death, Tmax = 50, BIRTH = NULL, DEATH = NULL,
+n0 = 2, eps = 1e-6)
+
+t1 <- rlineage(0.1, 0, Tmax = 25)
+t2 <- rlineage(0.1, 0.025)
+b <- function(t) 1/(1 + exp(-0.03*t + 3))
+t3 <- rlineage(b, 0.1)
+t4 <- rlineage(b, 0.05)
+layout(matrix(1:4, 2, 2))
+plot(t1, show.tip.label = FALSE); axisPhylo()
+title(expression(list(lambda == 0.1, mu == 0)))
+plot(t2, show.tip.label = FALSE); axisPhylo()
+title(expression(list(lambda == 0.1, mu == 0.025)))
+plot(t3, show.tip.label = FALSE); axisPhylo()
+title(expression(list(lambda(t) ==
+frac(1, 1 + exp(-0.03*t + 3)), mu == 0.1)))
+plot(t4, show.tip.label = FALSE); axisPhylo()
+title(expression(lambda(t)*" as above, "* mu == 0.05))
+
+tree.bd(pars, max.taxa=Inf, max.t=Inf, include.extinct=FALSE)
+
+library(apTreeshape)
+rtreeshape(n, tip.number, p = 0.3, model = "", FUN = "")
+Q <- function(n, i) if (i == 1) 1 else 0
+rtreeshape(1, 10, FUN = Q)
+Q <- function(n, i) if (i > 0 && i < n) n else 0
+rtreeshape(1, 30, FUN = Q)
+Q <- function(n, i) if (i %in% c(0, n)) 0 else 1/(i*(n - i))
+
+
+R <- matrix(c(1, 0.9, 0.9, 1), 2)
+R
+e <- eigen(R, EISPACK = TRUE)
+e
+e$vectors %*% diag(sqrt(e$values))
+
+tr <- rcoal(4)
+V <- vcv(tr)
+V
+
+library(MASS)
+mvrnorm(3, mu = rep(0, 4), Sigma = V)
+
+chol(R)
+chol(matrix(c(1, 0, 0, 1), 2))
+
+X <- matrix(rnorm(8), 4)
+t(X %*% chol(R)) %*% chol(V)
+
+f <- eigen(V, EISPACK = TRUE)
+A <- f$vectors %*% diag(sqrt(f$values))
+B <- e$vectors %*% diag(sqrt(e$values))
+A %*% t(B %*% t(X))
+
+x <- mvrnorm(1, mu = rep(mu, n), Sigma = V)
+y <- beta * x + rnorm(n, 0, sigma)
+
+y <- beta * x + mvrnorm(1, mu = rep(0, n), Sigma = V)
+
+rTraitCont(phy, model = "BM", sigma = 0.1, alpha = 1,
+theta = 0, ancestor = FALSE, root.value = 0, ...)
+
+model <- function(x, l) x + rnorm(1, 0, sqrt(l * 0.1))
+model <- function(x, l) x + rnorm(1, 0, sqrt(0.1))
+
+rTraitDisc(phy, model = "ER",
+k = if (is.matrix(model)) ncol(model) else 2,
+rate = 0.1, states = LETTERS[1:k], freq = rep(1/k, k),
+ancestor = FALSE, root.value = 1, ...)
+
+X <- replicate(p, rTraitCont(tr))
+X %*% chol(R)
+
+rTraitMult(phy, model, p = 1, root.value = rep(0, p),
+ancestor = FALSE, asFactor = NULL,
+trait.labels = paste("x", 1:p, sep = ""), ...)
+
+mod <- function(x, l) {
+out1 <- rnorm(1, x[1] + 0.5 * x[2], sqrt(l * 0.1))
+out2 <- rnorm(1, 0.5 * x[1] + x[2], sqrt(l * 0.1))
+c(out1, out2)
+}
+
+tr <- rcoal(20)
+x <- rTraitMult(tr, mod, 2)
+x[1:4, ]
+
+layout(matrix(1:2, 2))
+plot(x, type = "n")
+text(x, labels = rownames(x), cex = 0.7)
+plot(tr, font = 1, cex = 0.7)
+
+rTraitMult(tr, mod, 2, gamma = 0.5) # same than above
+rTraitMult(tr, mod, 2, gamma = 0.2) # weaker correlation
+
+tree.bisse(pars, max.taxa = Inf, max.t = Inf,
+include.extinct = FALSE, x0 = NA, ...)
+
+p <- c(0.1, 0.1, 0.03, 0.06, 0.1, 0.5)
+tr.bisse <- tree.bisse(p, max.taxa = 30, x0 = 0,
+include.extinct = TRUE)
+h <- history.from.sim.discrete(tr.bisse, 0:1)
+tr <- prune(tr.bisse)
+hp <- history.from.sim.discrete(tr, 0:1)
+layout(matrix(1:2, 2))
+par(mar = rep(0, 4))
+
+plot(h, tr.bisse, c("black", "grey"), show.tip.label = FALSE)
+plot(hp, tr, c("black", "grey"), show.tip.label = FALSE)
+
+simSeq(tree, l = 1000, Q = NULL, bf = NULL, rootseq = NULL,
+type = "DNA", model = "USER", levels = NULL, rate = 1,
+ancestral = FALSE)
+
+compute.brlen(stree(5), 10)
+compute.brlen(stree(5), runif(5))
+
+seqgen()
+
+seqgen(opts = NULL, rooted.tree = NULL, newick.tree = NULL,
+input = NULL)
+
+
+```
+
