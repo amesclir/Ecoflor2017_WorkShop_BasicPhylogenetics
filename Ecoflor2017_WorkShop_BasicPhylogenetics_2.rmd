@@ -90,11 +90,19 @@ round(cor(cbind(syl.K80, syl.F84, syl.TN93, syl.GG95)), 3)
 syl.JC69 <- dist.dna(sylvia.seq.ali, model = "JC69", p = TRUE)
 # One rate and equal base frequencies
 syl.raw <- dist.dna(sylvia.seq.ali, model = "raw", p = TRUE)
-layout(matrix(1:2, 1))
+
+layout(matrix(1:5, 1))
 plot(syl.JC69, syl.raw)
 abline(b = 1, a = 0) # draw x = y line
 plot(syl.K80, syl.JC69)
 abline(b = 1, a = 0)
+plot(syl.F84, syl.K80)
+abline(b = 1, a = 0) # draw x = y line
+plot(syl.TN93, syl.F84)
+abline(b = 1, a = 0)
+plot(syl.F84, syl.GG95)
+abline(b = 1, a = 0)
+
 
 library(phangorn)
 sylvia.seq.ali.phyDat <- as.phyDat(sylvia.seq.ali)
@@ -108,6 +116,8 @@ maxit = 10, trace = 1), multicore = FALSE, mc.cores = NULL)
 #SYM six parameeters, and equal base frequences
 #GTR six parameters, equal base frequences
 modelTest.results
+
+
 
 ```
 
@@ -130,6 +140,7 @@ nj.sylvia.GG95$tip.label<-taxa.sylvia[nj.sylvia.GG95$tip.label==names(taxa.sylvi
 nj.sylvia.GG95 <- root(nj.sylvia.GG95, "Chamaea_fasciata")
 plot(nj.sylvia.GG95)
 
+
 dist.topo(nj.sylvia.K80, nj.sylvia.GG95)
 
 ```
@@ -146,6 +157,7 @@ plot(tr)
 
 nj.boot.sylvia <- boot.phylo(tr, sylvia.muscle, f, 200,
                              rooted = TRUE)
+#deffault is K80
 nj.boot.sylvia
 
 
@@ -160,7 +172,7 @@ write.tree(nj.est, "sylvia_nj_k80.tre")
 
 
 7. Maximum likelihood analyses
-#HASTA AQUI
+
 ```{r}
 write.dna(sylvia.muscle, "sylvia.txt")
 phyml.sylvia <- phymltest("sylvia.txt", execname = "~/local/bin/PhyML-3.1/PhyML-3.1_linux64")
@@ -170,10 +182,18 @@ TR <- read.tree("sylvia.txt_phyml_tree.txt")
 mltr.sylvia <- TR[[28]]
 mltr.sylvia$tip.label <- taxa.sylvia[mltr.sylvia$tip.label]
 mltr.sylvia <- root(mltr.sylvia, "Chamaea_fasciata")
+mltr.sylvia <- drop.tip(mltr.sylvia, "Chamaea_fasciata")
 plot(mltr.sylvia, no.margin = TRUE)
 add.scale.bar(length = 0.01)
 
+phyml.sylvia.GTRIG <- phymltest("sylvia.txt", exclude = c("JC69", "K80", "F81", "F84", "HKY85", "TN93", "GTR", "JC69+I", "K80+I", "F81+I", "F84+I", "HKY85+I", "TN93+I", "GTR+I", "JC69+G", "K80+G", "F81+G", "F84+G", "HKY85+G", "TN93+G", "GTR+G", "JC69+I+G", "K80+I+G", "F81+I+G", "F84+I+G", "HKY85+I+G", "TN93+I+G"), execname = "~/local/bin/PhyML-3.1/PhyML-3.1_linux64")
+
+
 ```
+
+8. Bootstrap analysis and maximum likelihood
+
+
 
 7. chronogram with the penalized likelihood method
 
