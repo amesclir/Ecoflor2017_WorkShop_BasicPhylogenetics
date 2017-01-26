@@ -290,6 +290,7 @@ sylvia.bayes.tree <- read.nexus("sylvia_bayes.nex.con")
 
 setwd("/home/amesclir/Documents/Ubuntufiles/GITHUB/Ecoflor2017_WorkShop_BasicPhylogenetics")
 write.tree(sylvia.bayes.tree, "sylvia_bayes.nex.con" )
+sylvia.bayes.tree <- read.tree("sylvia_bayes.nex.con")
 
 sylvia.bayes.tree[[1]] <- root(sylvia.bayes.tree[[1]], "AJ534526")
 sylvia.bayes.tree[[1]] <- drop.tip(sylvia.bayes.tree[[1]], "AJ534526")
@@ -299,10 +300,10 @@ plot(sylvia.bayes.tree[[1]], no.margin = TRUE, show.node.label=T)
 ```
 
 
-10. chronogram with the penalized likelihood method
+10. chronogram with the penalized likelihood method and bayesian approach
 
 ```{r}
-
+#dating using penalized likelihood method
 tr.ml <- drop.tip(mltr.sylvia, "Chamaea_fasciata")
 res <- vector("list", 9)
 for (L in -4:4)
@@ -325,20 +326,63 @@ axisPhylo()
 
 write.tree(sylvia.chrono, "sylvia.chrono.tre")
 
+
+#####################
+#dating using lagopus
+
+
+multidivtime.sylvia <- multidivtime(mdt.in.sylvia, file = NULL, start = "baseml", part = 1,
+  runs = 1, path = path, transfer.files = TRUE, 
+	LogLCheck = 100, plot = TRUE)
+
+setwd("/home/amesclir/Documents/Ubuntufiles/GITHUB/Ecoflor2017_WorkShop_BasicPhylogenetics")
+
+
+
+## Create object of class 'mdt.in'.
+library(LAGOPUS)
+sylvia.bayes.tree[[2]] <- root(sylvia.bayes.tree[[2]], "AJ534526")
+plot(sylvia.bayes.tree[[2]])
+
+plot(sylvia.bayes.tree[[2]])
+node.A <- c("L", "AJ534548", "AJ534529", 12)
+node.B <- c("U", "AJ534548", "AJ534529", 16)
+my.age.constraints <- data.frame(rbind(node.A, node.B))
+
+mdt.in.sylvia <- mdt.in(sylvia.seq.ali, sylvia.bayes.tree[[2]],my.age.constraints)
+
+## Load defaults for baseml and multidivtime control files.
+data(baseml.ctr)
+data(multicntrl.dat)
+
+## Have a look at '?baseml.ctr' and 'multicntrl.dat' for how
+## to change the defaults.
+
+## Not run:
+## Specify a path to the executables.
+path <- "/home/amesclir/local/bin/multidistribute/"
+
+multidivtime(mdt.in.sylvia, file = NULL, start = "baseml", part = 1,
+  runs = 1, path = path, transfer.files = TRUE, 
+	LogLCheck = 100, plot = TRUE)
+## Run another MCMC on the same data set, but with
+multidivtime(mdt.in.sylvia, file = NULL, start = "multidivtime", part = 1,
+  runs = 1, path = path, transfer.files = TRUE, 
+  LogLCheck = 100, plot = TRUE)
+
+##Not working. Maybe the version has changed.
+
 ```
 
 
 
-###
-### Chapter 6
-###
-8. Ancestral character reconstruction. Discrete characters.
+11. Ancestral character reconstruction. Discrete characters.
 
 ```{r}
 
 load("sylvia.RData")
 TR <- read.tree("sylvia.txt_phyml_tree.txt")
-mltr.sylvia <- TR[[28]]
+mltr.sylvia <- TR
 mltr.sylvia$tip.label <- taxa.sylvia[mltr.sylvia$tip.label]
 mltr.sylvia <- root(mltr.sylvia, "Chamaea_fasciata")
 mltr.sylvia <- drop.tip(mltr.sylvia, "Chamaea_fasciata")
@@ -351,6 +395,7 @@ syl.er
 syl.sym <- ace(DF$geo.range, mltr.sylvia, type="d", model="SYM")
 syl.sym
 anova(syl.er, syl.sym)
+sapply(list(syl.er, syl.sym), AIC)
 
 mod <- matrix(0, 3, 3)
 mod[2, 1] <- mod[1, 2] <- 1
@@ -394,8 +439,10 @@ nodelabels(thermo = syl.mod$lik.anc, cex = 0.8,
 
 ```
 
-9. Diversification analyses
+12. Diversification analyses
 ```{r}
+
+#diversification analyses with ape
 sylvia.chrono <- read.tree("sylvia.chrono.tre")
 yule(sylvia.chrono)
 birthdeath(sylvia.chrono)
@@ -404,8 +451,45 @@ birthdeath(sylvia.chrono)
 x <- sylvia.eco[sylvia.chrono$tip.label, "geo.range"]
 ANC <- ace(x, sylvia.chrono, type = "d", model = mod)
 ANC$lik.anc[1:3, ]
+
+co <- rep("grey", 24)
+co[x == "temp"] <- "black"
+co[x == "trop"] <- "white"
+plot(sylvia.chrono, type = "p", use.edge.length = T, no.margin = TRUE, label.offset = 1)
+tiplabels(pch = 22, bg = co, cex = 2, adj = 1)
+nodelabels(thermo = ANC$lik.anc, cex = 0.8,
+           piecol = c("black", "grey", "white"))
+
+
+#Diversification analyses with laser
+library(laser)
+library(phytools)
+
+mytree <- read.tree("sylvia.chrono.tre")
+mytree <- drop.tip(mytree,"AJ534526")
+
+mytreeltt <- ltt(mytree, plot=T, drop.extinct=FALSE, log.lineages=TRUE, gamma=TRUE)
+mytreeltt
+
+write.tree(mytree, "sylvia.chrono2.tree")
+myBtimes <- getBtimes("sylvia.chrono2.tree")
+
+myfitdAICrc <- fitdAICrc(myBtimes, modelset = c("pureBirth", "bd", "DDL", "DDX", "yule2rate", "yule3rate"), ints = 100)
+myfitdAICrc
+
+
+```
+
+
+13. Diversification and character states
+
+```{r}
+
+#test for different diversification rates for different character state using yule.cov
+
 anc <- apply(ANC$lik.anc, 1, which.max)
 anc
+
 X <- factor(c(x, anc))
 yule.cov(sylvia.chrono, ~ X)
 
@@ -427,9 +511,43 @@ for (i in 1:nrep) {
 hist(Pvls, freq = FALSE, main = "")
 lines(density(Pvls))
 
+
+#test for different diversification rates for different character states using GEOSSE in the library(diversitree)
+library(diversitree)
+phy <- sylvia.chrono
+tip.state <- sylvia.eco[sylvia.chrono$tip.label, "geo.range"]
+tip.state <- as.character(tip.state)
+tip.state[tip.state=="temptrop"] <- 2
+tip.state[tip.state=="temp"] <- 1
+tip.state[tip.state=="trop"] <- 0
+names(tip.state) <- sylvia.chrono$tip.label
+tip.state
+
+statecols <- c("1"="blue", "2"="purple", "0"="red")
+plot(phy, tip.color=statecols[tip.state], cex=0.5)
+
+p <- starting.point.geosse(phy)
+p
+
+tip.state <- as.numeric(tip.state)
+names(tip.state) <- sylvia.chrono$tip.label
+
+lik1 <- make.geosse(phy, tip.state)
+lik2 <- constrain(lik1, sAB ~ 0)
+lik3 <- constrain(lik1, sA ~ sB, xA ~ xB)
+
+ml1 <- find.mle(lik1, p)
+p <- coef(ml1)
+ml2 <- find.mle(lik2, p[argnames(lik2)])
+ml3 <- find.mle(lik3, p[argnames(lik3)])
+
+round(rbind(full = coef(ml1),
+no.sAB = coef(ml2, TRUE),
+eq.div = coef(ml3, TRUE)), 3)
+
+anova(ml1, no.sAB = ml2, eq.div = ml3)
+
 ```
-
-
 
 
 
