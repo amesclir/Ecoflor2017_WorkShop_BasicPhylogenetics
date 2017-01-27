@@ -15,8 +15,10 @@ You can find materials in this website.
 
 library(ape)
 
+
 x <- paste("AJ5345", 26:49, sep = "")
 x <- c("Z73494", x)
+x
 sylvia.seq <- read.GenBank(x)
 
 #Problems with https in linux? Use this!
@@ -24,6 +26,8 @@ library(RCurl)
 source("read.GenBank2.R")
 sylvia.seq <- read.GenBank2(x)
 sylvia.seq
+
+#Exploring the data
 names(sylvia.seq)
 attributes(sylvia.seq)
 attr(sylvia.seq, "names")
@@ -51,7 +55,7 @@ identical(sylvia.clus[x, ], sylvia.muscle[x, ])
 ```{r}
 taxa.sylvia <- attr(sylvia.seq, "species")
 taxa.sylvia
-# We have creaed an object with the scientific names of the species of the downloaded sequences
+# We have created an object with the scientific names of the species of the downloaded sequences
 names(taxa.sylvia) <- names(sylvia.seq)
 #We use the GenBank accession number to match list of scientific names and their sequences
 taxa.sylvia[1] <- "Sylvia_atricapilla"
@@ -103,7 +107,7 @@ abline(b = 1, a = 0)
 plot(syl.F84, syl.GG95)
 abline(b = 1, a = 0)
 
-
+#Let's find which is the best DNA evolution model for our matrix
 library(phangorn)
 sylvia.seq.ali.phyDat <- as.phyDat(sylvia.seq.ali)
 sylvia.seq.ali.phyDat
@@ -148,6 +152,7 @@ dist.topo(nj.sylvia.K80, nj.sylvia.GG95)
 6. Bootstrap analyses in a NJ tree
 
 ```{r}
+
 grep("Chamaea", taxa.sylvia, value = TRUE)
 f <- function(xx) root(nj(dist.dna(xx, p=TRUE)), "AJ534526")
 tr <- f(sylvia.muscle)
@@ -174,12 +179,13 @@ write.tree(nj.est, "sylvia_nj_k80.tre")
 7. Maximum likelihood analyses
 
 ```{r}
-#ML wiht phyml
-write.dna(sylvia.muscle, "sylvia.txt")
-phyml.sylvia <- phymltest("sylvia.txt", execname = "~/local/bin/PhyML-3.1/PhyML-3.1_linux64")
+#ML with phyml
+write.dna(sylvia.muscle, "sylvia.phy")
+#This saves the file in phy format
+phyml.sylvia <- phymltest("sylvia.phy", execname = "~/local/bin/PhyML-3.1/PhyML-3.1_linux64")
 summary(phyml.sylvia)
 plot(phyml.sylvia, col = "black")
-TR <- read.tree("sylvia.txt_phyml_tree.txt")
+TR <- read.tree("sylvia.phy_phyml_tree.txt")
 TR
 names(TR)
 mltr.sylvia <- TR[[28]]
@@ -189,8 +195,9 @@ mltr.sylvia <- drop.tip(mltr.sylvia, "Chamaea_fasciata")
 plot(mltr.sylvia, no.margin = TRUE)
 add.scale.bar(length = 0.01)
 
-phyml.sylvia.GTRIG <- phymltest("sylvia.txt", exclude = c("JC69", "K80", "F81", "F84", "HKY85", "TN93", "GTR", "JC69+I", "K80+I", "F81+I", "F84+I", "HKY85+I", "TN93+I", "GTR+I", "JC69+G", "K80+G", "F81+G", "F84+G", "HKY85+G", "TN93+G", "GTR+G", "JC69+I+G", "K80+I+G", "F81+I+G", "F84+I+G", "HKY85+I+G", "TN93+I+G"), execname = "~/local/bin/PhyML-3.1/PhyML-3.1_linux64")
-TRGTRIG <- read.tree("sylvia.txt_phyml_tree.txt")
+write.dna(sylvia.muscle, "sylvia2.phy")
+phyml.sylvia.GTRIG <- phymltest("sylvia2.phy", exclude = c("JC69", "K80", "F81", "F84", "HKY85", "TN93", "GTR", "JC69+I", "K80+I", "F81+I", "F84+I", "HKY85+I", "TN93+I", "GTR+I", "JC69+G", "K80+G", "F81+G", "F84+G", "HKY85+G", "TN93+G", "GTR+G", "JC69+I+G", "K80+I+G", "F81+I+G", "F84+I+G", "HKY85+I+G", "TN93+I+G"), execname = "~/local/bin/PhyML-3.1/PhyML-3.1_linux64")
+TRGTRIG <- read.tree("sylvia2.phy_phyml_tree.txt")
 
 #ML with RAXML
 library(phyloch)
@@ -214,14 +221,16 @@ library(phangorn)
 # Jukes-Cantor (starting tree from NJ)  
   fitJC <- pml(tree, sylvia.seq.ali.phyDat)
 fitJC
+fitJC$tree
 # optimize edge length parameter     
   fitJC <- optim.pml(fitJC)
-  fitJC 
+  fitJC
+fitJC$tree
 ## Not run:     
 # search for a better tree using NNI rearrangements     
   fitJC <- optim.pml(fitJC, optNni=TRUE)
   fitJC
-
+fitJC$tree
 # JC + Gamma + I - model
 fitJC_GI <- update(fitJC, k=4, inv=.2)
 fitJC_GI
@@ -239,6 +248,7 @@ fitGTRGI_def2 <- fitGTRGI_def
 fitGTRGI_def2$tree <- root(fitGTRGI_def2$tree, "AJ534526")
 fitGTRGI_def2$tree$tip.label <- taxa.sylvia[fitGTRGI_def2$tree$tip.label]
   plot(fitGTRGI_def2$tree, cex = 0.8)
+write.tree(fitGTRGI_def2$tree, file = "optim.plm.sylvia.GTRIG.tree")
 
 ```
 
@@ -253,13 +263,20 @@ raxml.sylvia.GTRCAT.boot <- raxml2(sylvia.seq.ali, runs = c(2, 5), outgroup = "A
 setwd("/home/amesclir/Documents/Ubuntufiles/GITHUB/Ecoflor2017_WorkShop_BasicPhylogenetics")
 #There is a bug in this old version of raxml and the bootstrap analysis does not work, a least for this data set
 
-#In case it works in your data set, you can use lines like these to plot the tree
-#raxml.sylvia.GTRCAT.boot$tip.label <- taxa.sylvia[raxml.sylvia.GTRCAT.boot$tip.label]
-#raxml.sylvia.GTRCAT.boot <- root(raxml.sylvia.GTRCAT.boot, "Chamaea_fasciata")
-#raxml.sylvia.GTRCAT.boot <- drop.tip(raxml.sylvia.GTRCAT.boot, "Chamaea_fasciata")
-#plot(raxml.sylvia.GTRCAT.boot, no.margin = TRUE)
-#add.scale.bar(length = 0.01)
-#setwd("/home/amesclir/Documents/Ubuntufiles/GITHUB/Ecoflor2017_WorkShop_BasicPhylogenetics")
+# Let's run it with the terminal using this line
+write.dna(sylvia.muscle, "~/local/bin/RAXML2/sylvia.phy")
+#Use this command 
+#raxmlHPC -f a -p 12345 -s sylvia.phy -x 12345 -# 100 -m GTRCAT -n sylvia.raxml
+raxml.sylvia.GTRCAT.boot <- read.tree("~/local/bin/RAXML2/RAxML_bipartitions.sylvia.raxml")
+
+raxml.sylvia.GTRCAT.boot$tip.label <- taxa.sylvia[raxml.sylvia.GTRCAT.boot$tip.label]
+raxml.sylvia.GTRCAT.boot <- root(raxml.sylvia.GTRCAT.boot, "Chamaea_fasciata")
+raxml.sylvia.GTRCAT.boot <- drop.tip(raxml.sylvia.GTRCAT.boot, "Chamaea_fasciata")
+plot(raxml.sylvia.GTRCAT.boot, no.margin = TRUE, show.node.label=T)
+add.scale.bar(length = 0.01)
+setwd("/home/amesclir/Documents/Ubuntufiles/GITHUB/Ecoflor2017_WorkShop_BasicPhylogenetics")
+
+
 
 #Bootstrap in function implemented in phangorn
 set.seed(123)
@@ -268,13 +285,13 @@ bs <- bootstrap.pml(fitGTRGI_def, bs=100, optNni=TRUE)
 fitGTRGI_def$tree <- root(fitGTRGI_def$tree, "AJ534526")
 treeBS <- plotBS(fitGTRGI_def$tree,bs,type="phylogram")
 ml.boot.sylvia <- prop.clades(fitGTRGI_def$tree, bs, part = NULL, rooted = FALSE)
-
 mytree <- fitGTRGI_def$tree
 mytree$tip.label <- taxa.sylvia[mytree$tip.label]
+mytree <- drop.tip(mytree, "Chamaea_fasciata")
 plot(mytree, no.margin = TRUE)
 nodelabels(round(ml.boot.sylvia / 100, 2), bg = "white")
 add.scale.bar(length = 0.01)
-write.tree(nj.est, "sylvia_ml_gtrig.tre")
+write.tree(nj.est, "sylvia_bootstrap.pml_gtrig.tre")
 
 ```
 

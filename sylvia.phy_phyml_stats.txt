@@ -5,66 +5,7 @@
                          Copyright CNRS - Universite Montpellier II                                 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
-. Sequence filename: 			sylvia.txt
-. Data set: 				#1
-. Tree topology search : 		NNIs
-. Initial tree: 			BioNJ
-. Model of nucleotides substitution: 	GTR
-. Number of taxa: 			25
-. Log-likelihood: 			-7444.84791
-. Unconstrained likelihood: 		-4483.83202
-. Parsimony: 				1380
-. Tree size: 				1.92335
-. Discrete gamma model: 		Yes
-  - Number of categories: 		4
-  - Gamma shape parameter: 		0.870
-. Proportion of invariant: 		0.523
-. Nucleotides frequencies:
-  - f(A)= 0.27006
-  - f(C)= 0.35371
-  - f(G)= 0.13108
-  - f(T)= 0.24515
-. GTR relative rate parameters : 
-  A <-> C    4.53983
-  A <-> G   24.96140
-  A <-> T    4.26385
-  C <-> G    1.52888
-  C <-> T   38.37491
-  G <-> T    1.00000
-
-. Instantaneous rate matrix : 
-  [A---------C---------G---------T------]
-  -0.58875   0.15962   0.32523   0.10390  
-   0.12187  -1.07691   0.01992   0.93512  
-   0.67008   0.05375  -0.74820   0.02437  
-   0.11446   1.34923   0.01303  -1.47672  
-
-
-
-. Run ID:				none
-. Random seed:				1485366493
-. Subtree patterns aliasing:		no
-. Version:				20120412
-. Time used:				0h0m17s (17 seconds)
-
- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
- Suggested citations:
- S. Guindon, JF. Dufayard, V. Lefort, M. Anisimova, W. Hordijk, O. Gascuel
- "New algorithms and methods to estimate maximum-likelihood phylogenies: assessing the performance of PhyML 3.0."
- Systematic Biology. 2010. 59(3):307-321.
-
- S. Guindon & O. Gascuel
- "A simple, fast, and accurate algorithm to estimate large phylogenies by maximum likelihood"
- Systematic Biology. 2003. 52(5):696-704.
- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
-
- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
-                                  ---  PhyML 20120412  ---                                             
-                            http://www.atgc-montpellier.fr/phyml                                          
-                         Copyright CNRS - Universite Montpellier II                                 
- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
-
-. Sequence filename: 			sylvia.txt
+. Sequence filename: 			sylvia.phy
 . Data set: 				#1
 . Tree topology search : 		NNIs
 . Initial tree: 			BioNJ
@@ -81,47 +22,7 @@
   - f(T)= 0.25000
 
 . Run ID:				none
-. Random seed:				1485536496
-. Subtree patterns aliasing:		no
-. Version:				20120412
-. Time used:				0h0m1s (1 seconds)
-
- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
- Suggested citations:
- S. Guindon, JF. Dufayard, V. Lefort, M. Anisimova, W. Hordijk, O. Gascuel
- "New algorithms and methods to estimate maximum-likelihood phylogenies: assessing the performance of PhyML 3.0."
- Systematic Biology. 2010. 59(3):307-321.
-
- S. Guindon & O. Gascuel
- "A simple, fast, and accurate algorithm to estimate large phylogenies by maximum likelihood"
- Systematic Biology. 2003. 52(5):696-704.
- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
-
- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
-                                  ---  PhyML 20120412  ---                                             
-                            http://www.atgc-montpellier.fr/phyml                                          
-                         Copyright CNRS - Universite Montpellier II                                 
- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
-
-. Sequence filename: 			sylvia.txt
-. Data set: 				#1
-. Tree topology search : 		NNIs
-. Initial tree: 			BioNJ
-. Model of nucleotides substitution: 	JC69
-. Number of taxa: 			25
-. Log-likelihood: 			-8304.45208
-. Unconstrained likelihood: 		-4483.83202
-. Parsimony: 				1378
-. Tree size: 				1.37832
-. Proportion of invariant: 		0.619
-. Nucleotides frequencies:
-  - f(A)= 0.25000
-  - f(C)= 0.25000
-  - f(G)= 0.25000
-  - f(T)= 0.25000
-
-. Run ID:				none
-. Random seed:				1485536497
+. Random seed:				1485536755
 . Subtree patterns aliasing:		no
 . Version:				20120412
 . Time used:				0h0m2s (2 seconds)
@@ -143,7 +44,47 @@
                          Copyright CNRS - Universite Montpellier II                                 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
-. Sequence filename: 			sylvia.txt
+. Sequence filename: 			sylvia.phy
+. Data set: 				#1
+. Tree topology search : 		NNIs
+. Initial tree: 			BioNJ
+. Model of nucleotides substitution: 	JC69
+. Number of taxa: 			25
+. Log-likelihood: 			-8304.45208
+. Unconstrained likelihood: 		-4483.83202
+. Parsimony: 				1378
+. Tree size: 				1.37832
+. Proportion of invariant: 		0.619
+. Nucleotides frequencies:
+  - f(A)= 0.25000
+  - f(C)= 0.25000
+  - f(G)= 0.25000
+  - f(T)= 0.25000
+
+. Run ID:				none
+. Random seed:				1485536757
+. Subtree patterns aliasing:		no
+. Version:				20120412
+. Time used:				0h0m2s (2 seconds)
+
+ oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+ Suggested citations:
+ S. Guindon, JF. Dufayard, V. Lefort, M. Anisimova, W. Hordijk, O. Gascuel
+ "New algorithms and methods to estimate maximum-likelihood phylogenies: assessing the performance of PhyML 3.0."
+ Systematic Biology. 2010. 59(3):307-321.
+
+ S. Guindon & O. Gascuel
+ "A simple, fast, and accurate algorithm to estimate large phylogenies by maximum likelihood"
+ Systematic Biology. 2003. 52(5):696-704.
+ oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+
+ oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+                                  ---  PhyML 20120412  ---                                             
+                            http://www.atgc-montpellier.fr/phyml                                          
+                         Copyright CNRS - Universite Montpellier II                                 
+ oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+
+. Sequence filename: 			sylvia.phy
 . Data set: 				#1
 . Tree topology search : 		NNIs
 . Initial tree: 			BioNJ
@@ -163,10 +104,10 @@
   - f(T)= 0.25000
 
 . Run ID:				none
-. Random seed:				1485536499
+. Random seed:				1485536759
 . Subtree patterns aliasing:		no
 . Version:				20120412
-. Time used:				0h0m8s (8 seconds)
+. Time used:				0h0m7s (7 seconds)
 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
  Suggested citations:
@@ -185,7 +126,7 @@
                          Copyright CNRS - Universite Montpellier II                                 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
-. Sequence filename: 			sylvia.txt
+. Sequence filename: 			sylvia.phy
 . Data set: 				#1
 . Tree topology search : 		NNIs
 . Initial tree: 			BioNJ
@@ -206,7 +147,7 @@
   - f(T)= 0.25000
 
 . Run ID:				none
-. Random seed:				1485536507
+. Random seed:				1485536766
 . Subtree patterns aliasing:		no
 . Version:				20120412
 . Time used:				0h0m15s (15 seconds)
@@ -228,7 +169,7 @@
                          Copyright CNRS - Universite Montpellier II                                 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
-. Sequence filename: 			sylvia.txt
+. Sequence filename: 			sylvia.phy
 . Data set: 				#1
 . Tree topology search : 		NNIs
 . Initial tree: 			BioNJ
@@ -246,7 +187,7 @@
   - f(T)= 0.25000
 
 . Run ID:				none
-. Random seed:				1485536522
+. Random seed:				1485536781
 . Subtree patterns aliasing:		no
 . Version:				20120412
 . Time used:				0h0m2s (2 seconds)
@@ -268,7 +209,7 @@
                          Copyright CNRS - Universite Montpellier II                                 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
-. Sequence filename: 			sylvia.txt
+. Sequence filename: 			sylvia.phy
 . Data set: 				#1
 . Tree topology search : 		NNIs
 . Initial tree: 			BioNJ
@@ -287,7 +228,7 @@
   - f(T)= 0.25000
 
 . Run ID:				none
-. Random seed:				1485536524
+. Random seed:				1485536783
 . Subtree patterns aliasing:		no
 . Version:				20120412
 . Time used:				0h0m5s (5 seconds)
@@ -309,7 +250,7 @@
                          Copyright CNRS - Universite Montpellier II                                 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
-. Sequence filename: 			sylvia.txt
+. Sequence filename: 			sylvia.phy
 . Data set: 				#1
 . Tree topology search : 		NNIs
 . Initial tree: 			BioNJ
@@ -330,7 +271,7 @@
   - f(T)= 0.25000
 
 . Run ID:				none
-. Random seed:				1485536529
+. Random seed:				1485536788
 . Subtree patterns aliasing:		no
 . Version:				20120412
 . Time used:				0h0m7s (7 seconds)
@@ -352,7 +293,7 @@
                          Copyright CNRS - Universite Montpellier II                                 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
-. Sequence filename: 			sylvia.txt
+. Sequence filename: 			sylvia.phy
 . Data set: 				#1
 . Tree topology search : 		NNIs
 . Initial tree: 			BioNJ
@@ -374,7 +315,7 @@
   - f(T)= 0.25000
 
 . Run ID:				none
-. Random seed:				1485536536
+. Random seed:				1485536795
 . Subtree patterns aliasing:		no
 . Version:				20120412
 . Time used:				0h0m22s (22 seconds)
@@ -396,7 +337,7 @@
                          Copyright CNRS - Universite Montpellier II                                 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
-. Sequence filename: 			sylvia.txt
+. Sequence filename: 			sylvia.phy
 . Data set: 				#1
 . Tree topology search : 		NNIs
 . Initial tree: 			BioNJ
@@ -413,7 +354,7 @@
   - f(T)= 0.24515
 
 . Run ID:				none
-. Random seed:				1485536558
+. Random seed:				1485536817
 . Subtree patterns aliasing:		no
 . Version:				20120412
 . Time used:				0h0m2s (2 seconds)
@@ -435,7 +376,7 @@
                          Copyright CNRS - Universite Montpellier II                                 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
-. Sequence filename: 			sylvia.txt
+. Sequence filename: 			sylvia.phy
 . Data set: 				#1
 . Tree topology search : 		NNIs
 . Initial tree: 			BioNJ
@@ -453,7 +394,7 @@
   - f(T)= 0.24515
 
 . Run ID:				none
-. Random seed:				1485536560
+. Random seed:				1485536819
 . Subtree patterns aliasing:		no
 . Version:				20120412
 . Time used:				0h0m2s (2 seconds)
@@ -475,7 +416,7 @@
                          Copyright CNRS - Universite Montpellier II                                 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
-. Sequence filename: 			sylvia.txt
+. Sequence filename: 			sylvia.phy
 . Data set: 				#1
 . Tree topology search : 		NNIs
 . Initial tree: 			BioNJ
@@ -495,7 +436,7 @@
   - f(T)= 0.24515
 
 . Run ID:				none
-. Random seed:				1485536562
+. Random seed:				1485536821
 . Subtree patterns aliasing:		no
 . Version:				20120412
 . Time used:				0h0m7s (7 seconds)
@@ -517,7 +458,7 @@
                          Copyright CNRS - Universite Montpellier II                                 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
-. Sequence filename: 			sylvia.txt
+. Sequence filename: 			sylvia.phy
 . Data set: 				#1
 . Tree topology search : 		NNIs
 . Initial tree: 			BioNJ
@@ -538,7 +479,7 @@
   - f(T)= 0.24515
 
 . Run ID:				none
-. Random seed:				1485536569
+. Random seed:				1485536828
 . Subtree patterns aliasing:		no
 . Version:				20120412
 . Time used:				0h0m15s (15 seconds)
@@ -560,7 +501,7 @@
                          Copyright CNRS - Universite Montpellier II                                 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
-. Sequence filename: 			sylvia.txt
+. Sequence filename: 			sylvia.phy
 . Data set: 				#1
 . Tree topology search : 		NNIs
 . Initial tree: 			BioNJ
@@ -578,7 +519,7 @@
   - f(T)= 0.24515
 
 . Run ID:				none
-. Random seed:				1485536584
+. Random seed:				1485536843
 . Subtree patterns aliasing:		no
 . Version:				20120412
 . Time used:				0h0m2s (2 seconds)
@@ -600,7 +541,7 @@
                          Copyright CNRS - Universite Montpellier II                                 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
-. Sequence filename: 			sylvia.txt
+. Sequence filename: 			sylvia.phy
 . Data set: 				#1
 . Tree topology search : 		NNIs
 . Initial tree: 			BioNJ
@@ -619,10 +560,10 @@
   - f(T)= 0.24515
 
 . Run ID:				none
-. Random seed:				1485536586
+. Random seed:				1485536845
 . Subtree patterns aliasing:		no
 . Version:				20120412
-. Time used:				0h0m3s (3 seconds)
+. Time used:				0h0m2s (2 seconds)
 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
  Suggested citations:
@@ -641,7 +582,7 @@
                          Copyright CNRS - Universite Montpellier II                                 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
-. Sequence filename: 			sylvia.txt
+. Sequence filename: 			sylvia.phy
 . Data set: 				#1
 . Tree topology search : 		NNIs
 . Initial tree: 			BioNJ
@@ -662,10 +603,10 @@
   - f(T)= 0.24515
 
 . Run ID:				none
-. Random seed:				1485536589
+. Random seed:				1485536847
 . Subtree patterns aliasing:		no
 . Version:				20120412
-. Time used:				0h0m7s (7 seconds)
+. Time used:				0h0m8s (8 seconds)
 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
  Suggested citations:
@@ -684,7 +625,7 @@
                          Copyright CNRS - Universite Montpellier II                                 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
-. Sequence filename: 			sylvia.txt
+. Sequence filename: 			sylvia.phy
 . Data set: 				#1
 . Tree topology search : 		NNIs
 . Initial tree: 			BioNJ
@@ -706,10 +647,10 @@
   - f(T)= 0.24515
 
 . Run ID:				none
-. Random seed:				1485536596
+. Random seed:				1485536855
 . Subtree patterns aliasing:		no
 . Version:				20120412
-. Time used:				0h0m27s (27 seconds)
+. Time used:				0h0m26s (26 seconds)
 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
  Suggested citations:
@@ -728,7 +669,7 @@
                          Copyright CNRS - Universite Montpellier II                                 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
-. Sequence filename: 			sylvia.txt
+. Sequence filename: 			sylvia.phy
 . Data set: 				#1
 . Tree topology search : 		NNIs
 . Initial tree: 			BioNJ
@@ -746,7 +687,7 @@
   - f(T)= 0.24515
 
 . Run ID:				none
-. Random seed:				1485536623
+. Random seed:				1485536881
 . Subtree patterns aliasing:		no
 . Version:				20120412
 . Time used:				0h0m2s (2 seconds)
@@ -768,7 +709,7 @@
                          Copyright CNRS - Universite Montpellier II                                 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
-. Sequence filename: 			sylvia.txt
+. Sequence filename: 			sylvia.phy
 . Data set: 				#1
 . Tree topology search : 		NNIs
 . Initial tree: 			BioNJ
@@ -787,7 +728,7 @@
   - f(T)= 0.24515
 
 . Run ID:				none
-. Random seed:				1485536625
+. Random seed:				1485536883
 . Subtree patterns aliasing:		no
 . Version:				20120412
 . Time used:				0h0m3s (3 seconds)
@@ -809,7 +750,7 @@
                          Copyright CNRS - Universite Montpellier II                                 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
-. Sequence filename: 			sylvia.txt
+. Sequence filename: 			sylvia.phy
 . Data set: 				#1
 . Tree topology search : 		NNIs
 . Initial tree: 			BioNJ
@@ -830,10 +771,10 @@
   - f(T)= 0.24515
 
 . Run ID:				none
-. Random seed:				1485536628
+. Random seed:				1485536886
 . Subtree patterns aliasing:		no
 . Version:				20120412
-. Time used:				0h0m6s (6 seconds)
+. Time used:				0h0m7s (7 seconds)
 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
  Suggested citations:
@@ -852,7 +793,7 @@
                          Copyright CNRS - Universite Montpellier II                                 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
-. Sequence filename: 			sylvia.txt
+. Sequence filename: 			sylvia.phy
 . Data set: 				#1
 . Tree topology search : 		NNIs
 . Initial tree: 			BioNJ
@@ -874,10 +815,10 @@
   - f(T)= 0.24515
 
 . Run ID:				none
-. Random seed:				1485536634
+. Random seed:				1485536893
 . Subtree patterns aliasing:		no
 . Version:				20120412
-. Time used:				0h0m29s (29 seconds)
+. Time used:				0h0m28s (28 seconds)
 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
  Suggested citations:
@@ -896,7 +837,7 @@
                          Copyright CNRS - Universite Montpellier II                                 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
-. Sequence filename: 			sylvia.txt
+. Sequence filename: 			sylvia.phy
 . Data set: 				#1
 . Tree topology search : 		NNIs
 . Initial tree: 			BioNJ
@@ -915,7 +856,7 @@
   - f(T)= 0.24515
 
 . Run ID:				none
-. Random seed:				1485536663
+. Random seed:				1485536921
 . Subtree patterns aliasing:		no
 . Version:				20120412
 . Time used:				0h0m2s (2 seconds)
@@ -937,7 +878,7 @@
                          Copyright CNRS - Universite Montpellier II                                 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
-. Sequence filename: 			sylvia.txt
+. Sequence filename: 			sylvia.phy
 . Data set: 				#1
 . Tree topology search : 		NNIs
 . Initial tree: 			BioNJ
@@ -957,7 +898,7 @@
   - f(T)= 0.24515
 
 . Run ID:				none
-. Random seed:				1485536665
+. Random seed:				1485536923
 . Subtree patterns aliasing:		no
 . Version:				20120412
 . Time used:				0h0m2s (2 seconds)
@@ -979,7 +920,7 @@
                          Copyright CNRS - Universite Montpellier II                                 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
-. Sequence filename: 			sylvia.txt
+. Sequence filename: 			sylvia.phy
 . Data set: 				#1
 . Tree topology search : 		NNIs
 . Initial tree: 			BioNJ
@@ -1001,7 +942,7 @@
   - f(T)= 0.24515
 
 . Run ID:				none
-. Random seed:				1485536667
+. Random seed:				1485536925
 . Subtree patterns aliasing:		no
 . Version:				20120412
 . Time used:				0h0m9s (9 seconds)
@@ -1023,7 +964,7 @@
                          Copyright CNRS - Universite Montpellier II                                 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
-. Sequence filename: 			sylvia.txt
+. Sequence filename: 			sylvia.phy
 . Data set: 				#1
 . Tree topology search : 		NNIs
 . Initial tree: 			BioNJ
@@ -1046,10 +987,10 @@
   - f(T)= 0.24515
 
 . Run ID:				none
-. Random seed:				1485536676
+. Random seed:				1485536934
 . Subtree patterns aliasing:		no
 . Version:				20120412
-. Time used:				0h0m24s (24 seconds)
+. Time used:				0h0m25s (25 seconds)
 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
  Suggested citations:
@@ -1068,7 +1009,7 @@
                          Copyright CNRS - Universite Montpellier II                                 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
-. Sequence filename: 			sylvia.txt
+. Sequence filename: 			sylvia.phy
 . Data set: 				#1
 . Tree topology search : 		NNIs
 . Initial tree: 			BioNJ
@@ -1101,10 +1042,10 @@
 
 
 . Run ID:				none
-. Random seed:				1485536700
+. Random seed:				1485536959
 . Subtree patterns aliasing:		no
 . Version:				20120412
-. Time used:				0h0m3s (3 seconds)
+. Time used:				0h0m2s (2 seconds)
 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
  Suggested citations:
@@ -1123,7 +1064,7 @@
                          Copyright CNRS - Universite Montpellier II                                 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
-. Sequence filename: 			sylvia.txt
+. Sequence filename: 			sylvia.phy
 . Data set: 				#1
 . Tree topology search : 		NNIs
 . Initial tree: 			BioNJ
@@ -1157,7 +1098,7 @@
 
 
 . Run ID:				none
-. Random seed:				1485536703
+. Random seed:				1485536961
 . Subtree patterns aliasing:		no
 . Version:				20120412
 . Time used:				0h0m3s (3 seconds)
@@ -1179,7 +1120,7 @@
                          Copyright CNRS - Universite Montpellier II                                 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
-. Sequence filename: 			sylvia.txt
+. Sequence filename: 			sylvia.phy
 . Data set: 				#1
 . Tree topology search : 		NNIs
 . Initial tree: 			BioNJ
@@ -1215,10 +1156,10 @@
 
 
 . Run ID:				none
-. Random seed:				1485536706
+. Random seed:				1485536964
 . Subtree patterns aliasing:		no
 . Version:				20120412
-. Time used:				0h0m9s (9 seconds)
+. Time used:				0h0m8s (8 seconds)
 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
  Suggested citations:
@@ -1237,7 +1178,7 @@
                          Copyright CNRS - Universite Montpellier II                                 
  oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 
-. Sequence filename: 			sylvia.txt
+. Sequence filename: 			sylvia.phy
 . Data set: 				#1
 . Tree topology search : 		NNIs
 . Initial tree: 			BioNJ
@@ -1274,7 +1215,7 @@
 
 
 . Run ID:				none
-. Random seed:				1485536715
+. Random seed:				1485536973
 . Subtree patterns aliasing:		no
 . Version:				20120412
 . Time used:				0h0m17s (17 seconds)
