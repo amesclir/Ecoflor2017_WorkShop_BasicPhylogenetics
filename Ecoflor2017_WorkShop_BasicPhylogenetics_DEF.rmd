@@ -1,0 +1,585 @@
+---
+title: "git@github.com:amesclir/Ecoflor2017_WorkShop_BasicPhylogenetics"
+author: "Marcial"
+date: "01/16/2017"
+output: html_document
+---
+
+0. Visit this website: http://ape-package.ird.fr/APER.html
+You can find materials in this website.
+
+
+1. Let's download the GenBank sequences
+
+```{r}
+
+library(ape)
+
+
+x <- paste("AJ5345", 26:49, sep = "")
+x <- c("Z73494", x)
+x
+sylvia.seq <- read.GenBank(x)
+
+#Problems with https in linux? Use this!
+library(RCurl)
+source("read.GenBank2.R")
+sylvia.seq <- read.GenBank2(x)
+sylvia.seq
+
+#Exploring the data
+names(sylvia.seq)
+attributes(sylvia.seq)
+attr(sylvia.seq, "names")
+attr(sylvia.seq, "species")
+attr(sylvia.seq, "description")
+attr(sylvia.seq, "class")
+
+save(list = ls(all.names = TRUE), file = "sylvia.RData")
+```
+
+2. Alignment of sequences
+```{r}
+sylvia.clus <- clustal(sylvia.seq)
+#clustal is an older method
+sylvia.clus
+
+library(phyloch)
+sylvia.muscle <- muscle(sylvia.seq)
+#muscle is a more updated method
+sylvia.muscle
+
+identical(sylvia.clus[x, ], sylvia.muscle[x, ])
+#this compare both alignments
+
+save(list = ls(all.names = TRUE), file = "sylvia.RData")
+```
+
+3. Edit sequence data, load ecological data and save data
+```{r}
+taxa.sylvia <- attr(sylvia.seq, "species")
+taxa.sylvia
+# We have created an object with the scientific names of the species of the downloaded sequences
+names(taxa.sylvia) <- names(sylvia.seq)
+#We use the GenBank accession number to match list of scientific names and their sequences
+taxa.sylvia[1] <- "Sylvia_atricapilla"
+taxa.sylvia[24] <- "Sylvia_abyssinica"
+taxa.sylvia[20] <- "Sylvia_melanocephala"
+taxa.sylvia[15] <- "Sylvia_conspicillata"
+# we have to update some scientific names
+
+sylvia.eco <- read.table("sylvia_data.txt")
+sylvia.eco
+str(sylvia.eco)
+rownames(sylvia.eco)
+
+save(list = ls(all.names = TRUE), file = "sylvia.RData")
+
+```
+
+
+
+4. DNA models of evolution
+Visit this website http://svitsrv25.epfl.ch/R-doc/library/ape/html/dist.dna.html
+
+```{r}
+
+load (file = "sylvia.RData")
+sylvia.seq.ali <- sylvia.muscle
+syl.K80 <- dist.dna(sylvia.seq.ali, pairwise.deletion = TRUE)
+#K80 transitions (A <-> G, i.e. from purine to purine, or C <-> T, i.e. from pyrimidine to pyrimidine) and transversion and equal base frequencies.
+syl.F84 <- dist.dna(sylvia.seq.ali, model = "F84", p = TRUE)
+#K84 transitions (A <-> G, i.e. from purine to purine, or C <-> T, i.e. from pyrimidine to pyrimidine) and transversion and unequal base frequencies.
+syl.TN93 <- dist.dna(sylvia.seq.ali, model = "TN93", p = TRUE)
+#TN93 2 transition rates (A <-> G, i.e. from purine to purine, or C <-> T, i.e. from pyrimidine to pyrimidine) and 1 transversion rate and unequal base frequencies.
+syl.GG95 <- dist.dna(sylvia.seq.ali, model = "GG95", p = TRUE)
+#Galtier and Gouy (1995) introduced a model where the G+C content may change through time. Different rates are assumed for transitons and transversions.
+round(cor(cbind(syl.K80, syl.F84, syl.TN93, syl.GG95)), 3)
+
+syl.JC69 <- dist.dna(sylvia.seq.ali, model = "JC69", p = TRUE)
+# One rate and equal base frequencies
+syl.raw <- dist.dna(sylvia.seq.ali, model = "raw", p = TRUE)
+
+layout(matrix(1:5, 1))
+plot(syl.JC69, syl.raw)
+abline(b = 1, a = 0) # draw x = y line
+plot(syl.K80, syl.JC69)
+abline(b = 1, a = 0)
+plot(syl.F84, syl.K80)
+abline(b = 1, a = 0) # draw x = y line
+plot(syl.TN93, syl.F84)
+abline(b = 1, a = 0)
+plot(syl.F84, syl.GG95)
+abline(b = 1, a = 0)
+
+#Let's find which is the best DNA evolution model for our matrix
+library(phangorn)
+sylvia.seq.ali.phyDat <- as.phyDat(sylvia.seq.ali)
+sylvia.seq.ali.phyDat
+modelTest.results <- modelTest(sylvia.seq.ali.phyDat, tree=NULL, model = c("JC", "F81", "K80", "HKY", "SYM", "GTR"), G = TRUE, I = TRUE, FREQ = FALSE, k = 4, control = pml.control(epsilon = 1e-08,
+maxit = 10, trace = 1), multicore = FALSE, mc.cores = NULL)
+#JC one parameter
+#F81 one parameter for tranv. and trans. and equal base frequences
+#K80 two parameters, tranv. vs. trans.
+#HKY two parameters, tranv. vs. trans. and unequal base frequences
+#SYM six parameeters, and equal base frequences
+#GTR six parameters, equal base frequences
+modelTest.results
+
+save(list = ls(all.names = TRUE), file = "sylvia.RData")
+
+```
+
+
+5. Making NJ trees based on distance matrices
+```{r}
+
+layout(matrix(1:1, 1))
+nj.sylvia.K80 <- nj(syl.K80)
+plot(nj.sylvia.K80)
+
+nj.sylvia.K80$tip.label<-taxa.sylvia[nj.sylvia.K80$tip.label==names(taxa.sylvia)]
+plot(nj.sylvia.K80)
+
+nj.sylvia.K80 <- root(nj.sylvia.K80, "Chamaea_fasciata")
+plot(nj.sylvia.K80)
+
+nj.sylvia.GG95 <- nj(syl.GG95)
+nj.sylvia.GG95$tip.label<-taxa.sylvia[nj.sylvia.GG95$tip.label==names(taxa.sylvia)]
+nj.sylvia.GG95 <- root(nj.sylvia.GG95, "Chamaea_fasciata")
+plot(nj.sylvia.GG95)
+
+
+dist.topo(nj.sylvia.K80, nj.sylvia.GG95)
+
+save(list = ls(all.names = TRUE), file = "sylvia.RData")
+```
+
+6. Bootstrap analyses in a NJ tree
+
+```{r}
+
+grep("Chamaea", taxa.sylvia, value = TRUE)
+f <- function(xx) root(nj(dist.dna(xx, p=TRUE)), "AJ534526")
+tr <- f(sylvia.muscle)
+tr
+plot(tr)
+## same than: tr <- root(nj.sylvia.K80, "AJ534526")
+
+nj.boot.sylvia <- boot.phylo(tr, sylvia.muscle, f, 200,
+                             rooted = TRUE)
+#deffault is K80
+nj.boot.sylvia
+
+
+nj.est <- tr
+nj.est$tip.label <- taxa.sylvia[tr$tip.label]
+plot(nj.est, no.margin = TRUE)
+nodelabels(round(nj.boot.sylvia / 200, 2), bg = "white")
+add.scale.bar(length = 0.01)
+write.tree(nj.est, "sylvia_nj_k80.tre")
+
+save(list = ls(all.names = TRUE), file = "sylvia.RData")
+
+```
+
+
+7. Maximum likelihood analyses
+
+```{r}
+#ML with phyml
+write.dna(sylvia.muscle, "sylvia.phy")
+#This saves the file in phy format
+phyml.sylvia <- phymltest("sylvia.phy", execname = "~/local/bin/PhyML-3.1/PhyML-3.1_linux64")
+summary(phyml.sylvia)
+plot(phyml.sylvia, col = "black")
+TR <- read.tree("sylvia.phy_phyml_tree.txt")
+TR
+names(TR)
+mltr.sylvia <- TR[[28]]
+mltr.sylvia$tip.label <- taxa.sylvia[mltr.sylvia$tip.label]
+mltr.sylvia <- root(mltr.sylvia, "Chamaea_fasciata")
+mltr.sylvia <- drop.tip(mltr.sylvia, "Chamaea_fasciata")
+plot(mltr.sylvia, no.margin = TRUE)
+add.scale.bar(length = 0.01)
+
+write.dna(sylvia.muscle, "sylvia2.phy")
+phyml.sylvia.GTRIG <- phymltest("sylvia2.phy", exclude = c("JC69", "K80", "F81", "F84", "HKY85", "TN93", "GTR", "JC69+I", "K80+I", "F81+I", "F84+I", "HKY85+I", "TN93+I", "GTR+I", "JC69+G", "K80+G", "F81+G", "F84+G", "HKY85+G", "TN93+G", "GTR+G", "JC69+I+G", "K80+I+G", "F81+I+G", "F84+I+G", "HKY85+I+G", "TN93+I+G"), execname = "~/local/bin/PhyML-3.1/PhyML-3.1_linux64")
+TRGTRIG <- read.tree("sylvia2.phy_phyml_tree.txt")
+
+#ML with RAXML
+library(phyloch)
+raxml.sylvia.GTRCAT <- raxml(sylvia.seq.ali, path = "~/local/bin/RAxML-7.0.4/")
+#Must be this version of raxml. If you use other newer version, it won't work
+setwd("/home/amesclir/Documents/Ubuntufiles/GITHUB/Ecoflor2017_WorkShop_BasicPhylogenetics")
+
+raxml.sylvia.GTRCAT$tip.label <- taxa.sylvia[raxml.sylvia.GTRCAT$tip.label]
+raxml.sylvia.GTRCAT <- root(raxml.sylvia.GTRCAT, "Chamaea_fasciata")
+raxml.sylvia.GTRCAT <- drop.tip(raxml.sylvia.GTRCAT, "Chamaea_fasciata")
+plot(raxml.sylvia.GTRCAT, no.margin = TRUE)
+add.scale.bar(length = 0.01)
+write.tree(raxml.sylvia.GTRCAT, file = "raxml.sylvia.GTRCAT.tree")
+
+
+#ML with function implemented in phangorn
+library(phangorn)
+  dmJC <- dist.ml(sylvia.seq.ali.phyDat)
+  tree <- NJ(dmJC)
+  tree <- root(tree, "AJ534526")
+# Jukes-Cantor (starting tree from NJ)  
+  fitJC <- pml(tree, sylvia.seq.ali.phyDat)
+fitJC
+fitJC$tree
+# optimize edge length parameter     
+  fitJC <- optim.pml(fitJC)
+  fitJC
+fitJC$tree
+## Not run:     
+# search for a better tree using NNI rearrangements     
+  fitJC <- optim.pml(fitJC, optNni=TRUE)
+  fitJC
+fitJC$tree
+# JC + Gamma + I - model
+fitJC_GI <- update(fitJC, k=4, inv=.2)
+fitJC_GI
+# optimize shape parameter + proportion of invariant sites     
+fitJC_GI <- optim.pml(fitJC_GI, optGamma=TRUE, optInv=TRUE)
+fitJC_GI
+# GTR + Gamma + I - model
+  fitGTRGI <- optim.pml(fitJC_GI, rearrangement = "stochastic", 
+      optGamma=TRUE, optInv=TRUE, model="GTR") 
+
+fitGTRGI_def <- optim.pml(fitJC_GI, rearrangement = "NNI", 
+      optGamma=TRUE, optInv=TRUE, model="GTR") 
+
+fitGTRGI_def2 <- fitGTRGI_def
+fitGTRGI_def2$tree <- root(fitGTRGI_def2$tree, "AJ534526")
+fitGTRGI_def2$tree$tip.label <- taxa.sylvia[fitGTRGI_def2$tree$tip.label]
+  plot(fitGTRGI_def2$tree, cex = 0.8)
+write.tree(fitGTRGI_def2$tree, file = "optim.plm.sylvia.GTRIG.tree")
+
+save(list = ls(all.names = TRUE), file = "sylvia.RData")
+
+```
+
+8. Bootstrap analysis and maximum likelihood
+
+```{r}
+#Bootstrap in phyml not available for R
+
+#Bootstrap in raxml
+library(phyloch)
+raxml.sylvia.GTRCAT.boot <- raxml2(sylvia.seq.ali, runs = c(2, 5), outgroup = "AJ534526", path = "~/local/bin/RAxML-7.0.4/")
+setwd("/home/amesclir/Documents/Ubuntufiles/GITHUB/Ecoflor2017_WorkShop_BasicPhylogenetics")
+#There is a bug in this old version of raxml and the bootstrap analysis does not work, a least for this data set
+
+# Let's run it with the terminal using this line
+write.dna(sylvia.muscle, "~/local/bin/RAXML2/sylvia.phy")
+#Use this command 
+#raxmlHPC -f a -p 12345 -s sylvia.phy -x 12345 -# 100 -m GTRCAT -n sylvia.raxml
+raxml.sylvia.GTRCAT.boot <- read.tree("~/local/bin/RAXML2/RAxML_bipartitions.sylvia.raxml")
+
+raxml.sylvia.GTRCAT.boot$tip.label <- taxa.sylvia[raxml.sylvia.GTRCAT.boot$tip.label]
+raxml.sylvia.GTRCAT.boot <- root(raxml.sylvia.GTRCAT.boot, "Chamaea_fasciata")
+raxml.sylvia.GTRCAT.boot <- drop.tip(raxml.sylvia.GTRCAT.boot, "Chamaea_fasciata")
+plot(raxml.sylvia.GTRCAT.boot, no.margin = TRUE, show.node.label=T)
+add.scale.bar(length = 0.01)
+setwd("/home/amesclir/Documents/Ubuntufiles/GITHUB/Ecoflor2017_WorkShop_BasicPhylogenetics")
+
+
+
+#Bootstrap in function implemented in phangorn
+set.seed(123)
+
+bs <- bootstrap.pml(fitGTRGI_def, bs=100, optNni=TRUE)
+fitGTRGI_def$tree <- root(fitGTRGI_def$tree, "AJ534526")
+treeBS <- plotBS(fitGTRGI_def$tree,bs,type="phylogram")
+ml.boot.sylvia <- prop.clades(fitGTRGI_def$tree, bs, part = NULL, rooted = FALSE)
+mytree <- fitGTRGI_def$tree
+mytree$tip.label <- taxa.sylvia[mytree$tip.label]
+mytree <- drop.tip(mytree, "Chamaea_fasciata")
+plot(mytree, no.margin = TRUE)
+nodelabels(round(ml.boot.sylvia / 100, 2), bg = "white")
+add.scale.bar(length = 0.01)
+write.tree(nj.est, "sylvia_bootstrap.pml_gtrig.tre")
+
+```
+
+9. Phylogenetic Bayesian analysis
+
+```{r}
+library(phyloch)
+
+setwd("/home/amesclir/local/bin/mrbayes-3.1.2")
+mrbayesresults <- mrbayes(sylvia.seq.ali, file = "sylvia_bayes.nex", nst = 6, rates = "invgamma", ngammacat = 4,     nruns = 2, ngen = 1e+05, printfreq = 100, samplefreq = 100,     nchains = 4, savebrlens = "yes", temp = 0.2, burnin = 10, contype = "allcompat", run = TRUE)
+
+sylvia.bayes.tree <- read.nexus("sylvia_bayes.nex.con")
+
+setwd("/home/amesclir/Documents/Ubuntufiles/GITHUB/Ecoflor2017_WorkShop_BasicPhylogenetics")
+write.tree(sylvia.bayes.tree, "sylvia_bayes.nex.con" )
+sylvia.bayes.tree <- read.tree("sylvia_bayes.nex.con")
+
+sylvia.bayes.tree[[1]] <- root(sylvia.bayes.tree[[1]], "AJ534526")
+sylvia.bayes.tree[[1]] <- drop.tip(sylvia.bayes.tree[[1]], "AJ534526")
+sylvia.bayes.tree[[1]]$tip.label <- taxa.sylvia[sylvia.bayes.tree[[1]]$tip.label]
+plot(sylvia.bayes.tree[[1]], no.margin = TRUE, show.node.label=T)
+
+
+save(list = ls(all.names = TRUE), file = "sylvia.RData")
+```
+
+
+10. chronogram with the penalized likelihood method and bayesian approach
+
+```{r}
+#dating using penalized likelihood method
+tr.ml <- drop.tip(mltr.sylvia, "Chamaea_fasciata")
+res <- vector("list", 9)
+for (L in -4:4)
+    res[[L + 5]] <- chronopl(tr.ml, 10^L, 12, 16, CV = TRUE)
+Lambda <- 10^(-4:4)
+CV <- sapply(res, function(x) sum(attr(x, "D2")))
+
+layout(matrix(1:1, 1))
+par(mai=c(1.02,0.82,0.82,0.42))    
+
+plot(Lambda, CV / 1e5, log = "x")
+
+sylvia.chrono <- res[[2]]
+rts <- attr(sylvia.chrono, "rates")
+summary(rts)
+
+par(mar = c(2, 0, 0, 0))
+plot(sylvia.chrono, edge.width = 100*rts, label.offset = .15)
+axisPhylo()
+
+write.tree(sylvia.chrono, "sylvia.chrono.tree")
+
+
+
+######################
+#dating using lagopus#
+######################
+#This is not actually working.
+#Usa beast better http://beast2.org/
+
+multidivtime.sylvia <- multidivtime(mdt.in.sylvia, file = NULL, start = "baseml", part = 1,
+  runs = 1, path = path, transfer.files = TRUE, 
+	LogLCheck = 100, plot = TRUE)
+
+setwd("/home/amesclir/Documents/Ubuntufiles/GITHUB/Ecoflor2017_WorkShop_BasicPhylogenetics")
+
+
+
+## Create object of class 'mdt.in'.
+library(LAGOPUS)
+sylvia.bayes.tree[[2]] <- root(sylvia.bayes.tree[[2]], "AJ534526")
+plot(sylvia.bayes.tree[[2]])
+
+plot(sylvia.bayes.tree[[2]])
+node.A <- c("L", "AJ534548", "AJ534529", 12)
+node.B <- c("U", "AJ534548", "AJ534529", 16)
+my.age.constraints <- data.frame(rbind(node.A, node.B))
+
+mdt.in.sylvia <- mdt.in(sylvia.seq.ali, sylvia.bayes.tree[[2]],my.age.constraints)
+
+## Load defaults for baseml and multidivtime control files.
+data(baseml.ctr)
+data(multicntrl.dat)
+
+## Have a look at '?baseml.ctr' and 'multicntrl.dat' for how
+## to change the defaults.
+
+## Not run:
+## Specify a path to the executables.
+path <- "/home/amesclir/local/bin/multidistribute/"
+
+multidivtime(mdt.in.sylvia, file = NULL, start = "baseml", part = 1,
+  runs = 1, path = path, transfer.files = TRUE, 
+	LogLCheck = 100, plot = TRUE)
+## Run another MCMC on the same data set, but with
+multidivtime(mdt.in.sylvia, file = NULL, start = "multidivtime", part = 1,
+  runs = 1, path = path, transfer.files = TRUE, 
+  LogLCheck = 100, plot = TRUE)
+
+##Not working. Maybe the version has changed.
+
+```
+
+
+
+11. Ancestral character reconstruction. Discrete characters.
+
+```{r}
+
+plot(sylvia.chrono)
+DF <- sylvia.eco[sylvia.chrono$tip.label, ]
+table(DF$geo.range, DF$mig.behav)
+
+syl.er <- ace(DF$geo.range, sylvia.chrono, type = "d")
+syl.er
+syl.sym <- ace(DF$geo.range, sylvia.chrono, type="d", model="SYM")
+syl.sym
+anova(syl.er, syl.sym)
+sapply(list(syl.er, syl.sym), AIC)
+
+mod <- matrix(0, 3, 3)
+mod[2, 1] <- mod[1, 2] <- 1
+mod[2, 3] <- mod[3, 2] <- 2
+mod
+syl.mod <- ace(DF$geo.range, sylvia.chrono, type="d", model=mod)
+syl.mod
+sapply(list(syl.er, syl.sym, syl.mod), AIC)
+
+Q <- syl.mod$index.matrix
+Q
+diag(Q) <- 0
+Q
+Q[1, 2] <- Q[2, 1] <- syl.mod$rates[1]
+Q[2, 3] <- Q[3, 2] <- syl.mod$rates[2]
+Q
+
+Q <- syl.mod$index.matrix
+diag(Q) <- 0
+Q
+Q[] <- c(0, syl.mod$rates)[Q + 1]
+Q
+diag(Q) <- -rowSums(Q)
+Q
+
+
+P <- matexpo(1 * Q)
+#This function computes the exponential of a square matrix using a spectral decomposition. 
+rownames(P) <- c("temp", "temptrop", "trop")
+colnames(P) <- rownames(P)
+P
+
+co <- rep("grey", 24)
+co[DF$geo.range == "temp"] <- "black"
+co[DF$geo.range == "trop"] <- "white"
+plot(sylvia.chrono, type = "c", use.edge.length = FALSE, no.margin = TRUE, label.offset = 1)
+tiplabels(pch = 22, bg = co, cex = 2, adj = 1)
+nodelabels(thermo = syl.mod$lik.anc, cex = 0.8,
+           piecol = c("black", "grey", "white"))
+
+
+```
+
+12. Diversification analyses
+```{r}
+
+#diversification analyses with ape
+sylvia.chrono <- read.tree("sylvia.chrono.tree")
+yule(sylvia.chrono)
+birthdeath(sylvia.chrono)
+1 - pchisq(2*(-7.858507 - -7.858507), 1)
+
+
+#Diversification analyses with laser
+library(laser)
+library(phytools)
+
+mytree <- read.tree("sylvia.chrono.tree")
+
+layout(matrix(1:1, 1))
+par(mai=c(1.02,0.82,0.82,0.42))    
+
+mytreeltt <- ltt(mytree, plot=T, drop.extinct=FALSE, log.lineages=TRUE, gamma=TRUE)
+mytreeltt
+
+myBtimes <- getBtimes("sylvia.chrono.tree")
+
+myfitdAICrc <- fitdAICrc(myBtimes, modelset = c("pureBirth", "bd", "DDL", "DDX", "yule2rate", "yule3rate"), ints = 100)
+myfitdAICrc
+
+
+```
+
+
+13. Diversification and character states
+
+```{r}
+
+#test for different diversification rates for different character state using yule.cov
+x <- sylvia.eco[sylvia.chrono$tip.label, "geo.range"]
+ANC <- ace(x, sylvia.chrono, type = "d", model = mod)
+ANC$lik.anc[1:3, ]
+anc <- apply(ANC$lik.anc, 1, which.max)
+anc
+
+X <- factor(c(x, anc))
+yule.cov(sylvia.chrono, ~ X)
+
+1 / (1 + exp(-(0.3200766)))
+1 / (1 + exp(-(0.3200766 -2.0038455)))
+1 / (1 + exp(-(0.3200766 -1.8433086)))
+
+#bootstrapping
+source("yule.cov2.R")
+yule.cov2(sylvia.chrono, ~ X)
+fsamp <- function(x) sample(length(x), size = 1, prob = x)
+nrep <- 1e3
+Pvls <- numeric(nrep)
+for (i in 1:nrep) {
+    anc <- apply(ANC$lik.anc, 1, fsamp)
+    X <- factor(c(x, anc))
+    Pvls[i] <- yule.cov2(sylvia.chrono, ~ X)
+}
+hist(Pvls, freq = FALSE, main = "")
+lines(density(Pvls))
+
+
+#test for different diversification rates for different character states using GEOSSE in the library(diversitree)
+library(diversitree)
+phy <- sylvia.chrono
+tip.state <- sylvia.eco[sylvia.chrono$tip.label, "geo.range"]
+tip.state <- as.character(tip.state)
+tip.state[tip.state=="temptrop"] <- 2
+tip.state[tip.state=="temp"] <- 1
+tip.state[tip.state=="trop"] <- 0
+names(tip.state) <- sylvia.chrono$tip.label
+tip.state
+
+statecols <- c("1"="blue", "2"="purple", "0"="red")
+plot(phy, tip.color=statecols[tip.state], cex=0.5)
+
+p <- starting.point.geosse(phy)
+p
+
+tip.state <- as.numeric(tip.state)
+names(tip.state) <- sylvia.chrono$tip.label
+
+lik1 <- make.geosse(phy, tip.state)
+lik2 <- constrain(lik1, sAB ~ 0)
+lik3 <- constrain(lik1, sA ~ sB, xA ~ xB)
+
+ml1 <- find.mle(lik1, p)
+p <- coef(ml1)
+ml2 <- find.mle(lik2, p[argnames(lik2)])
+ml3 <- find.mle(lik3, p[argnames(lik3)])
+
+round(rbind(full = coef(ml1),
+no.sAB = coef(ml2, TRUE),
+eq.div = coef(ml3, TRUE)), 3)
+
+anova(ml1, no.sAB = ml2, eq.div = ml3)
+
+
+geosse.asr <- asr.marginal(lik2, coef(ml2))
+
+plot(phy,use.edge.length=T, label.offset=1.3, no.margin=TRUE, cex=0.7)
+co <- c("0"="red", "1"="blue", "2"="purple")
+tiplabels(pch=22, bg=co[as.numeric(tip.state + 1)], col=co[as.numeric(tip.state + 1)], cex=1, adj=1)
+nodelabels(pie=t(geosse.asr), piecol = c("0"="red", "1"="blue", "2"="purple"), cex=0.7)
+legend("bottomleft", c("Tropical","Temperate","Widespread"),pch=c(16,16),col=c("red", "blue","purple"),cex=0.7)
+
+```
+
+
+
+
+
+
+
+
+
