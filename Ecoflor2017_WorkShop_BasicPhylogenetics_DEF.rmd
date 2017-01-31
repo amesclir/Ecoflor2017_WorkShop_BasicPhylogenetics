@@ -5,8 +5,9 @@ date: "01/16/2017"
 output: html_document
 ---
 
-0. Visit this website: http://ape-package.ird.fr/APER.html
-You can find materials in this website.
+0. Visit this website: 
+http://ape-package.ird.fr/APER.html
+You can find interesting materials in this website.
 
 
 1. Let's download the GenBank sequences
@@ -144,9 +145,14 @@ plot(nj.sylvia.K80)
 nj.sylvia.K80 <- root(nj.sylvia.K80, "Chamaea_fasciata")
 plot(nj.sylvia.K80)
 
+nj.sylvia.K80 <- drop.tip(nj.sylvia.K80, "Chamaea_fasciata")
+plot(nj.sylvia.K80)
+
+
 nj.sylvia.GG95 <- nj(syl.GG95)
 nj.sylvia.GG95$tip.label<-taxa.sylvia[nj.sylvia.GG95$tip.label==names(taxa.sylvia)]
 nj.sylvia.GG95 <- root(nj.sylvia.GG95, "Chamaea_fasciata")
+nj.sylvia.GG95 <-drop.tip(nj.sylvia.GG95, "Chamaea_fasciata")
 plot(nj.sylvia.GG95)
 
 
@@ -233,8 +239,7 @@ fitJC$tree
 # optimize edge length parameter     
   fitJC <- optim.pml(fitJC)
   fitJC
-fitJC$tree
-## Not run:     
+fitJC$tree   
 # search for a better tree using NNI rearrangements     
   fitJC <- optim.pml(fitJC, optNni=TRUE)
   fitJC
@@ -273,7 +278,8 @@ raxml.sylvia.GTRCAT.boot <- raxml2(sylvia.seq.ali, runs = c(2, 5), outgroup = "A
 setwd("/home/amesclir/Documents/Ubuntufiles/GITHUB/Ecoflor2017_WorkShop_BasicPhylogenetics")
 #There is a bug in this old version of raxml and the bootstrap analysis does not work, a least for this data set
 
-# Let's run it with the terminal using this line
+# Let's run it with the terminal 
+# Use this line to create de input
 write.dna(sylvia.muscle, "~/local/bin/RAXML2/sylvia.phy")
 #Use this command 
 #raxmlHPC -f a -p 12345 -s sylvia.phy -x 12345 -# 100 -m GTRCAT -n sylvia.raxml
@@ -294,6 +300,7 @@ set.seed(123)
 bs <- bootstrap.pml(fitGTRGI_def, bs=100, optNni=TRUE)
 fitGTRGI_def$tree <- root(fitGTRGI_def$tree, "AJ534526")
 treeBS <- plotBS(fitGTRGI_def$tree,bs,type="phylogram")
+
 ml.boot.sylvia <- prop.clades(fitGTRGI_def$tree, bs, part = NULL, rooted = FALSE)
 mytree <- fitGTRGI_def$tree
 mytree$tip.label <- taxa.sylvia[mytree$tip.label]
@@ -502,6 +509,7 @@ myfitdAICrc
 
 #test for different diversification rates for different character state using yule.cov
 x <- sylvia.eco[sylvia.chrono$tip.label, "geo.range"]
+x
 ANC <- ace(x, sylvia.chrono, type = "d", model = mod)
 ANC$lik.anc[1:3, ]
 anc <- apply(ANC$lik.anc, 1, which.max)
@@ -526,7 +534,6 @@ for (i in 1:nrep) {
     Pvls[i] <- yule.cov2(sylvia.chrono, ~ X)
 }
 hist(Pvls, freq = FALSE, main = "")
-lines(density(Pvls))
 
 
 #test for different diversification rates for different character states using GEOSSE in the library(diversitree)
@@ -552,17 +559,33 @@ names(tip.state) <- sylvia.chrono$tip.label
 lik1 <- make.geosse(phy, tip.state)
 lik2 <- constrain(lik1, sAB ~ 0)
 lik3 <- constrain(lik1, sA ~ sB, xA ~ xB)
+lik4 <- constrain(lik1, sB ~ sAB, xA ~ xB)
+lik5 <- constrain(lik1, sA ~ sAB, xA ~ xB)
+lik6 <- constrain(lik1, dA ~ dB)
+lik7 <- constrain(lik1, sAB ~ 0, dA ~ dB)
+lik8 <- constrain(lik1, xA ~ 0, xB ~ 0 , dB ~ 0)
 
 ml1 <- find.mle(lik1, p)
 p <- coef(ml1)
 ml2 <- find.mle(lik2, p[argnames(lik2)])
 ml3 <- find.mle(lik3, p[argnames(lik3)])
+ml4 <- find.mle(lik4, p[argnames(lik4)])
+ml5 <- find.mle(lik5, p[argnames(lik5)])
+ml6 <- find.mle(lik6, p[argnames(lik6)])
+ml7 <- find.mle(lik7, p[argnames(lik7)])
+ml8 <- find.mle(lik8, p[argnames(lik8)])
 
 round(rbind(full = coef(ml1),
 no.sAB = coef(ml2, TRUE),
-eq.div = coef(ml3, TRUE)), 3)
+eq.div = coef(ml3, TRUE),
+eq.div2 = coef(ml4, TRUE),
+eq.div3 = coef(ml5, TRUE),
+eq.disp = coef(ml6, TRUE),
+no.sAB.eq.disp = coef(ml7, TRUE),
+optm = coef(ml8, TRUE)
+), 3)
 
-anova(ml1, no.sAB = ml2, eq.div = ml3)
+anova(ml1, no.sAB = ml2, eq.div = ml3, eq.div2 = ml4, eq.div3 = ml5, eq.disp = ml6, no.sAB.eq.disp = ml7, opt = ml8)
 
 
 geosse.asr <- asr.marginal(lik2, coef(ml2))
@@ -571,6 +594,14 @@ plot(phy,use.edge.length=T, label.offset=1.3, no.margin=TRUE, cex=0.7)
 co <- c("0"="red", "1"="blue", "2"="purple")
 tiplabels(pch=22, bg=co[as.numeric(tip.state + 1)], col=co[as.numeric(tip.state + 1)], cex=1, adj=1)
 nodelabels(pie=t(geosse.asr), piecol = c("0"="red", "1"="blue", "2"="purple"), cex=0.7)
+legend("bottomleft", c("Tropical","Temperate","Widespread"),pch=c(16,16),col=c("red", "blue","purple"),cex=0.7)
+
+geosse.asr2 <- asr.marginal(lik6, coef(ml6))
+
+plot(phy,use.edge.length=T, label.offset=1.3, no.margin=TRUE, cex=0.7)
+co <- c("0"="red", "1"="blue", "2"="purple")
+tiplabels(pch=22, bg=co[as.numeric(tip.state + 1)], col=co[as.numeric(tip.state + 1)], cex=1, adj=1)
+nodelabels(pie=t(geosse.asr2), piecol = c("0"="red", "1"="blue", "2"="purple"), cex=0.7)
 legend("bottomleft", c("Tropical","Temperate","Widespread"),pch=c(16,16),col=c("red", "blue","purple"),cex=0.7)
 
 ```

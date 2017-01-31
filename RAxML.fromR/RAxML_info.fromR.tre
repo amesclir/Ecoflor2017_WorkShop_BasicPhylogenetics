@@ -29,23 +29,23 @@ RAxML was called as follows:
 ./raxmlHPC -f d -m GTRCAT -s fromR -# 10 -n fromR.tre 
 
 
-Inference[0]: Time 4.207002 CAT-likelihood -6434.407142, best rearrangement setting 5
-Inference[1]: Time 3.537291 CAT-likelihood -6437.717388, best rearrangement setting 5
-Inference[2]: Time 4.246620 CAT-likelihood -6425.387289, best rearrangement setting 5
-Inference[3]: Time 4.518339 CAT-likelihood -6430.885767, best rearrangement setting 5
-Inference[4]: Time 4.933367 CAT-likelihood -6431.631291, best rearrangement setting 5
-Inference[5]: Time 4.946281 CAT-likelihood -6431.631291, best rearrangement setting 5
-Inference[6]: Time 4.897614 CAT-likelihood -6431.631291, best rearrangement setting 5
-Inference[7]: Time 4.257760 CAT-likelihood -6423.042703, best rearrangement setting 5
-Inference[8]: Time 4.467386 CAT-likelihood -6430.525198, best rearrangement setting 5
-Inference[9]: Time 4.931796 CAT-likelihood -6431.631291, best rearrangement setting 5
+Inference[0]: Time 4.176193 CAT-likelihood -6431.532058, best rearrangement setting 5
+Inference[1]: Time 4.149126 CAT-likelihood -6431.532058, best rearrangement setting 5
+Inference[2]: Time 3.465390 CAT-likelihood -6433.361044, best rearrangement setting 5
+Inference[3]: Time 4.224433 CAT-likelihood -6434.407142, best rearrangement setting 5
+Inference[4]: Time 5.011768 CAT-likelihood -6431.631291, best rearrangement setting 5
+Inference[5]: Time 4.420406 CAT-likelihood -6432.402433, best rearrangement setting 5
+Inference[6]: Time 4.299981 CAT-likelihood -6432.444345, best rearrangement setting 5
+Inference[7]: Time 3.521802 CAT-likelihood -6421.438513, best rearrangement setting 5
+Inference[8]: Time 4.233629 CAT-likelihood -6431.532058, best rearrangement setting 5
+Inference[9]: Time 4.271687 CAT-likelihood -6434.407142, best rearrangement setting 5
 
 
-Overall Time for 10 Inferences 44.947842
-Average Time per Inference 4.494784
-Average Likelihood   : -6430.849065
+Overall Time for 10 Inferences 41.788678
+Average Time per Inference 4.178868
+Average Likelihood   : -6431.468809
 
-Best Likelihood in run number 7: likelihood -6423.042703
+Best Likelihood in run number 7: likelihood -6421.438513
 
 Parsimony starting trees written to:   /home/amesclir/local/bin/RAxML-7.0.4/RAxML_parsimonyTree.fromR.tre.RUN.0 to 9
 Final trees written to:                /home/amesclir/local/bin/RAxML-7.0.4/RAxML_result.fromR.tre.RUN.0 to 9
